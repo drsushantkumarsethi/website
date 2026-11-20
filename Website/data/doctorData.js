@@ -520,5 +520,17 @@ export const doctorData = {
     verifiedInstagramHandle: '@drsushantkumarsethi',
     city: 'Bhubaneswar',
     hospital: 'Apollo Hospitals, Bhubaneswar'
-  }
+  },
+  services: [
+    { id: 'gerd', title: 'Acid Reflux & GERD Management' },
+    { id: 'endoscopy', title: 'Upper GI Endoscopy Consultation' },
+    { id: 'colonoscopy', title: 'Colonoscopy & Colorectal Screening' },
+    { id: 'eus', title: 'Endoscopic Ultrasound (EUS) Evaluation' },
+    { id: 'ercp', title: 'ERCP & Pancreatic / Bile Duct Assessment' },
+    { id: 'liver', title: 'Liver Disease & Hepatology Second Opinion' },
+    { id: 'fatty-liver', title: 'Fatty Liver Disease (MASLD) Assessment' },
+    { id: 'ibs', title: 'Irritable Bowel Syndrome (IBS) Care' },
+    { id: 'pancreas', title: 'Pancreatitis & Pancreatic Health' },
+    { id: 'constipation', title: 'Chronic Constipation & Motility Disorders' }
+  ]
 };

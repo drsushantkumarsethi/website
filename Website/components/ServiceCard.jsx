@@ -20,7 +20,7 @@ export default function ServiceCard({ service, onBook }) {
     <article className="service-card editorial-card" id={`service-${service.id}`}>
       {/* Category & Badge */}
       <div className="service-card-top">
-        <span className="badge badge-sage">{service.category}</span>
+        <span className="badge badge-sage">{service.category || 'Gastroenterology'}</span>
         <div className="service-icon-wrap" aria-hidden="true">
           <Stethoscope size={18} />
         </div>
@@ -28,20 +28,22 @@ export default function ServiceCard({ service, onBook }) {
 
       {/* Title & Short Summary */}
       <h3 className="service-card-title">{service.title}</h3>
-      <p className="service-card-summary">{service.shortSummary}</p>
+      <p className="service-card-summary">{service.shortSummary || service.lead || service.description || ''}</p>
 
       {/* Common Symptoms List */}
-      <div className="service-symptoms-section">
-        <span className="symptoms-label">Common Symptoms & Indications:</span>
-        <ul className="symptoms-list">
-          {service.commonSymptoms.slice(0, 3).map((symptom, idx) => (
-            <li key={idx} className="symptom-item">
-              <CheckCircle2 size={14} className="symptom-check" aria-hidden="true" />
-              <span>{symptom}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
+      {(service.commonSymptoms && service.commonSymptoms.length > 0) ? (
+        <div className="service-symptoms-section">
+          <span className="symptoms-label">Common Symptoms & Indications:</span>
+          <ul className="symptoms-list">
+            {service.commonSymptoms.slice(0, 3).map((symptom, idx) => (
+              <li key={idx} className="symptom-item">
+                <CheckCircle2 size={14} className="symptom-check" aria-hidden="true" />
+                <span>{symptom}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
 
       {/* Expandable Clinical Details */}
       {expanded && (

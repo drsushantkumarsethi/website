@@ -4,6 +4,19 @@ import React, { useState, useEffect } from 'react';
 import { doctorData } from '../data/doctorData';
 import { X, Calendar, CheckCircle2, AlertTriangle, ShieldCheck, Clock, MapPin, User, Phone, FileText } from 'lucide-react';
 
+const defaultServices = [
+  'General Gastroenterology Consultation',
+  'Upper GI Endoscopy Consultation',
+  'Endoscopic Ultrasound (EUS) Evaluation',
+  'ERCP & Biliary / Pancreatic Assessment',
+  'Liver & Hepatology Second Opinion',
+  'Acid Reflux & GERD Management',
+  'Irritable Bowel Syndrome (IBS) Care',
+  'Colonoscopy & Colorectal Screening',
+  'Fatty Liver Disease (MASLD) Assessment',
+  'Chronic Constipation / Motility Evaluation'
+];
+
 export default function AppointmentModal({
   isOpen,
   onClose,
@@ -39,6 +52,16 @@ export default function AppointmentModal({
 
   if (!isOpen) return null;
 
+  const clinicsList = doctorData?.clinics && doctorData.clinics.length > 0
+    ? doctorData.clinics
+    : [{ id: 'bhubaneswar-main', name: 'Dr. Sethi Consultation Clinic', city: 'Bhubaneswar' }];
+
+  const availableServices = (doctorData?.services && doctorData.services.length > 0)
+    ? doctorData.services.map(s => s.title || s)
+    : (doctorData?.doctor?.procedures && doctorData.doctor.procedures.length > 0)
+      ? doctorData.doctor.procedures.map(p => p.title || p)
+      : defaultServices;
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -48,7 +71,7 @@ export default function AppointmentModal({
     }
 
     if (!formData.confirmedNonEmergency) {
-      setErrorMessage('Please confirm that this is a non-emergency consultation request.');
+      setErrorMessage('Please confirm that this is a routine, non-emergency consultation request.');
       return;
     }
 
@@ -56,21 +79,22 @@ export default function AppointmentModal({
     setSubmitted(true);
 
     const email = 'drsushantkumarsethi@gmail.com';
+    const clinicName = clinicsList.find(c => c.id === formData.preferredLocation)?.name || 'Bhubaneswar Clinic';
     const subject = `Consultation Request: ${formData.serviceArea} - ${formData.fullName}`;
     const body = `Dear Dr. Sushant Kumar Sethi,
 
 I would like to request a consultation appointment.
 
-Full Name: ${formData.fullName}
-Phone Number: ${formData.phone}
-Email: ${formData.email || 'Not provided'}
-Clinical Focus: ${formData.serviceArea}
+Patient Full Name: ${formData.fullName}
+Contact Phone Number: ${formData.phone}
+Email Address: ${formData.email || 'Not provided'}
+Clinical Focus / Concern: ${formData.serviceArea}
 Preferred Date: ${formData.preferredDate || 'Earliest available'}
-Preferred Time: ${formData.preferredTime}
-Location: Bhubaneswar, Odisha
-Notes / Symptoms: ${formData.symptomNotes || 'None'}
+Preferred Time Window: ${formData.preferredTime}
+Location: ${clinicName}
+Symptoms / Health Notes: ${formData.symptomNotes || 'None'}
 
-Thank you.`;
+Submitted via Dr. Sushant Kumar Sethi Consultation Desk`;
 
     if (typeof window !== 'undefined') {
       window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
@@ -83,7 +107,7 @@ Thank you.`;
       fullName: '',
       phone: '',
       email: '',
-      preferredLocation: doctorData.clinics[0]?.id || '',
+      preferredLocation: clinicsList[0]?.id || 'bhubaneswar-main',
       serviceArea: 'General Gastroenterology Consultation',
       preferredDate: '',
       preferredTime: 'Morning (10:00 AM - 1:00 PM)',
@@ -94,14 +118,14 @@ Thank you.`;
   };
 
   return (
-    <div className="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div className="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title" onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}>
       <div className="modal-card">
         {/* Modal Header */}
         <div className="modal-header">
           <div className="modal-header-text">
             <span className="modal-eyebrow">Outpatient Consultation Desk</span>
             <h3 id="modal-title" className="modal-title">Schedule a Consultation</h3>
-            <p className="modal-subtitle">with {doctorData.doctor.fullName} ({doctorData.doctor.speciality})</p>
+            <p className="modal-subtitle">with {doctorData?.doctor?.fullName || 'Dr. Sushant Kumar Sethi'} ({doctorData?.doctor?.speciality || 'Gastroenterology & Hepatology'})</p>
           </div>
           <button
             onClick={onClose}
@@ -117,11 +141,11 @@ Thank you.`;
           {submitted ? (
             <div className="appointment-success">
               <div className="success-icon-wrap">
-                <CheckCircle2 size={48} className="success-icon" />
+                <CheckCircle2 size={48} className="success-icon" style={{ color: 'var(--color-primary)' }} />
               </div>
               <h4 className="success-title">Consultation Request Received</h4>
               <p className="success-message">
-                Thank you, <strong>{formData.fullName}</strong>. Your consultation request for <strong>{doctorData.clinics.find(c => c.id === formData.preferredLocation)?.name || 'Bhubaneswar Clinic'}</strong> has been registered.
+                Thank you, <strong>{formData.fullName}</strong>. Your consultation request for <strong>{clinicsList.find(c => c.id === formData.preferredLocation)?.name || 'Bhubaneswar Clinic'}</strong> has been registered.
               </p>
 
               <div className="success-summary-box">
@@ -142,18 +166,15 @@ Thank you.`;
               <div className="next-steps-guide">
                 <strong>What happens next:</strong>
                 <ul>
-                  <li>The clinical coordination desk will review your slot preference and contact you via phone or SMS to confirm the appointment token.</li>
-                  <li>Please arrive 15 minutes before your scheduled slot with previous medical records and current prescriptions.</li>
+                  <li>The clinical coordination desk will review your slot preference and contact you at <strong>{formData.phone}</strong> to confirm the appointment token.</li>
+                  <li>Booking details have also been dispatched to <strong>drsushantkumarsethi@gmail.com</strong>.</li>
+                  <li>Please bring prior medical records, endoscopy reports, and current prescriptions to your visit.</li>
                 </ul>
               </div>
 
-              <div className="modal-actions-success">
-                <button
-                  type="button"
-                  onClick={handleReset}
-                  className="btn btn-primary"
-                >
-                  Done
+              <div className="modal-actions-success" style={{ display: 'flex', gap: '12px', marginTop: '24px' }}>
+                <button type="button" onClick={handleReset} className="btn btn-primary btn-full">
+                  <span>Done</span>
                 </button>
               </div>
             </div>
@@ -161,17 +182,17 @@ Thank you.`;
             <form onSubmit={handleSubmit} className="appointment-form">
               {/* Emergency Warning */}
               <div className="modal-alert-emergency">
-                <AlertTriangle size={18} className="alert-icon" />
+                <AlertTriangle size={18} className="alert-icon" style={{ flexShrink: 0, marginTop: '2px', color: '#b45309' }} />
                 <div>
                   <strong>Routine Outpatient Scheduling Only</strong>
                   <p>
-                    This form is not monitored 24/7 for acute emergencies. If you have severe GI bleeding, sudden acute pain, or critical distress, proceed to an emergency department.
+                    This form is not monitored 24/7 for acute emergencies. If you have severe GI bleeding, sudden severe pain, or acute medical distress, please proceed to an emergency department.
                   </p>
                 </div>
               </div>
 
               {errorMessage && (
-                <div className="form-error-banner" role="alert">
+                <div className="form-error-banner" role="alert" style={{ color: '#b91c1c', background: '#fef2f2', border: '1px solid #fecaca', padding: '10px 14px', borderRadius: '8px', marginBottom: '16px', fontSize: '0.88rem' }}>
                   {errorMessage}
                 </div>
               )}
@@ -225,9 +246,9 @@ Thank you.`;
                     onChange={(e) => setFormData({ ...formData, preferredLocation: e.target.value })}
                     className="form-select"
                   >
-                    {doctorData.clinics.map((clinic) => (
+                    {clinicsList.map((clinic) => (
                       <option key={clinic.id} value={clinic.id}>
-                        {clinic.name} ({clinic.city})
+                        {clinic.name} ({clinic.city || 'Bhubaneswar'})
                       </option>
                     ))}
                   </select>
@@ -245,14 +266,11 @@ Thank you.`;
                     onChange={(e) => setFormData({ ...formData, serviceArea: e.target.value })}
                     className="form-select"
                   >
-                    <option value="General Gastroenterology Consultation">General Gastroenterology Consultation</option>
-                    {doctorData.services.map((service) => (
-                      <option key={service.id} value={service.title}>
-                        {service.title}
+                    {availableServices.map((service, sIdx) => (
+                      <option key={sIdx} value={service}>
+                        {service}
                       </option>
                     ))}
-                    <option value="Liver & Hepatology Second Opinion">Liver & Hepatology Second Opinion</option>
-                    <option value="Endoscopy / Colonoscopy Evaluation">Endoscopy / Colonoscopy Evaluation</option>
                   </select>
                 </div>
               </div>
@@ -270,7 +288,6 @@ Thank you.`;
                     value={formData.preferredDate}
                     onChange={(e) => setFormData({ ...formData, preferredDate: e.target.value })}
                     className="form-input"
-                    min={new Date().toISOString().split('T')[0]}
                   />
                 </div>
 
@@ -318,7 +335,7 @@ Thank you.`;
                   className="form-checkbox"
                 />
                 <label htmlFor="emergency-ack" className="checkbox-label">
-                  I understand that this form is for a non-urgent outpatient appointment request. I will bring previous medical records and current prescriptions to the visit.
+                  I understand that this form is for a routine outpatient appointment request. I will bring previous medical records and current prescriptions to the visit.
                 </label>
               </div>
 
@@ -332,7 +349,7 @@ Thank you.`;
               </div>
 
               <div className="patient-privacy-note">
-                <ShieldCheck size={14} />
+                <ShieldCheck size={14} style={{ color: 'var(--color-primary)', flexShrink: 0 }} />
                 <span>Patient privacy is strictly respected. Your information is shared only with the clinical coordination desk.</span>
               </div>
             </form>
