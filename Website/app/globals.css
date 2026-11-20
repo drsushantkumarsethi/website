@@ -1,0 +1,1458 @@
+/* ==========================================================================
+   DR. SUSHANT KUMAR SETHI - OFFICIAL WEBSITE STYLESHEET
+   Accurate recreation of editorial medical design from reference screenshots
+   ========================================================================== */
+
+:root {
+  /* Brand Palette */
+  --color-primary: #163b34;
+  --color-primary-dark: #0f2b26;
+  --color-primary-light: #f2f7f5;
+  --color-primary-soft: rgba(22, 59, 52, 0.08);
+
+  --color-accent-gold: #c29d68;
+  --color-accent-gold-soft: rgba(194, 157, 104, 0.15);
+
+  --color-heading: #163b34;
+  --color-heading-dark: #12302a;
+  --color-text-main: #243b35;
+  --color-text-body: #495e57;
+  --color-text-muted: #6e827c;
+  --color-text-light: #94a39f;
+
+  --color-bg-page: #ffffff;
+  --color-bg-subtle: #fbfdfc;
+  --color-bg-muted: #f4f7f6;
+  --color-border: #e4ebe8;
+  --color-border-light: #edf2f0;
+
+  --font-body: var(--font-body), -apple-system, BlinkMacSystemFont, "Plus Jakarta Sans", "Segoe UI", Roboto, sans-serif;
+  
+  --container-max: 1220px;
+  --container-narrow: 840px;
+  
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+  
+  --shadow-subtle: 0 4px 20px rgba(22, 59, 52, 0.06);
+  --shadow-card: 0 10px 30px rgba(22, 59, 52, 0.08);
+  --shadow-floating: 0 16px 36px rgba(22, 59, 52, 0.12);
+}
+
+/* Reset & Box Sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg-page);
+  color: var(--color-text-body);
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.container-narrow {
+  max-width: var(--container-narrow);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Accessibility */
+.skip-link {
+  position: absolute;
+  top: -60px;
+  left: 20px;
+  background: var(--color-primary);
+  color: #ffffff;
+  padding: 8px 16px;
+  z-index: 1000;
+  border-radius: var(--radius-sm);
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 15px;
+}
+
+/* Section Eyebrow matching reference (warm tan line + uppercase text) */
+.eyebrow-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 0.85rem;
+}
+.eyebrow-line {
+  width: 28px;
+  height: 1.5px;
+  background-color: var(--color-accent-gold);
+}
+.eyebrow-text {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+/* Headings */
+h1, h2, h3, h4, .heading-editorial {
+  color: var(--color-heading);
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.18;
+}
+
+.text-highlight {
+  color: var(--color-heading);
+}
+
+/* Buttons matching screenshots */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 22px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border: 1px solid var(--color-primary);
+}
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  color: #ffffff;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-border);
+}
+.btn-secondary:hover {
+  background-color: var(--color-primary-soft);
+  border-color: var(--color-primary);
+}
+
+.btn-sm {
+  padding: 8px 16px;
+  font-size: 0.84rem;
+}
+
+.btn-full {
+  width: 100%;
+}
+
+.arrow-icon {
+  font-size: 1.05em;
+  transition: transform 0.2s ease;
+}
+.btn:hover .arrow-icon, .link-with-arrow:hover .arrow-icon {
+  transform: translate(2px, -2px);
+}
+
+.link-with-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-primary);
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+.link-with-arrow:hover {
+  opacity: 0.85;
+}
+
+/* Header Top Bar */
+.header-top-bar {
+  background: #ffffff;
+  border-bottom: 1px solid var(--color-border-light);
+  padding: 7px 0;
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.header-top-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-top-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.header-top-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.header-top-right a, .header-top-right button {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.header-top-right a:hover, .header-top-right button:hover {
+  color: var(--color-primary);
+}
+
+/* Main Site Header */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--color-border);
+  transition: all 0.25s ease;
+}
+.site-header.is-scrolled {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+/* Brand Logo (Matching Screenshot) */
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.logo-circle {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 1.15rem;
+  line-height: 1;
+}
+.logo-plus {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+}
+.brand-text-col {
+  display: flex;
+  flex-direction: column;
+}
+.brand-name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-heading);
+  letter-spacing: -0.01em;
+}
+.brand-sub {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+}
+
+/* Navigation Menu */
+.desktop-nav {
+  display: flex;
+  align-items: center;
+}
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 32px;
+}
+.nav-link {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--color-text-body);
+  transition: color 0.2s ease;
+  padding: 8px 0;
+  position: relative;
+}
+.nav-link:hover, .nav-link.is-active {
+  color: var(--color-primary);
+}
+.nav-link.is-active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-primary);
+}
+
+.mobile-toggle {
+  display: none;
+  padding: 8px;
+  color: var(--color-primary);
+}
+
+/* ==========================================================================
+   HOMEPAGE STYLES
+   ========================================================================== */
+
+/* 1. Hero Section */
+.hero-section {
+  padding: 60px 0 40px;
+  background-color: #ffffff;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
+}
+.hero-sub-label {
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  margin-bottom: 0.6rem;
+}
+.hero-h1 {
+  font-size: 4rem;
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  color: var(--color-heading);
+  margin-bottom: 1.25rem;
+}
+.hero-primary-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-heading);
+  margin-bottom: 0.3rem;
+}
+.hero-academic-title {
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+}
+.hero-badges-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+.badge-pill {
+  display: inline-block;
+  padding: 4px 12px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--color-text-body);
+  background-color: #f7faf9;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+}
+
+.hero-lead-text {
+  font-size: 1.02rem;
+  color: var(--color-text-body);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.hero-care-tags {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 2rem;
+}
+.care-tag-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  color: var(--color-text-body);
+  font-weight: 500;
+}
+.care-tag-icon {
+  color: var(--color-primary);
+}
+
+.hero-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Right Media (Doctor with Arch Frame & Floating Cards) */
+.hero-media-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.hero-arch-container {
+  position: relative;
+  width: 380px;
+  height: 480px;
+  border: 1px solid #e1ebe7;
+  border-radius: 200px 200px 30px 30px;
+  background: radial-gradient(circle at 50% 35%, #f6f9f8 0%, #ffffff 80%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: visible;
+}
+.hero-arch-ring {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border: 1px dashed #dbe5e2;
+  border-radius: 190px 190px 20px 20px;
+  pointer-events: none;
+}
+.hero-doctor-img {
+  width: 320px;
+  height: auto;
+  max-height: 430px;
+  object-fit: cover;
+  object-position: top center;
+  z-index: 2;
+  border-radius: 0 0 25px 25px;
+}
+
+/* Floating dark green experience badge */
+.hero-float-badge {
+  position: absolute;
+  top: 40px;
+  right: -20px;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  padding: 14px 18px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  z-index: 5;
+  text-align: left;
+}
+.float-badge-num {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1;
+  display: block;
+  margin-bottom: 4px;
+}
+.float-badge-label {
+  font-size: 0.72rem;
+  line-height: 1.3;
+  color: #d1deda;
+  display: block;
+}
+
+/* Bottom floating doctor card */
+.hero-bottom-card {
+  position: absolute;
+  bottom: -20px;
+  left: 20px;
+  right: 20px;
+  background: #ffffff;
+  padding: 14px 18px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.bottom-card-plus {
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+.bottom-card-name {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--color-heading);
+  display: block;
+}
+.bottom-card-degrees {
+  font-size: 0.74rem;
+  color: var(--color-text-muted);
+  display: block;
+}
+
+.hero-caption-sub {
+  text-align: center;
+  margin-top: 36px;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+}
+
+/* Stats Bar Strip */
+.hero-stats-strip {
+  border-top: 1px solid var(--color-border-light);
+  border-bottom: 1px solid var(--color-border-light);
+  padding: 36px 0;
+  margin-top: 50px;
+}
+.stats-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 24px;
+}
+.stats-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+.stat-col-item {
+  border-left: 1px solid var(--color-border);
+  padding-left: 20px;
+}
+.stat-col-item:first-child {
+  border-left: none;
+  padding-left: 0;
+}
+.stat-col-val {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--color-heading);
+  line-height: 1.1;
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+.stat-col-val-text {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-heading);
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+.stat-col-desc {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+/* 2. Meet Dr. Sethi Section */
+.section-meet-doctor {
+  padding: 100px 0;
+  background-color: #ffffff;
+}
+.meet-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 60px;
+  align-items: center;
+}
+.meet-image-card {
+  position: relative;
+  max-width: 400px;
+}
+.meet-img-frame {
+  position: relative;
+  border-radius: 120px 20px 20px 20px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  background-color: #f7faf9;
+}
+.meet-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.meet-floating-badge {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: #ffffff;
+  padding: 12px 18px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
+}
+.meet-badge-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-heading);
+}
+.meet-badge-sub {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+.meet-caption {
+  margin-top: 16px;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+}
+
+.meet-heading {
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+}
+.meet-paragraphs p {
+  font-size: 1.02rem;
+  color: var(--color-text-body);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+.meet-credentials-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  padding: 24px 0;
+  margin: 16px 0 24px;
+  border-top: 1px solid var(--color-border-light);
+  border-bottom: 1px solid var(--color-border-light);
+}
+.cred-col-degree {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-heading);
+  margin-bottom: 4px;
+}
+.cred-col-inst {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+}
+
+/* 3. Recent Academic Activity */
+.section-academic {
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+.academic-heading {
+  font-size: 2.6rem;
+  margin-bottom: 2.5rem;
+}
+.academic-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+.academic-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 32px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 240px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.academic-card:hover {
+  box-shadow: var(--shadow-card);
+  transform: translateY(-2px);
+}
+.academic-tag-top {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 16px;
+}
+.academic-card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-heading);
+  margin-bottom: 12px;
+}
+.academic-card-desc {
+  font-size: 0.92rem;
+  color: var(--color-text-body);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+.academic-tag-bottom {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+}
+
+/* 4. Understand Your Health (Condition Cards) */
+.section-conditions {
+  padding: 90px 0;
+  background-color: #ffffff;
+}
+.conditions-header-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: flex-end;
+  margin-bottom: 40px;
+}
+.conditions-heading {
+  font-size: 2.8rem;
+}
+.conditions-header-right {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.conditions-header-desc {
+  font-size: 1rem;
+  color: var(--color-text-body);
+}
+
+.conditions-cards-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.condition-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.condition-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-card);
+}
+.condition-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  background-color: #f2f7f5;
+  overflow: hidden;
+}
+.condition-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.condition-num-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 4px 10px;
+  border-radius: var(--radius-xs);
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--color-heading);
+}
+.condition-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.condition-cat {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 8px;
+}
+.condition-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--color-heading);
+  margin-bottom: 12px;
+}
+.condition-desc {
+  font-size: 0.9rem;
+  color: var(--color-text-body);
+  line-height: 1.55;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+/* 5. Care Journey */
+.section-journey {
+  padding: 90px 0;
+  border-top: 1px solid var(--color-border-light);
+  background-color: #ffffff;
+}
+.journey-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 60px;
+}
+.journey-heading {
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+}
+.journey-left-desc {
+  font-size: 1.05rem;
+  color: var(--color-text-body);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+.journey-steps-list {
+  display: flex;
+  flex-direction: column;
+}
+.journey-step-item {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 20px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--color-border-light);
+}
+.journey-step-item:first-child {
+  padding-top: 0;
+}
+.step-num-italic {
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--color-text-light);
+  line-height: 1;
+}
+.step-item-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-heading);
+  margin-bottom: 6px;
+}
+.step-item-desc {
+  font-size: 0.95rem;
+  color: var(--color-text-body);
+}
+
+/* 6. Clinic Consultation Strip */
+.section-clinic-cta {
+  padding: 70px 0;
+  border-top: 1px solid var(--color-border-light);
+  background-color: #ffffff;
+}
+.clinic-cta-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.clinic-cta-heading {
+  font-size: 2.4rem;
+  margin-bottom: 0.5rem;
+}
+.clinic-cta-sub {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+/* 7. Before Your Visit (FAQ Accordion) */
+.section-faq {
+  padding: 80px 0;
+  border-top: 1px solid var(--color-border-light);
+  background-color: #ffffff;
+}
+.faq-grid-2 {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 60px;
+}
+.faq-title {
+  font-size: 2.6rem;
+}
+.faq-items-list {
+  display: flex;
+  flex-direction: column;
+}
+.faq-row {
+  border-bottom: 1px solid var(--color-border-light);
+}
+.faq-trigger {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 0;
+  text-align: left;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--color-heading);
+}
+.faq-trigger-icon {
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: var(--color-primary);
+  transition: transform 0.2s ease;
+}
+.faq-trigger-icon.is-open {
+  transform: rotate(45deg);
+}
+.faq-content {
+  padding-bottom: 22px;
+  font-size: 0.95rem;
+  color: var(--color-text-body);
+  line-height: 1.65;
+}
+
+/* 8. Footer (Matching Screenshot 6) */
+.site-footer {
+  border-top: 1px solid var(--color-border);
+  padding: 80px 0 40px;
+  background-color: #ffffff;
+}
+.footer-main-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1.2fr 1.4fr;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+.footer-brand-quote {
+  font-size: 1.45rem;
+  line-height: 1.25;
+  color: var(--color-heading);
+  margin: 20px 0 16px;
+  font-weight: 500;
+}
+.quote-italic {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+.footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-primary);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.footer-col-title {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  margin-bottom: 20px;
+}
+.footer-links-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.footer-links-list a {
+  font-size: 0.9rem;
+  color: var(--color-text-body);
+  transition: color 0.2s ease;
+}
+.footer-links-list a:hover {
+  color: var(--color-primary);
+}
+
+.contact-doctor-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-heading);
+}
+.contact-doctor-title {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: 16px;
+}
+.contact-sub-label {
+  font-size: 0.75rem;
+  color: var(--color-text-light);
+  margin-bottom: 4px;
+}
+.contact-phone-link {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+.contact-note {
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+  margin-top: 14px;
+  line-height: 1.4;
+}
+
+.footer-bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-border-light);
+  font-size: 0.78rem;
+  color: var(--color-text-light);
+}
+.back-to-top {
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   THE DOCTOR PAGE STYLES (Matching Screenshots 7-15)
+   ========================================================================== */
+
+.doctor-hero-section {
+  padding: 40px 0 60px;
+  background-color: #ffffff;
+}
+.breadcrumb-nav {
+  font-size: 0.78rem;
+  color: var(--color-text-light);
+  margin-bottom: 24px;
+}
+.breadcrumb-nav a {
+  color: var(--color-text-muted);
+}
+.doctor-hero-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 60px;
+  align-items: center;
+}
+.doctor-hero-h1 {
+  font-size: 3.4rem;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+}
+.doctor-hero-subtitle {
+  font-size: 1.05rem;
+  color: var(--color-text-body);
+  line-height: 1.5;
+}
+
+.doctor-portrait-frame {
+  position: relative;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+.doctor-portrait-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.doctor-name-bar {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  padding: 8px 16px;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Subnav Anchor Bar */
+.doctor-subnav-bar {
+  position: sticky;
+  top: 80px;
+  z-index: 90;
+  background-color: #ffffff;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding: 0;
+}
+.doctor-subnav-list {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+}
+.doctor-subnav-link {
+  display: block;
+  padding: 16px 0;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  position: relative;
+}
+.doctor-subnav-link:hover, .doctor-subnav-link.is-active {
+  color: var(--color-primary);
+}
+.doctor-subnav-link.is-active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-primary);
+}
+
+/* Detail Section Rows */
+.doc-section-row {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--color-border-light);
+}
+.doc-split-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 60px;
+}
+.doc-section-heading {
+  font-size: 2.6rem;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+.doc-section-lead {
+  font-size: 1rem;
+  color: var(--color-text-body);
+  line-height: 1.6;
+}
+
+/* Left Role Card in Background */
+.role-card-boxed {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  background-color: #fbfdfc;
+}
+.role-card-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  margin-bottom: 12px;
+  display: block;
+}
+.role-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-heading);
+  margin-bottom: 6px;
+}
+.role-card-dept {
+  font-size: 0.88rem;
+  color: var(--color-text-body);
+}
+.role-card-hosp {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.languages-box {
+  margin-top: 28px;
+}
+.languages-label {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  margin-bottom: 10px;
+  display: block;
+}
+.languages-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.lang-pill {
+  padding: 4px 12px;
+  font-size: 0.8rem;
+  background-color: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  color: var(--color-text-body);
+}
+
+/* Timeline & Lists */
+.doc-timeline-table {
+  display: flex;
+  flex-direction: column;
+}
+.timeline-row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 24px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--color-border-light);
+}
+.timeline-row:first-child {
+  padding-top: 0;
+}
+.timeline-year-tag {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text-light);
+}
+.timeline-degree-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-heading);
+  margin-bottom: 4px;
+}
+.timeline-inst-name {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+}
+
+/* Institutional Experience list */
+.inst-exp-list {
+  display: flex;
+  flex-direction: column;
+}
+.inst-exp-item {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--color-border-light);
+}
+.inst-exp-item:first-child {
+  padding-top: 0;
+}
+.inst-loc-tag {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  margin-bottom: 6px;
+  display: block;
+}
+.inst-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-heading);
+  margin-bottom: 4px;
+}
+.inst-role-text {
+  font-size: 0.88rem;
+  color: var(--color-text-body);
+}
+
+/* Clinical Interests 6-Card Grid (Screenshot 11) */
+.interests-grid-6 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.interest-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 20px 24px;
+  background-color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-heading);
+}
+
+/* Academics & Leadership Column (Screenshot 12/13) */
+.academics-list {
+  display: flex;
+  flex-direction: column;
+}
+.academic-leader-item {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--color-border-light);
+}
+.academic-leader-item:first-child {
+  padding-top: 0;
+}
+.leader-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  margin-bottom: 6px;
+  display: block;
+}
+.leader-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-heading);
+  margin-bottom: 6px;
+}
+.leader-desc {
+  font-size: 0.9rem;
+  color: var(--color-text-body);
+}
+
+.research-bullet-list {
+  list-style: none;
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.research-bullet-list li {
+  font-size: 0.92rem;
+  color: var(--color-text-body);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.research-bullet-list li::before {
+  content: '•';
+  color: var(--color-primary);
+}
+
+/* Publications List (Screenshot 15) */
+.publications-list {
+  display: flex;
+  flex-direction: column;
+}
+.publication-item {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 20px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--color-border-light);
+}
+.pub-year {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text-light);
+}
+.pub-title-link {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-heading);
+  margin-bottom: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.pub-title-link:hover {
+  color: var(--color-primary-dark);
+}
+.pub-journal {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: 4px;
+}
+.pub-desc {
+  font-size: 0.85rem;
+  color: var(--color-text-body);
+}
+
+/* Awards List (Screenshot 15 bottom) */
+.awards-list {
+  display: flex;
+  flex-direction: column;
+}
+.award-item {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--color-border-light);
+}
+.award-year {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text-light);
+}
+.award-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-heading);
+  margin-bottom: 2px;
+}
+.award-org {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 992px) {
+  .hero-grid, .meet-grid, .journey-grid, .conditions-header-row, .faq-grid-2, .doctor-hero-grid, .doc-split-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .stats-grid-4 {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .academic-cards-grid, .conditions-cards-3, .interests-grid-6 {
+    grid-template-columns: 1fr;
+  }
+  .footer-main-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+  .desktop-nav {
+    display: none;
+  }
+  .mobile-toggle {
+    display: block;
+  }
+  .hero-h1 {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-h1 {
+    font-size: 2.4rem;
+  }
+  .stats-grid-4, .footer-main-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-actions-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hero-arch-container {
+    width: 300px;
+    height: 400px;
+  }
+  .hero-doctor-img {
+    width: 260px;
+  }
+}

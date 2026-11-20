@@ -1,0 +1,11 @@
+{
+  "name": "dr-sushant-sethi-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix Website run dev",
+    "build": "npm --prefix Website run build",
+    "start": "npm --prefix Website run start",
+    "install:all": "npm --prefix Website install"
+  }
+}
