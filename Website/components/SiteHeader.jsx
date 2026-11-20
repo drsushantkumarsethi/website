@@ -40,9 +40,9 @@ export default function SiteHeader() {
         <div className="container header-top-inner">
           <div className="header-top-left">
             <span className="topbar-badge">Consultation Desk</span>
-            <a href="tel:+919437545772" className="topbar-item">
+            <a href={`tel:${doctorData.contact.phone.replace(/\s+/g, '')}`} className="topbar-item">
               <Phone size={12} className="topbar-icon" />
-              <span>Direct: +91 94375 45772</span>
+              <span>Direct: {doctorData.contact.phone}</span>
             </a>
             <span className="topbar-sep">•</span>
             <span className="topbar-item">
@@ -57,7 +57,7 @@ export default function SiteHeader() {
           </div>
           <div className="header-top-right">
             <a
-              href="https://wa.me/919437545772?text=Hello%20Dr.%20Sushant%20Kumar%20Sethi%20Clinic,%20I%20would%20like%20to%20enquire%20about%20a%20consultation."
+              href={`https://wa.me/918093060180?text=${encodeURIComponent('Hello Dr. Sushant Kumar Sethi Clinic, I would like to enquire about a consultation.')}`}
               target="_blank"
               rel="noopener noreferrer"
               className="topbar-whatsapp"
