@@ -7,7 +7,7 @@ import { doctorData } from '../data/doctorData';
 import { blogPosts } from '../data/blogData';
 import { useAppointment } from '../components/AppointmentContext';
 import { MedicalEcgLine, MedicalStethoscope, HepaticCellLattice, MedicalCrossSparkle, DigestiveCurve } from '../components/MedicalAccents';
-import { Stethoscope, Activity, Heart, Shield } from 'lucide-react';
+import { Stethoscope, Activity, Heart, Shield, Award, GraduationCap, HeartHandshake } from 'lucide-react';
 
 export default function HomePage() {
   const { openBooking } = useAppointment();
@@ -127,32 +127,80 @@ export default function HomePage() {
             SENIOR CLINICAL EXPERTISE, ACADEMIC LEADERSHIP.
           </div>
 
-          {/* Stats Bar Strip (Screenshot 1 Bottom) */}
+          {/* Stats Bar Strip (IIGH Clinical Highlights) */}
           <div className="hero-stats-strip">
             <div className="stats-top-row">
-              <span>EXPLORE DIGESTIVE &amp; LIVER CARE ↓</span>
-              <span>Profile updated 7 November 2026</span>
+              <span style={{ color: 'var(--color-teal)', fontWeight: 700 }}>CLINICAL EXCELLENCE &amp; TRUST ↓</span>
+              <span>Senior Specialist Profile</span>
             </div>
 
             <div className="stats-grid-4">
               <div className="stat-col-item">
+                <div style={{
+                  width: '38px',
+                  height: '38px',
+                  borderRadius: '50%',
+                  background: 'var(--color-teal-soft)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginBottom: '12px'
+                }}>
+                  <Award size={18} color="var(--color-teal)" />
+                </div>
                 <div className="stat-col-val">25+</div>
-                <div className="stat-col-desc">Years of medical experience</div>
+                <div className="stat-col-desc">Years of medical &amp; clinical gastroenterology experience</div>
               </div>
 
               <div className="stat-col-item">
-                <div className="stat-col-val-text">MBBS • MD • DNB</div>
-                <div className="stat-col-desc">Medicine &amp; Gastroenterology</div>
+                <div style={{
+                  width: '38px',
+                  height: '38px',
+                  borderRadius: '50%',
+                  background: 'var(--color-teal-soft)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginBottom: '12px'
+                }}>
+                  <GraduationCap size={18} color="var(--color-teal)" />
+                </div>
+                <div className="stat-col-val-text">AIIMS &amp; Apollo Trained</div>
+                <div className="stat-col-desc">MBBS • MD (Medicine) • DNB (Gastroenterology)</div>
               </div>
 
               <div className="stat-col-item">
-                <div className="stat-col-val-text">Senior Consultant</div>
-                <div className="stat-col-desc">Clinical care &amp; academic leadership</div>
+                <div style={{
+                  width: '38px',
+                  height: '38px',
+                  borderRadius: '50%',
+                  background: 'var(--color-teal-soft)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginBottom: '12px'
+                }}>
+                  <Stethoscope size={18} color="var(--color-teal)" />
+                </div>
+                <div className="stat-col-val-text">Head of Academics</div>
+                <div className="stat-col-desc">Senior Consultant in Gastroenterology &amp; Hepatology</div>
               </div>
 
               <div className="stat-col-item">
-                <div className="stat-col-val-text">Patient-first</div>
-                <div className="stat-col-desc">A considered approach to every consultation</div>
+                <div style={{
+                  width: '38px',
+                  height: '38px',
+                  borderRadius: '50%',
+                  background: 'var(--color-teal-soft)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginBottom: '12px'
+                }}>
+                  <HeartHandshake size={18} color="var(--color-teal)" />
+                </div>
+                <div className="stat-col-val-text">Patient-Centered</div>
+                <div className="stat-col-desc">Personalized care with direct time and clinical clarity</div>
               </div>
             </div>
           </div>
@@ -165,24 +213,28 @@ export default function HomePage() {
         <DigestiveCurve style={{ position: 'absolute', bottom: '15px', left: '2%', zIndex: 0 }} />
         <div className="container">
           <div className="meet-grid">
-            {/* Left Image */}
-            <div>
-              <div className="meet-image-card">
+            {/* Left Image (Same photo and frame as The Doctor page) */}
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+              <div className="meet-image-card" style={{ maxWidth: '340px', width: '100%' }}>
                 <div className="meet-img-frame">
                   <Image
-                    src="/images/meet-doctor-card.jpg"
+                    src="/images/doctor-chair.jpg"
                     alt={doctorData.doctor.fullName}
-                    width={400}
-                    height={320}
+                    width={340}
+                    height={300}
                     className="meet-img"
+                    priority
                   />
                   <div className="meet-floating-badge">
-                    <div className="meet-badge-title">+ Senior Consultant</div>
-                    <div className="meet-badge-sub">Gastroenterology &amp; Hepatology</div>
+                    <span className="badge-plus">+</span>
+                    <div>
+                      <div className="badge-title">Senior Consultant</div>
+                      <div className="badge-sub">Gastroenterology &amp; Hepatology</div>
+                    </div>
                   </div>
                 </div>
-                <div className="meet-caption">
-                  CLINICAL EXPERIENCE, ACADEMIC LEADERSHIP.
+                <div className="meet-card-caption">
+                  CLINICAL EXPERIENCE, ACADEMIC LEADERSHIP
                 </div>
               </div>
             </div>

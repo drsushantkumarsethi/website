@@ -66,7 +66,7 @@ export default function ConditionDetailPage({ params }) {
                 priority
               />
               <div style={{
-                background: '#163b34',
+                background: 'var(--color-navy-dark)',
                 color: '#ffffff',
                 padding: '6px 14px',
                 fontSize: '0.65rem',

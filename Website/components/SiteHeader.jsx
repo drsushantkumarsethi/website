@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { doctorData } from '../data/doctorData';
 import { useAppointment } from './AppointmentContext';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Phone, MapPin, Clock, MessageCircle } from 'lucide-react';
 
 export default function SiteHeader() {
   const currentPath = usePathname();
@@ -35,35 +35,40 @@ export default function SiteHeader() {
 
   return (
     <>
-      {/* Top Clinical Announcement Strip */}
+      {/* Top Clinical Announcement Strip - IIGH Hospital Style */}
       <div className="header-top-bar" role="region" aria-label="Clinical Notice">
         <div className="container header-top-inner">
           <div className="header-top-left">
-            <span>GASTROENTEROLOGY &amp; HEPATOLOGY • BHUBANESWAR</span>
+            <span className="topbar-badge">Consultation Desk</span>
+            <a href="tel:+919437545772" className="topbar-item">
+              <Phone size={12} className="topbar-icon" />
+              <span>Direct: +91 94375 45772</span>
+            </a>
+            <span className="topbar-sep">•</span>
+            <span className="topbar-item">
+              <MapPin size={12} className="topbar-icon" />
+              <span>Bhubaneswar, Odisha</span>
+            </span>
+            <span className="topbar-sep">•</span>
+            <span className="topbar-item">
+              <Clock size={12} className="topbar-icon" />
+              <span>Mon - Sat: 9:00 AM - 7:00 PM</span>
+            </span>
           </div>
           <div className="header-top-right">
-            <Link href="/clinic-appointments" style={{ color: 'inherit', textDecoration: 'none' }}>
+            <a
+              href="https://wa.me/919437545772?text=Hello%20Dr.%20Sushant%20Kumar%20Sethi%20Clinic,%20I%20would%20like%20to%20enquire%20about%20a%20consultation."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="topbar-whatsapp"
+            >
+              <MessageCircle size={13} />
+              <span>WhatsApp Desk</span>
+            </a>
+            <span className="topbar-sep">|</span>
+            <Link href="/clinic-appointments" className="topbar-link">
               <span>Clinic appointments</span>
             </Link>
-            <span>|</span>
-            <button
-              onClick={() => openBooking('General Consultation')}
-              className="link-with-arrow"
-              style={{
-                background: 'none',
-                border: 'none',
-                padding: 0,
-                font: 'inherit',
-                color: 'inherit',
-                cursor: 'pointer',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '4px'
-              }}
-            >
-              <span>Request a consultation</span>
-              <span className="arrow-icon">↗</span>
-            </button>
           </div>
         </div>
       </div>
@@ -147,7 +152,7 @@ export default function SiteHeader() {
                 <li key={item.path}>
                   <Link
                     href={item.path}
-                    style={{ fontSize: '1.05rem', fontWeight: 500, color: '#163b34' }}
+                    style={{ fontSize: '1.05rem', fontWeight: 600, color: 'var(--color-navy)', fontFamily: 'var(--font-heading)' }}
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.label}

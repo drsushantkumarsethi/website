@@ -1,32 +1,47 @@
 /* ==========================================================================
    DR. SUSHANT KUMAR SETHI - OFFICIAL WEBSITE STYLESHEET
-   Accurate recreation of editorial medical design from reference screenshots
+   Design System & Typography inspired by IIGH (Institute of Interventional Gastroenterology & Hepatology)
    ========================================================================== */
 
 :root {
-  /* Brand Palette */
-  --color-primary: #163b34;
-  --color-primary-dark: #0f2b26;
-  --color-primary-light: #f2f7f5;
-  --color-primary-soft: rgba(22, 59, 52, 0.08);
+  /* Brand Palette - Inspired by IIGH (https://iigh.in/) */
+  --color-teal: #21cdc0;
+  --color-teal-hover: #1cb3a8;
+  --color-teal-soft: #def8f6;
+  --color-teal-glow: rgba(33, 205, 192, 0.28);
 
+  --color-navy: #213360;
+  --color-navy-dark: #0e204d;
+  --color-navy-deep: #061733;
+  --color-navy-slate: #283b6a;
+  --color-navy-light: #435ba1;
+
+  --color-primary: #213360;
+  --color-primary-dark: #0e204d;
+  --color-primary-light: #def8f6;
+  --color-primary-soft: rgba(33, 51, 96, 0.08);
+
+  --color-accent-teal: #21cdc0;
   --color-accent-gold: #c29d68;
   --color-accent-gold-soft: rgba(194, 157, 104, 0.15);
 
-  --color-heading: #163b34;
-  --color-heading-dark: #12302a;
-  --color-text-main: #243b35;
-  --color-text-body: #495e57;
-  --color-text-muted: #6e827c;
-  --color-text-light: #94a39f;
+  --color-heading: #0e204d;
+  --color-heading-dark: #061733;
+  --color-text-main: #213360;
+  --color-text-body: #556277;
+  --color-text-muted: #848e9f;
+  --color-text-light: #9ca7b7;
 
   --color-bg-page: #ffffff;
-  --color-bg-subtle: #fbfdfc;
-  --color-bg-muted: #f4f7f6;
-  --color-border: #e4ebe8;
-  --color-border-light: #edf2f0;
+  --color-bg-subtle: #f8fafd;
+  --color-bg-muted: #f1f5f9;
+  --color-border: #e6e8eb;
+  --color-border-light: #edf2f7;
 
-  --font-body: var(--font-body), -apple-system, BlinkMacSystemFont, "Plus Jakarta Sans", "Segoe UI", Roboto, sans-serif;
+  /* Typography: Quicksand & Roboto from IIGH */
+  --font-heading: var(--font-quicksand), "Quicksand", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: var(--font-quicksand), "Quicksand", var(--font-roboto), "Roboto", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sub: var(--font-roboto), "Roboto", sans-serif;
   
   --container-max: 1220px;
   --container-narrow: 840px;
@@ -37,9 +52,9 @@
   --radius-lg: 16px;
   --radius-full: 9999px;
   
-  --shadow-subtle: 0 4px 20px rgba(22, 59, 52, 0.06);
-  --shadow-card: 0 10px 30px rgba(22, 59, 52, 0.08);
-  --shadow-floating: 0 16px 36px rgba(22, 59, 52, 0.12);
+  --shadow-subtle: 0 4px 20px rgba(33, 51, 96, 0.06);
+  --shadow-card: 0 10px 30px rgba(33, 51, 96, 0.08);
+  --shadow-floating: 0 16px 36px rgba(33, 51, 96, 0.14);
 }
 
 /* Reset & Box Sizing */
@@ -54,6 +69,16 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* IIGH Selection Colors */
+::selection {
+  background-color: #21cdc0;
+  color: #ffffff;
+}
+::-moz-selection {
+  background-color: #21cdc0;
+  color: #ffffff;
 }
 
 body {
@@ -113,24 +138,25 @@ button {
 }
 .eyebrow-line {
   width: 28px;
-  height: 1.5px;
-  background-color: var(--color-accent-gold);
+  height: 2px;
+  background-color: var(--color-teal);
 }
 .eyebrow-text {
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
+  font-family: var(--font-heading);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--color-text-muted);
 }
 
-/* Headings */
-h1, h2, h3, h4, .heading-editorial {
+/* Headings in IIGH Quicksand */
+h1, h2, h3, h4, h5, h6, .heading-editorial {
   color: var(--color-heading);
-  font-family: var(--font-body);
-  font-weight: 600;
-  letter-spacing: -0.025em;
-  line-height: 1.18;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
 }
 
 .text-highlight {
@@ -212,20 +238,22 @@ h1, h2, h3, h4, .heading-editorial {
   animation: fadeSlideUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
 }
 
-/* Buttons matching screenshots with premium micro-interactions */
+/* Buttons matching IIGH Hospital aesthetic with Quicksand typography */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   padding: 12px 24px;
-  font-size: 0.92rem;
-  font-weight: 500;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
   border-radius: var(--radius-sm);
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
               box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
               background-color 0.2s ease, 
-              border-color 0.2s ease;
+              border-color 0.2s ease,
+              color 0.2s ease;
   text-decoration: none;
   position: relative;
   overflow: hidden;
@@ -233,10 +261,10 @@ h1, h2, h3, h4, .heading-editorial {
 }
 
 .btn-primary {
-  background-color: var(--color-primary);
+  background-color: var(--color-teal);
   color: #ffffff;
-  border: 1px solid var(--color-primary);
-  box-shadow: 0 4px 14px rgba(22, 59, 52, 0.2);
+  border: 1px solid var(--color-teal);
+  box-shadow: 0 4px 14px rgba(33, 205, 192, 0.35);
 }
 .btn-primary::after {
   content: '';
@@ -248,7 +276,7 @@ h1, h2, h3, h4, .heading-editorial {
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.22) 50%,
+    rgba(255, 255, 255, 0.25) 50%,
     rgba(255, 255, 255, 0) 100%
   );
   transform: rotate(30deg);
@@ -259,28 +287,29 @@ h1, h2, h3, h4, .heading-editorial {
   left: 135%;
 }
 .btn-primary:hover {
-  background-color: #0d2621;
-  border-color: #0d2621;
+  background-color: var(--color-navy);
+  border-color: var(--color-navy);
   color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(22, 59, 52, 0.32);
+  box-shadow: 0 8px 24px rgba(33, 51, 96, 0.22);
 }
 .btn-primary:active {
   transform: translateY(0px) scale(0.98);
-  box-shadow: 0 4px 10px rgba(22, 59, 52, 0.2);
+  box-shadow: 0 4px 10px rgba(33, 205, 192, 0.2);
 }
 
 .btn-secondary {
-  background-color: transparent;
-  color: var(--color-primary);
-  border: 1px solid var(--color-border);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  background-color: var(--color-navy);
+  color: #ffffff;
+  border: 1px solid var(--color-navy);
+  box-shadow: 0 4px 14px rgba(33, 51, 96, 0.15);
 }
 .btn-secondary:hover {
-  background-color: #f2f7f5;
-  border-color: var(--color-primary);
+  background-color: var(--color-teal);
+  border-color: var(--color-teal);
+  color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(22, 59, 52, 0.1);
+  box-shadow: 0 8px 20px rgba(33, 205, 192, 0.3);
 }
 .btn-secondary:active {
   transform: translateY(0px) scale(0.98);
@@ -310,52 +339,99 @@ h1, h2, h3, h4, .heading-editorial {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: var(--color-primary);
-  font-size: 0.88rem;
-  font-weight: 500;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  color: var(--color-navy);
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 .link-with-arrow:hover {
-  opacity: 0.88;
+  color: var(--color-teal);
   transform: translateX(2px);
 }
 
-/* Header Top Bar */
+/* Header Top Bar - IIGH Hospital Style */
 .header-top-bar {
-  background: #ffffff;
-  border-bottom: 1px solid var(--color-border-light);
-  padding: 7px 0;
-  font-size: 0.72rem;
-  color: var(--color-text-muted);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  background: var(--color-navy-slate);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 8px 0;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  color: #f4f4f4;
+  letter-spacing: 0.02em;
 }
 .header-top-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 .header-top-left {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.topbar-badge {
+  background-color: var(--color-teal);
+  color: #ffffff;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.topbar-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #e6ebf5;
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+.topbar-item:hover {
+  color: var(--color-teal);
+}
+.topbar-icon {
+  color: var(--color-teal);
+}
+.topbar-sep {
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 0.75rem;
 }
 .header-top-right {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
 }
-.header-top-right a, .header-top-right button {
-  color: var(--color-text-muted);
-  text-decoration: none;
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
+.topbar-whatsapp {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
+  color: #def8f6;
+  font-weight: 700;
+  font-size: 0.78rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
-.header-top-right a:hover, .header-top-right button:hover {
-  color: var(--color-primary);
+.topbar-whatsapp:hover {
+  color: var(--color-teal);
+}
+.topbar-link {
+  color: #e6ebf5;
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+.topbar-link:hover {
+  color: var(--color-teal);
 }
 
 /* Main Site Header */
@@ -385,25 +461,33 @@ h1, h2, h3, h4, .heading-editorial {
 }
 .logo-circle {
   position: relative;
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  border: 1.5px solid var(--color-primary);
+  border: 1.5px solid var(--color-teal);
+  background: var(--color-teal-soft);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-primary);
-  font-weight: 600;
-  font-size: 1.15rem;
+  color: var(--color-navy);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.2rem;
   line-height: 1;
+  transition: all 0.3s ease;
+}
+.brand-logo:hover .logo-circle {
+  background-color: var(--color-teal);
+  color: #ffffff;
+  transform: scale(1.05);
 }
 .logo-plus {
   position: absolute;
   top: -4px;
   right: -4px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--color-primary);
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--color-teal);
   line-height: 1;
 }
 .brand-text-col {
@@ -411,20 +495,22 @@ h1, h2, h3, h4, .heading-editorial {
   flex-direction: column;
 }
 .brand-name {
-  font-size: 1.05rem;
-  font-weight: 600;
+  font-family: var(--font-heading);
+  font-size: 1.12rem;
+  font-weight: 700;
   color: var(--color-heading);
   letter-spacing: -0.01em;
 }
 .brand-sub {
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  color: var(--color-text-muted);
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--color-teal);
   text-transform: uppercase;
 }
 
-/* Navigation Menu */
+/* Navigation Menu with Quicksand Typography */
 .desktop-nav {
   display: flex;
   align-items: center;
@@ -435,9 +521,10 @@ h1, h2, h3, h4, .heading-editorial {
   gap: 32px;
 }
 .nav-link {
-  font-size: 0.92rem;
-  font-weight: 500;
-  color: var(--color-text-body);
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-navy);
   transition: color 0.25s ease;
   padding: 8px 0;
   position: relative;
@@ -449,13 +536,13 @@ h1, h2, h3, h4, .heading-editorial {
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: var(--color-primary);
+  background-color: var(--color-teal);
   transform: scaleX(0);
   transform-origin: center;
   transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .nav-link:hover, .nav-link.is-active {
-  color: var(--color-primary);
+  color: var(--color-teal);
 }
 .nav-link:hover::after, .nav-link.is-active::after {
   transform: scaleX(1);
@@ -604,16 +691,17 @@ h1, h2, h3, h4, .heading-editorial {
   transform: scale(1.035);
 }
 
-/* Floating dark green experience badge with lively float & hover pop */
+/* Floating experience badge with IIGH teal accent & lively float */
 .hero-float-badge {
   position: absolute;
   top: 40px;
   right: -20px;
-  background-color: var(--color-primary);
+  background-color: var(--color-navy-dark);
+  border-left: 4px solid var(--color-teal);
   color: #ffffff;
   padding: 14px 20px;
   border-radius: var(--radius-md);
-  box-shadow: 0 14px 32px rgba(22, 59, 52, 0.22);
+  box-shadow: 0 14px 32px rgba(33, 51, 96, 0.25);
   z-index: 5;
   text-align: left;
   animation: gentleFloat 5s ease-in-out infinite;
@@ -624,11 +712,13 @@ h1, h2, h3, h4, .heading-editorial {
 .hero-float-badge:hover {
   animation-play-state: paused;
   transform: scale(1.07) translateY(-4px);
-  box-shadow: 0 20px 42px rgba(22, 59, 52, 0.35);
+  box-shadow: 0 20px 42px rgba(33, 51, 96, 0.35);
 }
 .float-badge-num {
-  font-size: 1.85rem;
+  font-family: var(--font-heading);
+  font-size: 2rem;
   font-weight: 700;
+  color: var(--color-teal);
   line-height: 1;
   display: block;
   margin-bottom: 4px;
@@ -650,7 +740,8 @@ h1, h2, h3, h4, .heading-editorial {
   padding: 14px 20px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--color-border);
-  box-shadow: 0 12px 30px rgba(22, 59, 52, 0.09);
+  border-left: 4px solid var(--color-teal);
+  box-shadow: 0 12px 30px rgba(33, 51, 96, 0.09);
   z-index: 5;
   display: flex;
   align-items: center;
@@ -662,21 +753,22 @@ h1, h2, h3, h4, .heading-editorial {
 }
 .hero-bottom-card:hover {
   transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 20px 42px rgba(22, 59, 52, 0.16);
-  border-color: rgba(194, 157, 104, 0.6);
+  box-shadow: 0 20px 42px rgba(33, 51, 96, 0.16);
+  border-color: var(--color-teal);
 }
 .bottom-card-plus {
-  color: var(--color-primary);
-  font-weight: 700;
-  font-size: 1.15rem;
+  color: var(--color-teal);
+  font-weight: 800;
+  font-size: 1.25rem;
   transition: transform 0.3s ease;
 }
 .hero-bottom-card:hover .bottom-card-plus {
   transform: rotate(90deg) scale(1.2);
 }
 .bottom-card-name {
-  font-size: 0.92rem;
-  font-weight: 600;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
   color: var(--color-heading);
   display: block;
 }
@@ -689,16 +781,18 @@ h1, h2, h3, h4, .heading-editorial {
 .hero-caption-sub {
   text-align: center;
   margin-top: 36px;
-  font-size: 0.68rem;
-  letter-spacing: 0.16em;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--color-text-light);
 }
 
-/* Stats Bar Strip */
+/* Stats Bar Strip - Quicksand Numbers */
 .hero-stats-strip {
-  border-top: 1px solid var(--color-border-light);
-  border-bottom: 1px solid var(--color-border-light);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
   padding: 36px 0;
   margin-top: 50px;
 }
@@ -706,7 +800,9 @@ h1, h2, h3, h4, .heading-editorial {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.72rem;
+  font-family: var(--font-heading);
+  font-size: 0.74rem;
+  font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--color-text-muted);
@@ -730,21 +826,23 @@ h1, h2, h3, h4, .heading-editorial {
   padding-left: 0;
 }
 .stat-col-val {
-  font-size: 2.2rem;
-  font-weight: 600;
-  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: var(--color-teal);
   line-height: 1.1;
   margin-bottom: 6px;
   letter-spacing: -0.02em;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 .stat-col-item:hover .stat-col-val {
-  color: var(--color-primary);
+  color: var(--color-navy);
   transform: scale(1.05);
 }
 .stat-col-val-text {
+  font-family: var(--font-heading);
   font-size: 1.15rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--color-heading);
   line-height: 1.2;
   margin-bottom: 6px;
@@ -781,12 +879,12 @@ h1, h2, h3, h4, .heading-editorial {
   overflow: hidden;
   border: 1px solid var(--color-border);
   background-color: #f7faf9;
-  box-shadow: 0 10px 28px rgba(22, 59, 52, 0.08);
+  box-shadow: 0 10px 28px rgba(33, 51, 96, 0.08);
   transition: box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
 }
 .meet-image-card:hover .meet-img-frame {
-  box-shadow: 0 24px 48px -10px rgba(22, 59, 52, 0.18);
-  border-color: rgba(194, 157, 104, 0.5);
+  box-shadow: 0 24px 48px -10px rgba(33, 51, 96, 0.18);
+  border-color: var(--color-teal);
 }
 .meet-img {
   width: 100%;
@@ -803,32 +901,46 @@ h1, h2, h3, h4, .heading-editorial {
   bottom: 20px;
   left: 20px;
   background: #ffffff;
-  padding: 12px 20px;
+  padding: 12px 18px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--color-border);
-  box-shadow: 0 8px 24px rgba(22, 59, 52, 0.1);
+  border-left: 4px solid var(--color-teal);
+  box-shadow: 0 8px 24px rgba(33, 51, 96, 0.12);
+  display: flex;
+  align-items: center;
+  gap: 12px;
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.3s ease;
+}
+.badge-plus {
+  color: var(--color-teal);
+  font-weight: 800;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+.badge-title, .meet-badge-title {
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--color-heading);
+}
+.badge-sub, .meet-badge-sub {
+  font-size: 0.76rem;
+  color: var(--color-text-muted);
 }
 .meet-image-card:hover .meet-floating-badge {
   transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 16px 36px rgba(22, 59, 52, 0.16);
-  border-color: rgba(194, 157, 104, 0.5);
+  box-shadow: 0 16px 36px rgba(33, 51, 96, 0.16);
+  border-color: var(--color-teal);
 }
-.meet-badge-title {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--color-heading);
-}
-.meet-badge-sub {
-  font-size: 0.75rem;
-  color: var(--color-text-muted);
-}
-.meet-caption {
+.meet-caption, .meet-card-caption {
   margin-top: 16px;
-  font-size: 0.68rem;
-  letter-spacing: 0.16em;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--color-text-light);
+  text-align: center;
 }
 
 .meet-heading {
@@ -1215,10 +1327,12 @@ h1, h2, h3, h4, .heading-editorial {
 }
 
 /* 8. Footer (Matching Screenshot 6) */
+/* Site Footer - IIGH Hospital Dark Navy & Vibrant Teal Aesthetic */
 .site-footer {
-  border-top: 1px solid var(--color-border);
+  background-color: var(--color-navy-dark);
+  color: #d8e2ec;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding: 80px 0 40px;
-  background-color: #ffffff;
 }
 .footer-main-grid {
   display: grid;
@@ -1226,34 +1340,63 @@ h1, h2, h3, h4, .heading-editorial {
   gap: 40px;
   margin-bottom: 60px;
 }
+.footer-logo .logo-circle {
+  border-color: var(--color-teal);
+  background: rgba(33, 205, 192, 0.15);
+  color: #ffffff;
+}
+.footer-logo .brand-name {
+  color: #ffffff;
+}
+.footer-logo .brand-sub {
+  color: var(--color-teal);
+}
 .footer-brand-quote {
+  font-family: var(--font-heading);
   font-size: 1.45rem;
   line-height: 1.25;
-  color: var(--color-heading);
+  color: #ffffff;
   margin: 20px 0 16px;
-  font-weight: 500;
+  font-weight: 600;
 }
 .quote-italic {
   font-style: italic;
   font-weight: 400;
-  color: var(--color-text-muted);
+  color: var(--color-teal);
 }
 .footer-social-link {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: var(--color-primary);
+  color: var(--color-teal);
+  font-family: var(--font-heading);
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+.footer-social-link:hover {
+  color: #ffffff;
 }
 
 .footer-col-title {
-  font-size: 0.72rem;
-  font-weight: 600;
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-text-light);
-  margin-bottom: 20px;
+  color: #ffffff;
+  margin-bottom: 22px;
+  position: relative;
+  display: inline-block;
+}
+.footer-col-title::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-teal);
 }
 .footer-links-list {
   list-style: none;
@@ -1261,44 +1404,56 @@ h1, h2, h3, h4, .heading-editorial {
   flex-direction: column;
   gap: 12px;
 }
-.footer-links-list a {
-  font-size: 0.9rem;
-  color: var(--color-text-body);
-  transition: color 0.2s ease;
+.footer-links-list a, .footer-links-list button {
+  font-size: 0.92rem;
+  color: #a4b3c6;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
 }
-.footer-links-list a:hover {
-  color: var(--color-primary);
+.footer-links-list a:hover, .footer-links-list button:hover {
+  color: var(--color-teal);
+  transform: translateX(3px);
 }
 
 .contact-doctor-name {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
 }
 .contact-doctor-title {
   font-size: 0.85rem;
-  color: var(--color-text-muted);
+  color: #92a4ba;
   margin-bottom: 16px;
 }
 .contact-sub-label {
-  font-size: 0.75rem;
-  color: var(--color-text-light);
-  margin-bottom: 4px;
+  font-family: var(--font-heading);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-teal);
+  margin-bottom: 6px;
 }
 .contact-phone-link {
+  font-family: var(--font-heading);
   font-size: 1.15rem;
-  font-weight: 600;
-  color: var(--color-primary);
+  font-weight: 700;
+  color: #ffffff;
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
   margin-bottom: 16px;
+  transition: color 0.2s ease;
+}
+.contact-phone-link:hover {
+  color: var(--color-teal);
 }
 .contact-note {
-  font-size: 0.8rem;
-  color: var(--color-text-light);
+  font-size: 0.82rem;
+  color: #8397af;
   margin-top: 14px;
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
 .footer-bottom-bar {
@@ -1306,13 +1461,21 @@ h1, h2, h3, h4, .heading-editorial {
   justify-content: space-between;
   align-items: center;
   padding-top: 24px;
-  border-top: 1px solid var(--color-border-light);
-  font-size: 0.78rem;
-  color: var(--color-text-light);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.8rem;
+  color: #8397af;
 }
-.back-to-top {
-  color: var(--color-text-muted);
-  cursor: pointer;
+.footer-bottom-left span, .footer-bottom-center span {
+  color: #8397af;
+}
+.back-to-top-btn {
+  color: #a4b3c6;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+.back-to-top-btn:hover {
+  color: var(--color-teal);
 }
 
 /* ==========================================================================

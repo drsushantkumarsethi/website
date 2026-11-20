@@ -63,7 +63,7 @@ export default function ConditionsPage() {
                 style={{ width: '100%', height: 'auto', display: 'block' }}
               />
               <div style={{
-                background: '#163b34',
+                background: 'var(--color-navy-dark)',
                 color: '#ffffff',
                 padding: '6px 14px',
                 fontSize: '0.65rem',

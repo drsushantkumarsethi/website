@@ -2,19 +2,20 @@
 
 import React, { useState, useEffect } from 'react';
 import { doctorData } from '../data/doctorData';
-import { X, Calendar, CheckCircle2, AlertTriangle, ShieldCheck, Clock, MapPin, User, Phone, FileText } from 'lucide-react';
+import { X, Calendar, CheckCircle2, AlertTriangle, ShieldCheck, Clock, MapPin, User, Phone, FileText, Edit3 } from 'lucide-react';
 
 const defaultServices = [
   'General Gastroenterology Consultation',
-  'Upper GI Endoscopy Consultation',
-  'Endoscopic Ultrasound (EUS) Evaluation',
-  'ERCP & Biliary / Pancreatic Assessment',
-  'Liver & Hepatology Second Opinion',
   'Acid Reflux & GERD Management',
-  'Irritable Bowel Syndrome (IBS) Care',
+  'Upper GI Endoscopy Consultation',
   'Colonoscopy & Colorectal Screening',
+  'Endoscopic Ultrasound (EUS) Evaluation',
+  'ERCP & Pancreatic / Bile Duct Assessment',
+  'Liver Disease & Hepatology Second Opinion',
   'Fatty Liver Disease (MASLD) Assessment',
-  'Chronic Constipation / Motility Evaluation'
+  'Irritable Bowel Syndrome (IBS) Care',
+  'Pancreatitis & Pancreatic Health',
+  'Chronic Constipation & Motility Disorders'
 ];
 
 export default function AppointmentModal({
@@ -35,7 +36,9 @@ export default function AppointmentModal({
     confirmedNonEmergency: false
   });
 
+  const [customServiceText, setCustomServiceText] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [submittedService, setSubmittedService] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
@@ -45,6 +48,7 @@ export default function AppointmentModal({
         preferredLocation: preselectedClinicId || doctorData?.clinics?.[0]?.id || 'bhubaneswar-main',
         serviceArea: preselectedServiceId || 'General Gastroenterology Consultation'
       }));
+      setCustomServiceText('');
       setSubmitted(false);
       setErrorMessage('');
     }
@@ -56,11 +60,14 @@ export default function AppointmentModal({
     ? doctorData.clinics
     : [{ id: 'bhubaneswar-main', name: 'Dr. Sethi Consultation Clinic', city: 'Bhubaneswar' }];
 
-  const availableServices = (doctorData?.services && doctorData.services.length > 0)
+  const baseServices = (doctorData?.services && doctorData.services.length > 0)
     ? doctorData.services.map(s => s.title || s)
     : (doctorData?.doctor?.procedures && doctorData.doctor.procedures.length > 0)
       ? doctorData.doctor.procedures.map(p => p.title || p)
       : defaultServices;
+
+  // Ensure unique service options and place 'Other' at the end
+  const availableServices = Array.from(new Set(baseServices.filter(s => s !== 'Other')));
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -70,17 +77,27 @@ export default function AppointmentModal({
       return;
     }
 
+    if (formData.serviceArea === 'Other' && !customServiceText.trim()) {
+      setErrorMessage('Please specify your reason for visit in the blank text field.');
+      return;
+    }
+
     if (!formData.confirmedNonEmergency) {
       setErrorMessage('Please confirm that this is a routine, non-emergency consultation request.');
       return;
     }
 
+    const finalService = formData.serviceArea === 'Other'
+      ? (customServiceText.trim() ? `Other: ${customServiceText.trim()}` : 'Other Medical Concern')
+      : formData.serviceArea;
+
+    setSubmittedService(finalService);
     setErrorMessage('');
     setSubmitted(true);
 
     const email = 'drsushantkumarsethi@gmail.com';
     const clinicName = clinicsList.find(c => c.id === formData.preferredLocation)?.name || 'Bhubaneswar Clinic';
-    const subject = `Consultation Request: ${formData.serviceArea} - ${formData.fullName}`;
+    const subject = `Consultation Request: ${finalService} - ${formData.fullName}`;
     const body = `Dear Dr. Sushant Kumar Sethi,
 
 I would like to request a consultation appointment.
@@ -88,7 +105,7 @@ I would like to request a consultation appointment.
 Patient Full Name: ${formData.fullName}
 Contact Phone Number: ${formData.phone}
 Email Address: ${formData.email || 'Not provided'}
-Clinical Focus / Concern: ${formData.serviceArea}
+Clinical Focus / Concern: ${finalService}
 Preferred Date: ${formData.preferredDate || 'Earliest available'}
 Preferred Time Window: ${formData.preferredTime}
 Location: ${clinicName}
@@ -103,6 +120,7 @@ Submitted via Dr. Sushant Kumar Sethi Consultation Desk`;
 
   const handleReset = () => {
     setSubmitted(false);
+    setCustomServiceText('');
     setFormData({
       fullName: '',
       phone: '',
@@ -155,7 +173,7 @@ Submitted via Dr. Sushant Kumar Sethi Consultation Desk`;
                 </div>
                 <div className="summary-row">
                   <span className="summary-label">Clinical Focus:</span>
-                  <span className="summary-val">{formData.serviceArea}</span>
+                  <span className="summary-val">{submittedService || formData.serviceArea}</span>
                 </div>
                 <div className="summary-row">
                   <span className="summary-label">Preferred Timing:</span>
@@ -271,7 +289,29 @@ Submitted via Dr. Sushant Kumar Sethi Consultation Desk`;
                         {service}
                       </option>
                     ))}
+                    <option value="Other">Other (Please specify)</option>
                   </select>
+
+                  {/* Blank Text Field when 'Other' is selected */}
+                  {formData.serviceArea === 'Other' && (
+                    <div style={{ marginTop: '10px', animation: 'fadeIn 0.25s ease' }}>
+                      <label htmlFor="custom-service-field" className="form-label" style={{ fontSize: '0.8rem', color: 'var(--color-primary)' }}>
+                        <Edit3 size={13} />
+                        <span>Specify your medical concern or reason *</span>
+                      </label>
+                      <input
+                        id="custom-service-field"
+                        type="text"
+                        required
+                        autoFocus
+                        placeholder="e.g. Severe abdominal discomfort, Jaundice evaluation..."
+                        value={customServiceText}
+                        onChange={(e) => setCustomServiceText(e.target.value)}
+                        className="form-input"
+                        style={{ borderColor: 'var(--color-primary)', backgroundColor: '#fcfdfd' }}
+                      />
+                    </div>
+                  )}
                 </div>
               </div>
 

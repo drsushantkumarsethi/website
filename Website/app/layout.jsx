@@ -1,14 +1,21 @@
 import './globals.css';
-import { Plus_Jakarta_Sans } from 'next/font/google';
+import { Quicksand, Roboto } from 'next/font/google';
 import SiteHeader from '../components/SiteHeader';
 import SiteFooter from '../components/SiteFooter';
 import { AppointmentProvider } from '../components/AppointmentContext';
 import { doctorData } from '../data/doctorData';
 
-const plusJakarta = Plus_Jakarta_Sans({
+const quicksand = Quicksand({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-body',
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-quicksand',
+  display: 'swap'
+});
+
+const roboto = Roboto({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+  variable: '--font-roboto',
   display: 'swap'
 });
 
@@ -53,7 +60,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={plusJakarta.variable}>
+    <html lang="en" className={`${quicksand.variable} ${roboto.variable}`}>
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>

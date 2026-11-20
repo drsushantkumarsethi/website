@@ -12,6 +12,8 @@ export default function ClinicAppointmentsPage() {
   const [selectedTime, setSelectedTime] = useState('10:30');
   const [fullName, setFullName] = useState('');
   const [contactNumber, setContactNumber] = useState('');
+  const [reasonForVisit, setReasonForVisit] = useState('Acid Reflux & GERD Management');
+  const [customReasonText, setCustomReasonText] = useState('');
   const [agreed, setAgreed] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
@@ -25,6 +27,10 @@ export default function ClinicAppointmentsPage() {
       setErrorMessage('Please fill in your full name and contact phone number.');
       return;
     }
+    if (reasonForVisit === 'Other' && !customReasonText.trim()) {
+      setErrorMessage('Please specify your reason for visit in the blank text field.');
+      return;
+    }
     if (!agreed) {
       setErrorMessage('Please check the agreement checkbox to continue.');
       return;
@@ -32,14 +38,16 @@ export default function ClinicAppointmentsPage() {
     setErrorMessage('');
     setSubmitted(true);
 
+    const finalReason = reasonForVisit === 'Other' ? (customReasonText.trim() ? `Other: ${customReasonText.trim()}` : 'Other Medical Concern') : reasonForVisit;
     const email = 'drsushantkumarsethi@gmail.com';
-    const subject = `Clinic Appointment Request - ${fullName}`;
+    const subject = `Clinic Appointment Request: ${finalReason} - ${fullName}`;
     const body = `Dear Dr. Sushant Kumar Sethi,
 
 I would like to request an in-person clinic consultation appointment.
 
 Patient Name: ${fullName}
 Contact Phone: ${contactNumber}
+Clinical Focus / Concern: ${finalReason}
 Preferred Date: ${selectedDay} November 2026
 Preferred Time: ${selectedTime}
 Location: Bhubaneswar, Odisha
@@ -341,6 +349,58 @@ Thank you.`;
                         }}
                       />
                     </div>
+                  </div>
+
+                  {/* Reason for Visit Dropdown + Dynamic Other Field */}
+                  <div style={{ marginBottom: '20px' }}>
+                    <label style={{ display: 'block', fontSize: '0.76rem', color: 'var(--color-text-light)', marginBottom: '4px' }}>
+                      Primary Reason for Visit *
+                    </label>
+                    <select
+                      value={reasonForVisit}
+                      onChange={(e) => setReasonForVisit(e.target.value)}
+                      style={{
+                        width: '100%',
+                        padding: '10px 14px',
+                        border: '1px solid var(--color-border)',
+                        borderRadius: '6px',
+                        fontSize: '0.9rem',
+                        backgroundColor: '#ffffff'
+                      }}
+                    >
+                      <option value="Acid Reflux & GERD Management">Acid Reflux &amp; GERD Management</option>
+                      <option value="Upper GI Endoscopy Consultation">Upper GI Endoscopy Consultation</option>
+                      <option value="Colonoscopy & Colorectal Screening">Colonoscopy &amp; Colorectal Screening</option>
+                      <option value="Endoscopic Ultrasound (EUS) Evaluation">Endoscopic Ultrasound (EUS) Evaluation</option>
+                      <option value="ERCP & Pancreatic / Bile Duct Assessment">ERCP &amp; Pancreatic / Bile Duct Assessment</option>
+                      <option value="Liver Disease & Hepatology Second Opinion">Liver Disease &amp; Hepatology Second Opinion</option>
+                      <option value="Fatty Liver Disease (MASLD) Assessment">Fatty Liver Disease (MASLD) Assessment</option>
+                      <option value="Irritable Bowel Syndrome (IBS) Care">Irritable Bowel Syndrome (IBS) Care</option>
+                      <option value="Pancreatitis & Pancreatic Health">Pancreatitis &amp; Pancreatic Health</option>
+                      <option value="Chronic Constipation & Motility Disorders">Chronic Constipation &amp; Motility Disorders</option>
+                      <option value="Other">Other (Please specify)</option>
+                    </select>
+
+                    {reasonForVisit === 'Other' && (
+                      <div style={{ marginTop: '10px' }}>
+                        <input
+                          type="text"
+                          required
+                          autoFocus
+                          placeholder="Please specify your medical concern or reason for visit..."
+                          value={customReasonText}
+                          onChange={(e) => setCustomReasonText(e.target.value)}
+                          style={{
+                            width: '100%',
+                            padding: '10px 14px',
+                            border: '1px solid var(--color-teal)',
+                            borderRadius: '6px',
+                            fontSize: '0.9rem',
+                            backgroundColor: '#fcfdfd'
+                          }}
+                        />
+                      </div>
+                    )}
                   </div>
 
                   <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', marginBottom: '20px' }}>

@@ -249,29 +249,30 @@ export default function BlogArticleClient({ post, relatedPosts, doctor }) {
 
           {/* Consultation CTA Banner */}
           <div style={{
-            background: 'linear-gradient(135deg, #163b34 0%, #1e4d44 100%)',
+            background: 'linear-gradient(135deg, #0e204d 0%, #213360 100%)',
             color: '#ffffff',
             borderRadius: 'var(--radius-lg)',
             padding: '40px',
             textAlign: 'center',
             marginTop: '50px',
-            boxShadow: '0 16px 36px rgba(22, 59, 52, 0.16)'
+            boxShadow: '0 16px 36px rgba(33, 51, 96, 0.16)'
           }}>
             <h3 style={{ fontSize: '1.85rem', color: '#ffffff', marginBottom: '12px' }}>
               Need personal medical guidance on this condition?
             </h3>
-            <p style={{ fontSize: '1.02rem', color: '#d5e2de', maxWidth: '600px', margin: '0 auto 24px', lineHeight: 1.6 }}>
+            <p style={{ fontSize: '1.02rem', color: '#d8e2ec', maxWidth: '600px', margin: '0 auto 24px', lineHeight: 1.6 }}>
               Every patient’s digestive health is unique. Arrange a focused clinical consultation with Dr. Sushant Kumar Sethi for diagnostic evaluation.
             </p>
             <button
               onClick={() => openBooking(post.title)}
               className="btn btn-primary"
               style={{
-                backgroundColor: '#ffffff',
-                color: '#163b34',
+                backgroundColor: 'var(--color-teal)',
+                color: '#ffffff',
+                border: 'none',
                 padding: '14px 28px',
                 fontSize: '0.98rem',
-                fontWeight: 600
+                fontWeight: 700
               }}
             >
               <span>Schedule a consultation</span>
