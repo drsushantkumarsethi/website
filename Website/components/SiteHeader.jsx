@@ -41,7 +41,9 @@ export default function SiteHeader() {
             <span>GASTROENTEROLOGY &amp; HEPATOLOGY • BHUBANESWAR</span>
           </div>
           <div className="header-top-right">
-            <span>Clinic appointments</span>
+            <Link href="/clinic-appointments" style={{ color: 'inherit', textDecoration: 'none' }}>
+              <span>Clinic appointments</span>
+            </Link>
             <span>|</span>
             <button
               onClick={() => openBooking()}

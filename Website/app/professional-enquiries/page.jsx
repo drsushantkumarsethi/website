@@ -94,17 +94,12 @@ export default function ProfessionalEnquiriesPage() {
                 style={{
                   fontSize: 'clamp(1.4rem, 2.5vw, 1.85rem)',
                   fontWeight: 600,
-                  color: 'var(--color-primary)',
                   textDecoration: 'none',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  transition: 'opacity 0.2s',
                 }}
-                className="hover-opacity"
+                className="enquiry-contact-link"
               >
                 <span>{doctorData.contact.phone}</span>
-                <span style={{ fontSize: '1.2rem', color: 'var(--color-primary)' }}>↗</span>
+                <span className="arrow-icon" style={{ fontSize: '1.2rem' }}>↗</span>
               </a>
             </div>
 
@@ -133,18 +128,13 @@ export default function ProfessionalEnquiriesPage() {
                 style={{
                   fontSize: 'clamp(1.15rem, 2vw, 1.45rem)',
                   fontWeight: 500,
-                  color: 'var(--color-primary)',
                   textDecoration: 'none',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
                   wordBreak: 'break-all',
-                  transition: 'opacity 0.2s',
                 }}
-                className="hover-opacity"
+                className="enquiry-contact-link"
               >
                 <span>{doctorData.doctor.email}</span>
-                <span style={{ fontSize: '1.1rem', color: 'var(--color-primary)' }}>↗</span>
+                <span className="arrow-icon" style={{ fontSize: '1.1rem' }}>↗</span>
               </a>
             </div>
 

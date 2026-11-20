@@ -125,18 +125,8 @@ export default function ConditionDetailPage({ params }) {
               </h2>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
                 {condition.symptoms.map((symptom, idx) => (
-                  <div key={idx} style={{
-                    border: '1px solid var(--color-border)',
-                    borderRadius: '8px',
-                    padding: '16px 20px',
-                    backgroundColor: '#ffffff',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '14px',
-                    fontSize: '0.96rem',
-                    color: 'var(--color-heading)'
-                  }}>
-                    <Sparkles size={16} color="var(--color-primary)" />
+                  <div key={idx} className="symptom-tag-card">
+                    <Sparkles size={16} className="sparkle-icon" color="var(--color-primary)" />
                     <span>{symptom}</span>
                   </div>
                 ))}
@@ -223,12 +213,7 @@ export default function ConditionDetailPage({ params }) {
 
           {/* Right Column: Sticky Specialist Consultation Card (Screenshot 12, 13) */}
           <div style={{ position: 'sticky', top: '100px' }}>
-            <div style={{
-              border: '1px solid var(--color-border)',
-              borderRadius: '12px',
-              padding: '36px',
-              backgroundColor: '#fbfdfc'
-            }}>
+            <div className="sticky-consult-card">
               <span style={{ fontSize: '0.72rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--color-text-light)', display: 'block', marginBottom: '14px' }}>
                 SPECIALIST CONSULTATION
               </span>

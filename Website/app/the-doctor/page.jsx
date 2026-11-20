@@ -43,20 +43,25 @@ export default function TheDoctorPage() {
               </p>
             </div>
 
-            {/* Doctor Photo in Chair with Dark Green Bar */}
+            {/* Doctor Photo in Chair with Floating Card (Screenshot 7) */}
             <div style={{ display: 'flex', justifyContent: 'center' }}>
-              <div className="doctor-portrait-frame" style={{ maxWidth: '320px', width: '100%' }}>
-                <Image
-                  src="/images/doctor-chair.jpg"
-                  alt={doctorData.doctor.fullName}
-                  width={320}
-                  height={280}
-                  className="doc-chair-img"
-                  style={{ width: '100%', height: 'auto', display: 'block' }}
-                  priority
-                />
-                <div className="doctor-name-bar">
-                  {doctorData.doctor.fullName.toUpperCase()}
+              <div className="meet-image-card" style={{ maxWidth: '340px', width: '100%' }}>
+                <div className="meet-img-frame">
+                  <Image
+                    src="/images/doctor-chair.jpg"
+                    alt={doctorData.doctor.fullName}
+                    width={340}
+                    height={300}
+                    className="meet-img"
+                    priority
+                  />
+                  <div className="meet-floating-badge">
+                    <div className="meet-badge-title">+ Senior Consultant</div>
+                    <div className="meet-badge-sub">Gastroenterology &amp; Hepatology</div>
+                  </div>
+                </div>
+                <div className="meet-caption">
+                  CLINICAL EXPERIENCE, ACADEMIC LEADERSHIP.
                 </div>
               </div>
             </div>

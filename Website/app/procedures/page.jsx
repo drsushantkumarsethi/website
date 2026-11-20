@@ -49,8 +49,8 @@ export default function ProceduresPage() {
         {/* 3 Detailed Procedures Items (Screenshot 7 & 8) */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '80px', marginBottom: '80px' }}>
           {/* Procedure 01: Upper GI Endoscopy */}
-          <div style={{ display: 'grid', gridTemplateColumns: '120px 1fr', gap: '40px', borderTop: '1px solid var(--color-border-light)', paddingTop: '50px' }}>
-            <div style={{ fontSize: '3.5rem', fontStyle: 'italic', fontWeight: 300, color: 'var(--color-text-light)', lineHeight: 1 }}>
+          <div className="procedure-step-row" style={{ display: 'grid', gridTemplateColumns: '120px 1fr', gap: '40px', borderTop: '1px solid var(--color-border-light)', paddingTop: '50px' }}>
+            <div className="proc-step-num" style={{ fontSize: '3.5rem', fontStyle: 'italic', fontWeight: 300, color: 'var(--color-text-light)', lineHeight: 1 }}>
               01
             </div>
             <div>
@@ -78,8 +78,8 @@ export default function ProceduresPage() {
           </div>
 
           {/* Procedure 02: Endoscopic ultrasound (EUS) */}
-          <div style={{ display: 'grid', gridTemplateColumns: '120px 1fr', gap: '40px', borderTop: '1px solid var(--color-border-light)', paddingTop: '50px' }}>
-            <div style={{ fontSize: '3.5rem', fontStyle: 'italic', fontWeight: 300, color: 'var(--color-text-light)', lineHeight: 1 }}>
+          <div className="procedure-step-row" style={{ display: 'grid', gridTemplateColumns: '120px 1fr', gap: '40px', borderTop: '1px solid var(--color-border-light)', paddingTop: '50px' }}>
+            <div className="proc-step-num" style={{ fontSize: '3.5rem', fontStyle: 'italic', fontWeight: 300, color: 'var(--color-text-light)', lineHeight: 1 }}>
               02
             </div>
             <div>
@@ -110,8 +110,8 @@ export default function ProceduresPage() {
           </div>
 
           {/* Procedure 03: ERCP */}
-          <div style={{ display: 'grid', gridTemplateColumns: '120px 1fr', gap: '40px', borderTop: '1px solid var(--color-border-light)', paddingTop: '50px' }}>
-            <div style={{ fontSize: '3.5rem', fontStyle: 'italic', fontWeight: 300, color: 'var(--color-text-light)', lineHeight: 1 }}>
+          <div className="procedure-step-row" style={{ display: 'grid', gridTemplateColumns: '120px 1fr', gap: '40px', borderTop: '1px solid var(--color-border-light)', paddingTop: '50px' }}>
+            <div className="proc-step-num" style={{ fontSize: '3.5rem', fontStyle: 'italic', fontWeight: 300, color: 'var(--color-text-light)', lineHeight: 1 }}>
               03
             </div>
             <div>

@@ -307,7 +307,7 @@ export default function HomePage() {
                   <h3 className="condition-title">{item.title}</h3>
                   <p className="condition-desc">{item.description}</p>
                   <div>
-                    <Link href={`/conditions#${item.id}`} className="link-with-arrow">
+                    <Link href={`/conditions/${item.slug || item.id}`} className="link-with-arrow">
                       <span>Understand the condition</span>
                       <span className="arrow-icon">↗</span>
                     </Link>
