@@ -200,13 +200,14 @@ export default function ConditionsPage() {
             </h2>
           </div>
 
-          <a
-            href={getConsultationMailto('Conditions & Care Consultation')}
+          <button
+            type="button"
+            onClick={() => openBooking('Conditions & Care Consultation')}
             className="btn btn-primary"
           >
             <span>Arrange a consultation</span>
             <span className="arrow-icon">↗</span>
-          </a>
+          </button>
         </div>
       </div>
     </div>

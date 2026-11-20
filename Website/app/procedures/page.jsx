@@ -66,14 +66,15 @@ export default function ProceduresPage() {
                 Your team explains why it is recommended, possible risks, preparation, and recovery. Follow the hospital&apos;s instructions about fasting and medicines.
               </p>
               <div>
-                <a
-                  href={getConsultationMailto('Upper GI Endoscopy')}
+                <button
+                  type="button"
+                  onClick={() => openBooking('Upper GI Endoscopy')}
                   className="link-with-arrow"
-                  style={{ textDecoration: 'underline' }}
+                  style={{ background: 'none', border: 'none', padding: 0, font: 'inherit', color: 'inherit', cursor: 'pointer', textDecoration: 'underline' }}
                 >
                   <span>Request consultation for this procedure</span>
                   <span className="arrow-icon">↗</span>
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -97,14 +98,15 @@ export default function ProceduresPage() {
                 Ask what question the test is intended to answer, whether any sampling is planned, and what preparation and recovery will involve.
               </p>
               <div>
-                <a
-                  href={getConsultationMailto('Endoscopic ultrasound (EUS)')}
+                <button
+                  type="button"
+                  onClick={() => openBooking('Endoscopic ultrasound (EUS)')}
                   className="link-with-arrow"
-                  style={{ textDecoration: 'underline' }}
+                  style={{ background: 'none', border: 'none', padding: 0, font: 'inherit', color: 'inherit', cursor: 'pointer', textDecoration: 'underline' }}
                 >
                   <span>Request consultation for this procedure</span>
                   <span className="arrow-icon">↗</span>
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -128,14 +130,15 @@ export default function ProceduresPage() {
                 ERCP has specific risks and is not required for every digestive complaint. Your specialist will explain whether it is appropriate and discuss alternatives.
               </p>
               <div>
-                <a
-                  href={getConsultationMailto('ERCP (Endoscopic Retrograde Cholangiopancreatography)')}
+                <button
+                  type="button"
+                  onClick={() => openBooking('ERCP (Endoscopic Retrograde Cholangiopancreatography)')}
                   className="link-with-arrow"
-                  style={{ textDecoration: 'underline' }}
+                  style={{ background: 'none', border: 'none', padding: 0, font: 'inherit', color: 'inherit', cursor: 'pointer', textDecoration: 'underline' }}
                 >
                   <span>Request consultation for this procedure</span>
                   <span className="arrow-icon">↗</span>
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -161,13 +164,14 @@ export default function ProceduresPage() {
             </h2>
           </div>
 
-          <a
-            href={getConsultationMailto('Specialist Procedures Consultation')}
+          <button
+            type="button"
+            onClick={() => openBooking('Specialist Procedures Consultation')}
             className="btn btn-primary"
           >
             <span>Arrange a consultation</span>
             <span className="arrow-icon">↗</span>
-          </a>
+          </button>
         </div>
       </div>
     </div>

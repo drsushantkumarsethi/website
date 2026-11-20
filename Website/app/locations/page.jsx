@@ -93,10 +93,14 @@ export default function LocationsPage() {
             </div>
 
             <div className="arrival-action-bar">
-              <a href={getConsultationMailto('Clinic Location Appointment')} className="btn btn-primary">
+              <button
+                type="button"
+                onClick={() => openBooking('Clinic Location Appointment')}
+                className="btn btn-primary"
+              >
                 <Calendar size={16} />
                 <span>Request Appointment Token</span>
-              </a>
+              </button>
             </div>
           </div>
         </div>

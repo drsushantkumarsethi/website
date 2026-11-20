@@ -4,7 +4,8 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { doctorData } from '../data/doctorData';
-import { useAppointment, getConsultationMailto } from '../components/AppointmentContext';
+import { blogPosts } from '../data/blogData';
+import { useAppointment } from '../components/AppointmentContext';
 import { MedicalEcgLine, MedicalStethoscope, HepaticCellLattice, MedicalCrossSparkle, DigestiveCurve } from '../components/MedicalAccents';
 import { Stethoscope, Activity, Heart, Shield } from 'lucide-react';
 
@@ -71,13 +72,14 @@ export default function HomePage() {
               </div>
 
               <div className="hero-actions-row">
-                <a
-                  href={getConsultationMailto('General Consultation')}
+                <button
+                  type="button"
+                  onClick={() => openBooking('General Consultation')}
                   className="btn btn-primary"
                 >
                   <span>Book a consultation</span>
                   <span className="arrow-icon">↗</span>
-                </a>
+                </button>
 
                 <Link
                   href="/the-doctor"
@@ -341,14 +343,15 @@ export default function HomePage() {
               <p className="journey-left-desc">
                 Space to share your concerns. Clarity about the next step. A consultation centred around you.
               </p>
-              <a
-                href={getConsultationMailto('First Consultation Visit')}
+              <button
+                type="button"
+                onClick={() => openBooking('First Consultation Visit')}
                 className="link-with-arrow"
-                style={{ fontSize: '0.95rem' }}
+                style={{ fontSize: '0.95rem', background: 'none', border: 'none', padding: 0, font: 'inherit', color: 'inherit', cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: '4px' }}
               >
                 <span>Plan your visit</span>
                 <span className="arrow-icon">↗</span>
-              </a>
+              </button>
             </div>
 
             <div className="journey-steps-list">
@@ -385,14 +388,79 @@ export default function HomePage() {
             </div>
 
             <div>
-              <a
-                href={getConsultationMailto('General Consultation')}
+              <button
+                type="button"
+                onClick={() => openBooking('General Consultation')}
                 className="btn btn-primary"
               >
                 <span>Book a consultation</span>
                 <span className="arrow-icon">↗</span>
-              </a>
+              </button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 6.5 Clinical Articles & Patient Guides */}
+      <section className="section-blog-preview" style={{ padding: '80px 0', borderTop: '1px solid var(--color-border-light)' }}>
+        <div className="container">
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '40px', flexWrap: 'wrap', gap: '20px' }}>
+            <div>
+              <div className="eyebrow-wrap">
+                <span className="eyebrow-line"></span>
+                <span className="eyebrow-text">PATIENT EDUCATION &amp; ARTICLES</span>
+              </div>
+              <h2 style={{ fontSize: '2.5rem', color: 'var(--color-heading)' }}>
+                Clinical guidance.<br />Written for understanding.
+              </h2>
+            </div>
+            <div>
+              <Link href="/blog" className="link-with-arrow">
+                <span>View all articles</span>
+                <span className="arrow-icon">↗</span>
+              </Link>
+            </div>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '30px' }}>
+            {blogPosts.slice(0, 3).map((post) => (
+              <article key={post.slug} className="blog-card">
+                <div className="blog-card-media">
+                  <Image
+                    src={post.coverImage}
+                    alt={post.coverImageAlt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="blog-card-img"
+                  />
+                  <div className="blog-card-badge">{post.category}</div>
+                </div>
+                <div className="blog-card-body">
+                  <div className="blog-card-meta">
+                    <span>{post.readingTime}</span>
+                    <span>•</span>
+                    <span>{post.publishedAt}</span>
+                  </div>
+                  <h3 className="blog-card-title">
+                    <Link href={`/blog/${post.slug}`} style={{ color: 'inherit', textDecoration: 'none' }}>
+                      {post.title}
+                    </Link>
+                  </h3>
+                  <p className="blog-card-excerpt">
+                    {post.excerpt}
+                  </p>
+                  <div className="blog-card-footer">
+                    <span style={{ fontSize: '0.84rem', fontWeight: 600, color: 'var(--color-heading)' }}>
+                      {post.author.name}
+                    </span>
+                    <Link href={`/blog/${post.slug}`} className="link-with-arrow" style={{ fontSize: '0.86rem', fontWeight: 600 }}>
+                      <span>Read guide</span>
+                      <span className="arrow-icon">↗</span>
+                    </Link>
+                  </div>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>

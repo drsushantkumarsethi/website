@@ -57,14 +57,15 @@ export default function ProfessionalEnquiriesPage() {
             </p>
 
             <div>
-              <a
-                href={getConsultationMailto('Professional Consultation Request')}
+              <button
+                type="button"
+                onClick={() => openBooking('Professional Consultation Request')}
                 className="btn btn-primary"
                 style={{ padding: '15px 30px', fontSize: '1rem' }}
               >
                 <span>Request a consultation</span>
                 <span className="arrow-icon">↗</span>
-              </a>
+              </button>
             </div>
           </div>
 
@@ -226,14 +227,15 @@ export default function ProfessionalEnquiriesPage() {
           </div>
 
           <div>
-            <a
-              href={getConsultationMailto('Professional Consultation Request')}
+            <button
+              type="button"
+              onClick={() => openBooking('Professional Consultation Request')}
               className="btn btn-primary"
               style={{ padding: '16px 32px', fontSize: '1rem' }}
             >
               <span>Arrange a consultation</span>
               <span className="arrow-icon">↗</span>
-            </a>
+            </button>
           </div>
         </div>
       </div>

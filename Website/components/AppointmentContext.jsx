@@ -34,9 +34,7 @@ export function AppointmentProvider({ children }) {
   const openBooking = (serviceTitle = undefined, clinicId = undefined) => {
     setPreselectedService(serviceTitle);
     setPreselectedClinic(clinicId);
-    if (typeof window !== 'undefined') {
-      window.location.href = getConsultationMailto(serviceTitle);
-    }
+    setIsBookingOpen(true);
   };
 
   const closeBooking = () => {

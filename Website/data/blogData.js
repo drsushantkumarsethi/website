@@ -1,0 +1,399 @@
+export const blogCategories = [
+  'All Articles',
+  'Gut Health & GERD',
+  'Liver & Hepatology',
+  'Endoscopy & Procedures',
+  'Nutrition & Lifestyle',
+  'Pancreatic Health'
+];
+
+export const blogPosts = [
+  {
+    slug: 'understanding-gerd-and-acid-reflux',
+    title: 'Understanding Acid Reflux & GERD: When Daily Heartburn Demands Specialist Attention',
+    subtitle: 'Heartburn is common, but chronic gastroesophageal reflux disease can cause silent damage. Here is how we evaluate and treat it.',
+    excerpt: 'Frequent heartburn, nighttime acid regurgitation, or persistent throat clearing are signs that stomach acid is repeatedly irritating your esophagus. Discover evidence-based steps to protect your digestive lining.',
+    category: 'Gut Health & GERD',
+    tags: ['GERD', 'Acid Reflux', 'Endoscopy', 'Digestive Health'],
+    readingTime: '5 min read',
+    publishedAt: '12 November 2026',
+    updatedAt: '18 November 2026',
+    author: {
+      name: 'Dr. Sushant Kumar Sethi',
+      title: 'Senior Consultant Gastroenterology & Hepatology',
+      qualifications: 'MBBS, MD (Medicine), DNB (Gastroenterology)',
+      experience: '25+ Years Experience'
+    },
+    coverImage: '/images/blog-gerd.jpg',
+    coverImageAlt: 'Clinical discussion and digestive consultation for acid reflux',
+    keyTakeaways: [
+      'Over-the-counter antacids provide quick temporary relief but do not address the underlying barrier incompetence.',
+      'Warning signs requiring urgent specialist evaluation include dysphagia (difficulty swallowing), unexplained weight loss, and recurrent vomiting.',
+      'Upper GI endoscopy is the gold-standard diagnostic tool to rule out Barrett’s esophagus and evaluate mucosal healing.',
+      'Lifestyle modifications such as sleeping with elevated head of bed and dining 3 hours before sleep significantly reduce nocturnal reflux episodes.'
+    ],
+    sections: [
+      {
+        heading: 'What is GERD vs. Occasional Acid Reflux?',
+        paragraphs: [
+          'Most people experience occasional reflux after a heavy, spicy meal. However, Gastroesophageal Reflux Disease (GERD) is diagnosed when gastric acid flows backward into the esophagus frequently enough (two or more times a week) to cause troublesome symptoms or tissue injury.',
+          'The lower esophageal sphincter (LES) is a muscular ring at the junction between your esophagus and stomach. Under normal physiology, it relaxes to allow food into the stomach and closes firmly to prevent acid backup. When this barrier weakens or transiently relaxes abnormally, acidic gastric juices irritate the delicate squamous lining of the esophagus.'
+        ]
+      },
+      {
+        heading: 'Recognizing Atypical and Warning Symptoms',
+        paragraphs: [
+          'While retrosternal burning (heartburn) and sour regurgitation are classic, many patients present with atypical manifestations. These include a chronic morning cough, unexplained hoarseness, feeling of a lump in the throat (globus pharyngeus), and adult-onset asthma.',
+          'Certain symptoms—known as "red flags"—warrant immediate gastroenterology evaluation to prevent long-term complications such as peptic strictures or Barrett’s esophagus.'
+        ],
+        callout: {
+          type: 'warning',
+          title: 'Specialist Red Flags',
+          text: 'If you experience food sticking in your chest, painful swallowing (odynophagia), vomiting blood or dark "coffee ground" material, or unintentional weight loss, do not delay clinical consultation.'
+        }
+      },
+      {
+        heading: 'Diagnostic Evaluation in Modern Gastroenterology',
+        paragraphs: [
+          'During an outpatient consultation, we evaluate your complete dietary patterns, medication history (including NSAIDs or calcium channel blockers), and symptom frequency.',
+          'When symptoms are persistent or accompanied by alarm features, Upper GI Endoscopy (Gastroscopy) provides definitive anatomical clarity. Performed under gentle, conscious sedation, high-definition video endoscopy allows direct visualization of the esophageal mucosa, grading of reflux esophagitis, and biopsies if microscopic assessment is warranted.'
+        ]
+      },
+      {
+        heading: 'Comprehensive Care: From Diet to Medical Management',
+        paragraphs: [
+          'Medical therapy centers on targeted acid suppression, predominantly with modern Proton Pump Inhibitors (PPIs) or Potassium-Competitive Acid Blockers (P-CABs), titrated to the lowest effective dose.',
+          'Crucially, medications work best alongside foundational lifestyle adaptations: avoiding lying down within three hours of dinner, reducing dietary triggers like carbonated beverages and ultra-processed fats, and elevating the head of your bed by 6 to 8 inches.'
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: 'Is taking daily antacids safe long term?',
+        answer: 'Occasional antacid use is safe, but relying on them daily for weeks masks progressive inflammation. If you require acid suppressants for more than two consecutive weeks, a gastroenterology review is recommended.'
+      },
+      {
+        question: 'Will GERD resolve on its own?',
+        answer: 'Mild acute reflux caused by temporary lifestyle habits can improve with diet. Chronic GERD, however, usually requires structured medical therapy and clinical surveillance to ensure mucosal healing.'
+      }
+    ]
+  },
+  {
+    slug: 'fatty-liver-disease-stages-and-reversal',
+    title: 'Fatty Liver Disease (MASLD): Stages, Prevention, and How Early Intervention Reverses Damage',
+    subtitle: 'Non-alcoholic fatty liver is now the most common chronic liver condition globally. The good news: the liver has an extraordinary capacity to heal when caught early.',
+    excerpt: 'An ultrasound finding of "fatty liver" should never be ignored as incidental. Learn how Metabolic Dysfunction-Associated Steatotic Liver Disease (MASLD) progresses and the precise medical roadmap to reverse it.',
+    category: 'Liver & Hepatology',
+    tags: ['Fatty Liver', 'MASLD', 'Hepatology', 'Liver Health', 'Metabolism'],
+    readingTime: '6 min read',
+    publishedAt: '05 November 2026',
+    updatedAt: '15 November 2026',
+    author: {
+      name: 'Dr. Sushant Kumar Sethi',
+      title: 'Senior Consultant Gastroenterology & Hepatology',
+      qualifications: 'MBBS, MD (Medicine), DNB (Gastroenterology)',
+      experience: '25+ Years Experience'
+    },
+    coverImage: '/images/blog-liver.jpg',
+    coverImageAlt: 'Nutritious metabolic diet and clinical liver health guidance',
+    keyTakeaways: [
+      'Simple steatosis (fat accumulation) is completely reversible with structured weight loss and insulin sensitivity improvements.',
+      'Left unmanaged, fatty liver can progress to MASH (steatohepatitis with inflammation), progressive fibrosis, and cirrhosis.',
+      'Non-invasive liver stiffness assessment (FibroScan / elastography) allows accurate staging without a surgical biopsy in the majority of patients.',
+      'A 7% to 10% reduction in total body weight is clinically shown to reverse liver inflammation and even early stage fibrosis.'
+    ],
+    sections: [
+      {
+        heading: 'Why "Incidental" Fatty Liver Matters',
+        paragraphs: [
+          'Many patients discover they have a fatty liver purely by chance during a routine health check ultrasound. Because the liver parenchyma does not have sensory pain nerves, significant fat accumulation and even early inflammation cause zero symptoms.',
+          'Recently reclassified by international hepatology consensus as Metabolic Dysfunction-Associated Steatotic Liver Disease (MASLD), this condition is closely tied to insulin resistance, abdominal visceral fat, dyslipidemia, and elevated blood pressure.'
+        ]
+      },
+      {
+        heading: 'The Spectrum of Liver Steatosis',
+        paragraphs: [
+          'Understanding your precise stage is crucial for tailoring the clinical approach:',
+          '1. Simple Steatosis: Fat droplets comprise more than 5% of hepatocytes. Cellular inflammation is minimal, and the condition is entirely reversible.',
+          '2. Metabolic Dysfunction-Associated Steatohepatitis (MASH): Fat accumulation triggers chronic oxidative stress, cellular ballooning, and inflammation.',
+          '3. Progressive Fibrosis: Sustained inflammation leads to scar tissue deposition within the hepatic architecture.',
+          '4. Advanced Cirrhosis: Widespread architectural distortion that impairs liver synthetic and detoxification functions.'
+        ],
+        callout: {
+          type: 'info',
+          title: 'The Silent Organ',
+          text: 'Normal liver function tests (ALT/AST) do NOT rule out significant liver fibrosis. Comprehensive staging with non-invasive elastography (FibroScan) or serum biomarker scores (FIB-4) provides the accurate clinical picture.'
+        }
+      },
+      {
+        heading: 'Evidence-Based Protocol for Liver Reversal',
+        paragraphs: [
+          'The human liver possesses exceptional regenerative capacity. Our clinical approach focuses on targeted lifestyle interventions combined with cardiovascular and metabolic risk management.',
+          'A dietary pattern rooted in the Mediterranean approach—rich in monounsaturated fats (extra virgin olive oil), omega-3 fatty acids, leafy greens, and legumes, while drastically eliminating high-fructose corn syrups and refined carbohydrates—consistently achieves steatosis reduction.',
+          'Moderate aerobic activity paired with resistance training enhances muscle glucose uptake, directly reducing the flux of free fatty acids delivered to the liver.'
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: 'Can fatty liver disease be cured completely?',
+        answer: 'In stages of simple steatosis and early MASH, achieving a 7-10% weight loss and optimizing glycemic control can completely resolve hepatic fat accumulation and eliminate inflammatory ballooning.'
+      },
+      {
+        question: 'Do I need regular scans if I have grade 1 fatty liver?',
+        answer: 'Yes, an annual or biennial hepatology assessment is recommended to ensure the condition remains stable and has not developed progressive inflammatory markers.'
+      }
+    ]
+  },
+  {
+    slug: 'what-to-expect-during-upper-gi-endoscopy',
+    title: 'Upper GI Endoscopy Demystified: Safe, Painless, and Vital for Early Detection',
+    subtitle: 'Fear of endoscopy is common, but modern diagnostic procedures are gentle, fast, and performed with complete patient comfort.',
+    excerpt: 'Wondering what happens before, during, and after an upper GI endoscopy? From throat spray to mild conscious sedation, here is your comprehensive, reassuring guide to the procedure.',
+    category: 'Endoscopy & Procedures',
+    tags: ['Endoscopy', 'Gastroscopy', 'Procedures', 'Diagnostics'],
+    readingTime: '5 min read',
+    publishedAt: '28 October 2026',
+    updatedAt: '10 November 2026',
+    author: {
+      name: 'Dr. Sushant Kumar Sethi',
+      title: 'Senior Consultant Gastroenterology & Hepatology',
+      qualifications: 'MBBS, MD (Medicine), DNB (Gastroenterology)',
+      experience: '25+ Years Experience'
+    },
+    coverImage: '/images/blog-endoscopy.jpg',
+    coverImageAlt: 'Modern high-definition endoscopic procedure suite',
+    keyTakeaways: [
+      'A diagnostic upper endoscopy takes only 8 to 12 minutes to perform in our specialized endoscopy suite.',
+      'Conscious sedation and local lidocaine throat spray ensure the patient feels relaxed, comfortable, and pain-free.',
+      'It enables high-resolution mucosal inspection, painless micro-biopsies for H. pylori, and immediate photographic documentation.',
+      'Most patients resume normal light meals and activities within a few hours following recovery.'
+    ],
+    sections: [
+      {
+        heading: 'What is Upper Gastrointestinal Endoscopy?',
+        paragraphs: [
+          'An Upper Gastrointestinal Endoscopy (also called an Esophagogastroduodenoscopy or EGD) is an examination that allows the gastroenterologist to directly visualize the inside lining of your esophagus, stomach, and duodenum (the first part of your small intestine).',
+          'It utilizes a thin, flexible tube called an endoscope, equipped with a high-definition digital camera and fiber-optic illumination. Specialized narrow-band imaging (NBI) allows microvascular assessment of mucosal tissues for early cancer screening.'
+        ]
+      },
+      {
+        heading: 'Preparation: Clear and Simple Steps',
+        paragraphs: [
+          'Proper preparation ensures high-clarity visualization and safe execution:',
+          '• Fasting: You must refrain from solid foods for at least 6 to 8 hours before the procedure, and stop clear liquids 2 to 3 hours prior.',
+          '• Medications: Tell our clinical team about blood thinners (anticoagulants), diabetes medications, or NSAIDs. We provide clear, personalized instructions on whether to pause or adjust dosages.',
+          '• Escort: Because mild conscious sedation may be administered, arrange for a companion to accompany you home.'
+        ]
+      },
+      {
+        heading: 'During the Procedure: Step-by-Step',
+        paragraphs: [
+          'When you enter our dedicated endoscopy suite, our specialized nursing team will position you comfortably on your left side. A local anesthetic spray is gently applied to numb the back of the throat, eliminating gag reflexes.',
+          'A soft mouthguard is placed between your teeth to protect them and guide the instrument. If sedation is chosen, a gentle intravenous medication is administered that induces a pleasant, drowsy state.',
+          'Dr. Sethi carefully advances the endoscope through the upper tract. The procedure does not impede breathing in any way, as the airway remains completely open and untouched throughout.'
+        ],
+        callout: {
+          type: 'info',
+          title: 'Comfort Guarantee',
+          text: 'Patients are often surprised by how effortless and brief the experience is. Many do not recall the scope being in place at all thanks to modern sedation protocols.'
+        }
+      }
+    ],
+    faqs: [
+      {
+        question: 'Will I gag or choke during the endoscopy?',
+        answer: 'No. The local throat numbing spray significantly suppresses the gag reflex, and the endoscope travels down the esophagus, leaving the windpipe completely open for natural breathing.'
+      },
+      {
+        question: 'How soon will I get my results?',
+        answer: 'Immediate visual findings are explained to you and your accompanying family member before you leave the clinic. If biopsies were collected (e.g., for H. pylori or histopathology), laboratory reports are available within 2 to 4 working days.'
+      }
+    ]
+  },
+  {
+    slug: 'managing-irritable-bowel-syndrome',
+    title: 'Navigating Irritable Bowel Syndrome: The Gut-Brain Axis and Sustainable Relief',
+    subtitle: 'IBS is not in your head—it is a recognized disorder of gut-brain interaction. Discover holistic, clinically proven pathways to calm your digestive tract.',
+    excerpt: 'Bloating, irregular bowel habits, and abdominal cramps can disrupt your daily quality of life. Learn how gastroenterologists identify IBS subtypes and establish lasting symptom control.',
+    category: 'Gut Health & GERD',
+    tags: ['IBS', 'Gut-Brain Axis', 'Bloating', 'Microbiome', 'Nutrition'],
+    readingTime: '6 min read',
+    publishedAt: '20 October 2026',
+    updatedAt: '02 November 2026',
+    author: {
+      name: 'Dr. Sushant Kumar Sethi',
+      title: 'Senior Consultant Gastroenterology & Hepatology',
+      qualifications: 'MBBS, MD (Medicine), DNB (Gastroenterology)',
+      experience: '25+ Years Experience'
+    },
+    coverImage: '/images/blog-ibs.jpg',
+    coverImageAlt: 'Mind-body wellness, gut health, and nutritional guidance',
+    keyTakeaways: [
+      'Irritable Bowel Syndrome (IBS) is classified into IBS-C (constipation predominant), IBS-D (diarrhea predominant), and IBS-M (mixed pattern).',
+      'The bidirectional communication along the gut-brain axis explains why stress, sleep deprivation, and visceral hypersensitivity trigger intestinal motility spasms.',
+      'A structured, 3-phase low-FODMAP dietary approach guides symptom remission while preserving long-term microbiome diversity.',
+      'Specialized neuromodulators, targeted antispasmodics, and gut-directed therapies provide profound relief for treatment-resistant cramps.'
+    ],
+    sections: [
+      {
+        heading: 'Understanding Disorders of Gut-Brain Interaction (DGBI)',
+        paragraphs: [
+          'For decades, patients suffering from chronic abdominal pain and altered bowel habits were told that "nothing is physically wrong" after standard blood and imaging tests returned normal. Today, neuroscience and gastroenterology have validated IBS as a disorder of gut-brain communication.',
+          'Your enteric nervous system—often called the "second brain"—contains hundreds of millions of neurons lining your gastrointestinal tract. In IBS patients, visceral hypersensitivity means the nerves in the intestinal wall overreact to normal digestive gas and peristaltic contractions, sending magnified pain signals to the brain.'
+        ]
+      },
+      {
+        heading: 'Ruling Out Organic Pathologies First',
+        paragraphs: [
+          'Before formalizing an IBS diagnosis using the validated Rome IV clinical criteria, an experienced gastroenterologist rules out organic conditions that mimic IBS:',
+          '• Celiac disease (via tissue transglutaminase tTG-IgA testing)',
+          '• Inflammatory Bowel Disease (Crohn’s disease or Ulcerative Colitis, evaluated via fecal calprotectin and colonoscopy)',
+          '• Small Intestinal Bacterial Overgrowth (SIBO)',
+          '• Microscopic colitis or thyroid dysfunction.'
+        ]
+      },
+      {
+        heading: 'The 3-Pillar Treatment Framework',
+        paragraphs: [
+          'Lasting management is achieved by combining three clinical pillars:',
+          '1. Dietary Optimization: A supervised, temporary Low-FODMAP diet identifies specific carbohydrate culprits (fructose, fructans, galacto-oligosaccharides) without unnecessary long-term nutritional restriction.',
+          '2. Pharmacotherapy: Targeted motility agents, soluble psyllium fiber, peripherally acting mu-opioid receptor modulators, or low-dose neuromodulators to re-calibrate nerve signaling.',
+          '3. Stress Modulation: Incorporating diaphragmatic breathing, consistent sleep hygiene, and gut-directed mindfulness to calm heightened sympathetic tone.'
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: 'Does having IBS increase my risk of colon cancer?',
+        answer: 'No. IBS is a functional motility and sensory disorder; it does not cause inflammation, ulceration, or tissue dysplasia, and it does not increase cancer risks.'
+      },
+      {
+        question: 'Can probiotics cure IBS?',
+        answer: 'Specific validated probiotic strains may reduce bloating and improve stool consistency for some individuals, but probiotics alone rarely resolve severe IBS without comprehensive dietary and neuromodulatory management.'
+      }
+    ]
+  },
+  {
+    slug: 'pancreatitis-warning-signs-and-prevention',
+    title: 'Pancreatitis Warning Signs: Understanding Acute Flare-Ups and Chronic Management',
+    subtitle: 'The pancreas plays an indispensable role in digestion and blood sugar regulation. Here is how to recognize pancreatitis early.',
+    excerpt: 'Severe, radiating upper abdominal pain that intensifies after meals requires urgent specialist evaluation. Explore common triggers—from gallstones to metabolic factors—and prevention strategies.',
+    category: 'Pancreatic Health',
+    tags: ['Pancreatitis', 'Gallstones', 'ERCP', 'EUS', 'Pancreatic Health'],
+    readingTime: '5 min read',
+    publishedAt: '14 October 2026',
+    updatedAt: '25 October 2026',
+    author: {
+      name: 'Dr. Sushant Kumar Sethi',
+      title: 'Senior Consultant Gastroenterology & Hepatology',
+      qualifications: 'MBBS, MD (Medicine), DNB (Gastroenterology)',
+      experience: '25+ Years Experience'
+    },
+    coverImage: '/images/blog-pancreas.jpg',
+    coverImageAlt: 'Clinical imaging and diagnostic analysis for pancreatic health',
+    keyTakeaways: [
+      'Acute pancreatitis presents with sudden, intense epigastric pain that frequently radiates straight through to the back.',
+      'Gallstones migrating into the common bile duct are the single leading cause of acute pancreatitis worldwide.',
+      'Endoscopic Retrograde Cholangiopancreatography (ERCP) and Endoscopic Ultrasound (EUS) allow precise stone extraction and ductal decompression.',
+      'Chronic pancreatitis requires pancreatic enzyme replacement therapy (PERT) to maintain adequate nutrient absorption and prevent malnourishment.'
+    ],
+    sections: [
+      {
+        heading: 'The Dual Function of the Pancreas',
+        paragraphs: [
+          'Nestled deep behind the stomach, the pancreas is a dual-function powerhouse. Its exocrine function produces vital digestive enzymes (amylase, lipase, and proteases) that break down fats, starches, and proteins. Its endocrine function secretes insulin and glucagon directly into the bloodstream to regulate blood glucose.',
+          'When these powerful digestive enzymes become prematurely activated inside the delicate pancreatic parenchyma, they cause rapid autodigestion and acute inflammation—the hallmark of pancreatitis.'
+        ]
+      },
+      {
+        heading: 'Recognizing Acute vs. Chronic Pancreatitis',
+        paragraphs: [
+          'Acute Pancreatitis strikes suddenly. Patients describe a severe, stabbing pain in the upper abdomen that worsens when lying flat and eases slightly when leaning forward. Nausea, persistent vomiting, fever, and a rapid pulse commonly accompany the episode.',
+          'Chronic Pancreatitis develops over years of repeated inflammation, resulting in permanent structural scarring, ductal calcifications, persistent dull pain, oily loose stools (steatorrhea), and secondary diabetes.'
+        ],
+        callout: {
+          type: 'warning',
+          title: 'Emergency Action',
+          text: 'Acute severe pancreatitis is a medical emergency requiring rapid hospitalization, aggressive intravenous hydration, and continuous organ-support monitoring.'
+        }
+      },
+      {
+        heading: 'Advanced Endoscopic Solutions (ERCP & EUS)',
+        paragraphs: [
+          'In gallstone-induced pancreatitis, timely clearance of the common bile duct is critical. Using Endoscopic Retrograde Cholangiopancreatography (ERCP), we introduce specialized cannulas into the ampulla of Vater to perform sphincterotomy, remove obstructing stones, or place temporary pancreatic stents.',
+          'For occult micro-lithiasis or chronic ductal evaluation, Endoscopic Ultrasound (EUS) provides sub-millimeter anatomical detail superior to traditional external CT scans.'
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: 'Can gallstones cause pancreatitis without gallbladder pain?',
+        answer: 'Yes. Small "silent" gallstones or biliary sludge can pass through the cystic duct and lodge transiently at the pancreatic duct orifice without preceding biliary colic.'
+      },
+      {
+        question: 'What dietary changes are necessary after recovering from pancreatitis?',
+        answer: 'A strict low-fat dietary pattern, complete cessation of alcohol and tobacco, and eating smaller, more frequent meals are essential to reduce pancreatic metabolic workload.'
+      }
+    ]
+  },
+  {
+    slug: 'colonoscopy-screening-preventing-colorectal-cancer',
+    title: 'Preventative Colonoscopy: Why Timely Screening Saves Lives After Age 45',
+    subtitle: 'Colorectal cancer is one of the most preventable malignancies when precancerous polyps are identified and removed early.',
+    excerpt: 'Unlike many cancer screening tools that merely detect tumors after they form, colonoscopy allows gastroenterologists to prevent cancer altogether by removing adenomatous polyps during the examination.',
+    category: 'Endoscopy & Procedures',
+    tags: ['Colonoscopy', 'Cancer Prevention', 'Polyps', 'Screening'],
+    readingTime: '5 min read',
+    publishedAt: '01 October 2026',
+    updatedAt: '12 October 2026',
+    author: {
+      name: 'Dr. Sushant Kumar Sethi',
+      title: 'Senior Consultant Gastroenterology & Hepatology',
+      qualifications: 'MBBS, MD (Medicine), DNB (Gastroenterology)',
+      experience: '25+ Years Experience'
+    },
+    coverImage: '/images/blog-colonoscopy.jpg',
+    coverImageAlt: 'Clinical medical consultation and preventative colon screening',
+    keyTakeaways: [
+      'Screening guidelines recommend average-risk adults begin routine colorectal cancer screening at age 45.',
+      'Most colorectal cancers begin as harmless, non-cancerous growths called adenomatous polyps that take 7 to 10 years to transform.',
+      'Polypectomy performed during a screening colonoscopy removes polyps before they ever have the chance to become malignant.',
+      'Modern bowel preparation solutions are significantly smaller in volume and far easier to tolerate than older formulations.'
+    ],
+    sections: [
+      {
+        heading: 'Why Prevention is Superior to Early Detection',
+        paragraphs: [
+          'In oncology, detection often means discovering an existing malignancy at Stage 1 or 2. Colonoscopy is unique: it is one of the rare clinical procedures that actually prevents cancer from developing in the first place.',
+          'Colorectal malignancies almost universally arise from the adenoma-carcinoma sequence—a gradual process whereby benign polyps on the mucosal lining acquire genetic mutations over 7 to 10 years. By identifying and safely snaring these polyps during a 20-minute outpatient colonoscopy, the threat is eliminated.'
+        ]
+      },
+      {
+        heading: 'When Should You Schedule Your Screening?',
+        paragraphs: [
+          '• Average Risk: International gastroenterology guidelines recommend beginning screening at age 45 for all individuals without symptoms.',
+          '• Higher Risk: If you have a first-degree relative (parent, sibling, child) diagnosed with colorectal cancer or advanced adenomas, screening should commence at age 40, or 10 years younger than the earliest family diagnosis.',
+          '• Symptom-Driven: Any person experiencing persistent changes in bowel habits, rectal bleeding, unexplained iron-deficiency anemia, or chronic tenesmus should be evaluated promptly regardless of age.'
+        ]
+      },
+      {
+        heading: 'Comfort and Safety First',
+        paragraphs: [
+          'Under supervised monitored anesthesia care (MAC), you remain completely asleep and comfortable during the entirety of the examination. You feel no pain or cramping.',
+          'Advanced endoscopic optics featuring wide-field view and artificial intelligence polyp-detection algorithms ensure meticulous mucosal inspection from the cecum to the rectum.'
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: 'Does removing a polyp hurt?',
+        answer: 'No. The inner lining of the large intestine lacks pain-sensing nerves. Polypectomy is completely painless and bloodless.'
+      },
+      {
+        question: 'How often do I need a colonoscopy if my results are normal?',
+        answer: 'If your colonoscopy is of high quality with optimal bowel preparation and no polyps are found, the recommended screening interval is generally once every 10 years.'
+      }
+    ]
+  }
+];

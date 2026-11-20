@@ -27,10 +27,14 @@ export default function NotFound() {
             <Link href="/services" className="btn btn-secondary">
               <span>View Clinical Services</span>
             </Link>
-            <a href={getConsultationMailto('Consultation Request')} className="btn btn-light">
+            <button
+              type="button"
+              onClick={() => openBooking('Consultation Request')}
+              className="btn btn-light"
+            >
               <Calendar size={16} />
               <span>Book Consultation</span>
-            </a>
+            </button>
           </div>
         </div>
       </div>

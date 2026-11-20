@@ -3,23 +3,19 @@
 import React from 'react';
 import Link from 'next/link';
 import { doctorData } from '../data/doctorData';
-import { useAppointment, getConsultationMailto } from './AppointmentContext';
+import { useAppointment } from './AppointmentContext';
 
 export default function SiteFooter() {
-  const currentYear = new Date().getFullYear();
   const { openBooking } = useAppointment();
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
-    <footer className="site-footer" role="contentinfo">
+    <footer className="site-footer">
       <div className="container">
+        {/* Main 4-Column Grid */}
         <div className="footer-main-grid">
-          {/* Column 1: Brand & Quote */}
+          {/* Column 1: Brand & Philosophy */}
           <div className="footer-brand-col">
-            <Link href="/" className="brand-logo" aria-label="Home">
+            <Link href="/" className="brand-logo footer-logo" aria-label="Home">
               <div className="logo-circle" aria-hidden="true">
                 <span>S</span>
                 <span className="logo-plus">+</span>
@@ -60,10 +56,13 @@ export default function SiteFooter() {
                 <Link href="/procedures">GI investigations</Link>
               </li>
               <li>
+                <Link href="/blog">Blog &amp; articles</Link>
+              </li>
+              <li>
                 <button
                   type="button"
-                  onClick={() => openBooking()}
-                  style={{ textAlign: 'left', color: 'inherit' }}
+                  onClick={() => openBooking('General Consultation')}
+                  style={{ textAlign: 'left', color: 'inherit', background: 'none', border: 'none', padding: 0, font: 'inherit', cursor: 'pointer' }}
                 >
                   Plan your appointment
                 </button>
@@ -101,14 +100,26 @@ export default function SiteFooter() {
             </div>
 
             <div style={{ marginTop: '8px', marginBottom: '14px' }}>
-              <a
-                href={getConsultationMailto('General Consultation')}
+              <button
+                type="button"
+                onClick={() => openBooking('General Consultation')}
                 className="link-with-arrow"
-                style={{ fontWeight: 600, color: 'var(--color-primary)' }}
+                style={{
+                  fontWeight: 600,
+                  color: 'var(--color-primary)',
+                  background: 'none',
+                  border: 'none',
+                  padding: 0,
+                  font: 'inherit',
+                  cursor: 'pointer',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '4px'
+                }}
               >
                 <span>Book a consultation</span>
                 <span className="arrow-icon">↗</span>
-              </a>
+              </button>
             </div>
 
             <div className="contact-note">
@@ -119,15 +130,23 @@ export default function SiteFooter() {
 
         {/* Footer Bottom Bar */}
         <div className="footer-bottom-bar">
-          <div>
-            © {currentYear} {doctorData.doctor.fullName}
+          <div className="footer-bottom-left">
+            <span>© 2026 Dr. Sushant Kumar Sethi</span>
           </div>
-          <div>
-            Senior Consultant • Professional profile
+
+          <div className="footer-bottom-center">
+            <span>Senior Consultant • Professional profile</span>
           </div>
-          <button onClick={scrollToTop} className="back-to-top">
-            Back to top ↑
-          </button>
+
+          <div className="footer-bottom-right">
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="back-to-top-btn link-with-arrow"
+            >
+              <span>Back to top</span>
+              <span className="arrow-icon">↑</span>
+            </button>
+          </div>
         </div>
       </div>
     </footer>

@@ -74,9 +74,13 @@ export default function MedicalDisclaimerPage() {
             <div className="legal-cta-box">
               <h3>Have Questions About Your Digestive Health?</h3>
               <p>Schedule an in-person consultation for personalized diagnostic assessment.</p>
-              <a href={getConsultationMailto('Consultation Request')} className="btn btn-primary btn-sm">
+              <button
+                type="button"
+                onClick={() => openBooking('Consultation Request')}
+                className="btn btn-primary btn-sm"
+              >
                 Book Consultation
-              </a>
+              </button>
             </div>
           </div>
         </div>

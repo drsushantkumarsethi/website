@@ -238,14 +238,15 @@ export default function ConditionDetailPage({ params }) {
                 <div style={{ color: 'var(--color-text-light)' }}>Consultations by request</div>
               </div>
 
-              <a
-                href={getConsultationMailto(condition.title)}
+              <button
+                type="button"
+                onClick={() => openBooking(condition.title)}
                 className="btn btn-primary btn-full"
                 style={{ marginBottom: '14px' }}
               >
                 <span>Plan your visit</span>
                 <span className="arrow-icon">↗</span>
-              </a>
+              </button>
 
               <div style={{ fontSize: '0.76rem', color: 'var(--color-text-light)', textAlign: 'center', lineHeight: '1.4' }}>
                 Your preferred date and time requires clinic confirmation.
@@ -346,13 +347,14 @@ export default function ConditionDetailPage({ params }) {
             </h2>
           </div>
 
-          <a
-            href={getConsultationMailto(condition.title)}
+          <button
+            type="button"
+            onClick={() => openBooking(condition.title)}
             className="btn btn-primary"
           >
             <span>Arrange a consultation</span>
             <span className="arrow-icon">↗</span>
-          </a>
+          </button>
         </div>
       </div>
     </div>

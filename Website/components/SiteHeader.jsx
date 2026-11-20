@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { doctorData } from '../data/doctorData';
-import { useAppointment, getConsultationMailto } from './AppointmentContext';
+import { useAppointment } from './AppointmentContext';
 import { Menu, X } from 'lucide-react';
 
 export default function SiteHeader() {
@@ -29,7 +29,8 @@ export default function SiteHeader() {
     { label: 'Home', path: '/' },
     { label: 'The doctor', path: '/the-doctor' },
     { label: 'Conditions', path: '/conditions' },
-    { label: 'Procedures', path: '/procedures' }
+    { label: 'Procedures', path: '/procedures' },
+    { label: 'Blog', path: '/blog' }
   ];
 
   return (
@@ -45,13 +46,24 @@ export default function SiteHeader() {
               <span>Clinic appointments</span>
             </Link>
             <span>|</span>
-            <a
-              href={getConsultationMailto('General Consultation')}
+            <button
+              onClick={() => openBooking('General Consultation')}
               className="link-with-arrow"
+              style={{
+                background: 'none',
+                border: 'none',
+                padding: 0,
+                font: 'inherit',
+                color: 'inherit',
+                cursor: 'pointer',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '4px'
+              }}
             >
               <span>Request a consultation</span>
               <span className="arrow-icon">↗</span>
-            </a>
+            </button>
           </div>
         </div>
       </div>
@@ -79,7 +91,7 @@ export default function SiteHeader() {
           <nav className="desktop-nav" aria-label="Main Navigation">
             <ul className="nav-list">
               {navItems.map((item) => {
-                const isActive = currentPath === item.path;
+                const isActive = currentPath === item.path || (item.path !== '/' && currentPath.startsWith(item.path));
                 return (
                   <li key={item.path} className="nav-item">
                     <Link
@@ -97,14 +109,14 @@ export default function SiteHeader() {
 
           {/* Header Action Button */}
           <div className="header-actions" style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-            <a
-              href={getConsultationMailto('General Consultation')}
+            <button
+              onClick={() => openBooking('General Consultation')}
               className="btn btn-primary"
               id="header-appointment-btn"
             >
               <span>Book a consultation</span>
               <span className="arrow-icon">↗</span>
-            </a>
+            </button>
 
             {/* Mobile Menu Toggle Button */}
             <button
@@ -143,14 +155,16 @@ export default function SiteHeader() {
                 </li>
               ))}
             </ul>
-            <a
-              href={getConsultationMailto('General Consultation')}
-              onClick={() => setMobileMenuOpen(false)}
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                openBooking('General Consultation');
+              }}
               className="btn btn-primary btn-full"
             >
               <span>Book a consultation</span>
               <span className="arrow-icon">↗</span>
-            </a>
+            </button>
           </div>
         )}
       </header>

@@ -102,10 +102,14 @@ export default function ServicesPage() {
             </div>
 
             <div className="guidance-footer">
-              <a href={getConsultationMailto('Specialised Service Consultation')} className="btn btn-primary">
+              <button
+                type="button"
+                onClick={() => openBooking('Specialised Service Consultation')}
+                className="btn btn-primary"
+              >
                 <Calendar size={16} />
                 <span>Book a Consultation with Dr. Sethi</span>
-              </a>
+              </button>
             </div>
           </div>
         </div>

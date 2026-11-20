@@ -179,10 +179,14 @@ export default function PatientInfoPage() {
           <div className="faq-consultation-prompt">
             <h4>Have a specific medical concern or unaddressed symptom?</h4>
             <p>Schedule a personal clinical evaluation with Dr. Sushant Kumar Sethi.</p>
-            <a href={getConsultationMailto('Patient Evaluation')} className="btn btn-primary btn-sm">
+            <button
+              type="button"
+              onClick={() => openBooking('Patient Evaluation')}
+              className="btn btn-primary btn-sm"
+            >
               <Calendar size={15} />
               <span>Request Consultation</span>
-            </a>
+            </button>
           </div>
         </div>
       </section>
