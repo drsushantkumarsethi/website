@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { doctorData } from '../../data/doctorData';
 import { Calendar as CalendarIcon, Clock, CheckCircle2 } from 'lucide-react';
+import { MedicalEcgLine, HepaticCellLattice, MedicalCrossSparkle } from '../../components/MedicalAccents';
 
 export default function ClinicAppointmentsPage() {
   const [selectedDay, setSelectedDay] = useState(21);
@@ -30,6 +31,24 @@ export default function ClinicAppointmentsPage() {
     }
     setErrorMessage('');
     setSubmitted(true);
+
+    const email = 'drsushantkumarsethi@gmail.com';
+    const subject = `Clinic Appointment Request - ${fullName}`;
+    const body = `Dear Dr. Sushant Kumar Sethi,
+
+I would like to request an in-person clinic consultation appointment.
+
+Patient Name: ${fullName}
+Contact Phone: ${contactNumber}
+Preferred Date: ${selectedDay} November 2026
+Preferred Time: ${selectedTime}
+Location: Bhubaneswar, Odisha
+
+Thank you.`;
+
+    if (typeof window !== 'undefined') {
+      window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }
   };
 
   return (
@@ -41,7 +60,8 @@ export default function ClinicAppointmentsPage() {
         </nav>
 
         {/* Hero Section (Screenshot 9) */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '50px', alignItems: 'flex-start', marginBottom: '50px' }}>
+        <div style={{ position: 'relative', display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '50px', alignItems: 'flex-start', marginBottom: '50px' }}>
+          <MedicalEcgLine style={{ position: 'absolute', top: '-15px', right: '10px' }} />
           <div>
             <div className="eyebrow-wrap">
               <span className="eyebrow-line"></span>

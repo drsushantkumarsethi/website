@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { getVerifiedServices } from '../../utils/dataHelpers';
 import ServiceCard from '../../components/ServiceCard';
-import { useAppointment } from '../../components/AppointmentContext';
+import { useAppointment, getConsultationMailto } from '../../components/AppointmentContext';
 import { Calendar, ShieldCheck } from 'lucide-react';
 
 export default function ServicesPage() {
@@ -102,10 +102,10 @@ export default function ServicesPage() {
             </div>
 
             <div className="guidance-footer">
-              <button onClick={() => openBooking()} className="btn btn-primary">
+              <a href={getConsultationMailto('Specialised Service Consultation')} className="btn btn-primary">
                 <Calendar size={16} />
                 <span>Book a Consultation with Dr. Sethi</span>
-              </button>
+              </a>
             </div>
           </div>
         </div>

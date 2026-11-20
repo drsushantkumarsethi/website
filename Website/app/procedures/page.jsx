@@ -3,7 +3,8 @@
 import React from 'react';
 import Link from 'next/link';
 import { doctorData } from '../../data/doctorData';
-import { useAppointment } from '../../components/AppointmentContext';
+import { useAppointment, getConsultationMailto } from '../../components/AppointmentContext';
+import { MedicalEcgLine, HepaticCellLattice, MedicalCrossSparkle } from '../../components/MedicalAccents';
 
 export default function ProceduresPage() {
   const { openBooking } = useAppointment();
@@ -17,7 +18,8 @@ export default function ProceduresPage() {
         </nav>
 
         {/* Hero Section (Screenshot 7) */}
-        <div className="doc-split-grid" style={{ marginBottom: '80px', alignItems: 'flex-start' }}>
+        <div className="doc-split-grid" style={{ position: 'relative', marginBottom: '80px', alignItems: 'flex-start' }}>
+          <MedicalEcgLine style={{ position: 'absolute', top: '-10px', right: '5%' }} />
           <div>
             <div className="eyebrow-wrap">
               <span className="eyebrow-line"></span>
@@ -64,15 +66,14 @@ export default function ProceduresPage() {
                 Your team explains why it is recommended, possible risks, preparation, and recovery. Follow the hospital&apos;s instructions about fasting and medicines.
               </p>
               <div>
-                <button
-                  type="button"
-                  onClick={() => openBooking('Upper GI Endoscopy')}
+                <a
+                  href={getConsultationMailto('Upper GI Endoscopy')}
                   className="link-with-arrow"
                   style={{ textDecoration: 'underline' }}
                 >
-                  <span>Read the patient information</span>
+                  <span>Request consultation for this procedure</span>
                   <span className="arrow-icon">↗</span>
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -96,15 +97,14 @@ export default function ProceduresPage() {
                 Ask what question the test is intended to answer, whether any sampling is planned, and what preparation and recovery will involve.
               </p>
               <div>
-                <button
-                  type="button"
-                  onClick={() => openBooking('Endoscopic ultrasound (EUS)')}
+                <a
+                  href={getConsultationMailto('Endoscopic ultrasound (EUS)')}
                   className="link-with-arrow"
                   style={{ textDecoration: 'underline' }}
                 >
-                  <span>Read the patient information</span>
+                  <span>Request consultation for this procedure</span>
                   <span className="arrow-icon">↗</span>
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -128,15 +128,14 @@ export default function ProceduresPage() {
                 ERCP has specific risks and is not required for every digestive complaint. Your specialist will explain whether it is appropriate and discuss alternatives.
               </p>
               <div>
-                <button
-                  type="button"
-                  onClick={() => openBooking('ERCP')}
+                <a
+                  href={getConsultationMailto('ERCP (Endoscopic Retrograde Cholangiopancreatography)')}
                   className="link-with-arrow"
                   style={{ textDecoration: 'underline' }}
                 >
-                  <span>Read the patient information</span>
+                  <span>Request consultation for this procedure</span>
                   <span className="arrow-icon">↗</span>
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -162,13 +161,13 @@ export default function ProceduresPage() {
             </h2>
           </div>
 
-          <button
-            onClick={() => openBooking()}
+          <a
+            href={getConsultationMailto('Specialist Procedures Consultation')}
             className="btn btn-primary"
           >
             <span>Arrange a consultation</span>
             <span className="arrow-icon">↗</span>
-          </button>
+          </a>
         </div>
       </div>
     </div>

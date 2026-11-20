@@ -4,7 +4,8 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { doctorData } from '../data/doctorData';
-import { useAppointment } from '../components/AppointmentContext';
+import { useAppointment, getConsultationMailto } from '../components/AppointmentContext';
+import { MedicalEcgLine, MedicalStethoscope, HepaticCellLattice, MedicalCrossSparkle, DigestiveCurve } from '../components/MedicalAccents';
 import { Stethoscope, Activity, Heart, Shield } from 'lucide-react';
 
 export default function HomePage() {
@@ -18,7 +19,11 @@ export default function HomePage() {
   return (
     <div className="home-page">
       {/* 1. Hero Section (Screenshot 1) */}
-      <section className="hero-section">
+      <section className="hero-section" style={{ position: 'relative', overflow: 'hidden' }}>
+        {/* Subtle Transparent Medical Decorative Accents */}
+        <MedicalEcgLine style={{ position: 'absolute', top: '20px', right: '5%', zIndex: 0 }} />
+        <HepaticCellLattice style={{ position: 'absolute', top: '45%', left: '-20px', zIndex: 0 }} />
+        <MedicalCrossSparkle style={{ position: 'absolute', top: '15%', left: '46%', zIndex: 0 }} />
         <div className="container">
           <div className="hero-grid">
             {/* Left Content */}
@@ -66,13 +71,13 @@ export default function HomePage() {
               </div>
 
               <div className="hero-actions-row">
-                <button
-                  onClick={() => openBooking()}
+                <a
+                  href={getConsultationMailto('General Consultation')}
                   className="btn btn-primary"
                 >
                   <span>Book a consultation</span>
                   <span className="arrow-icon">↗</span>
-                </button>
+                </a>
 
                 <Link
                   href="/the-doctor"
@@ -153,7 +158,9 @@ export default function HomePage() {
       </section>
 
       {/* 2. Meet Dr. Sethi Section (Screenshot 2) */}
-      <section className="section-meet-doctor">
+      <section className="section-meet-doctor" style={{ position: 'relative', overflow: 'hidden' }}>
+        <MedicalStethoscope style={{ position: 'absolute', top: '25px', right: '4%', zIndex: 0 }} />
+        <DigestiveCurve style={{ position: 'absolute', bottom: '15px', left: '2%', zIndex: 0 }} />
         <div className="container">
           <div className="meet-grid">
             {/* Left Image */}
@@ -334,14 +341,14 @@ export default function HomePage() {
               <p className="journey-left-desc">
                 Space to share your concerns. Clarity about the next step. A consultation centred around you.
               </p>
-              <button
-                onClick={() => openBooking()}
+              <a
+                href={getConsultationMailto('First Consultation Visit')}
                 className="link-with-arrow"
                 style={{ fontSize: '0.95rem' }}
               >
                 <span>Plan your visit</span>
                 <span className="arrow-icon">↗</span>
-              </button>
+              </a>
             </div>
 
             <div className="journey-steps-list">
@@ -378,13 +385,13 @@ export default function HomePage() {
             </div>
 
             <div>
-              <button
-                onClick={() => openBooking()}
+              <a
+                href={getConsultationMailto('General Consultation')}
                 className="btn btn-primary"
               >
                 <span>Book a consultation</span>
                 <span className="arrow-icon">↗</span>
-              </button>
+              </a>
             </div>
           </div>
         </div>

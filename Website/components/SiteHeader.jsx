@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { doctorData } from '../data/doctorData';
-import { useAppointment } from './AppointmentContext';
+import { useAppointment, getConsultationMailto } from './AppointmentContext';
 import { Menu, X } from 'lucide-react';
 
 export default function SiteHeader() {
@@ -45,13 +45,13 @@ export default function SiteHeader() {
               <span>Clinic appointments</span>
             </Link>
             <span>|</span>
-            <button
-              onClick={() => openBooking()}
+            <a
+              href={getConsultationMailto('General Consultation')}
               className="link-with-arrow"
             >
               <span>Request a consultation</span>
               <span className="arrow-icon">↗</span>
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -97,14 +97,14 @@ export default function SiteHeader() {
 
           {/* Header Action Button */}
           <div className="header-actions" style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-            <button
-              onClick={() => openBooking()}
+            <a
+              href={getConsultationMailto('General Consultation')}
               className="btn btn-primary"
               id="header-appointment-btn"
             >
               <span>Book a consultation</span>
               <span className="arrow-icon">↗</span>
-            </button>
+            </a>
 
             {/* Mobile Menu Toggle Button */}
             <button
@@ -143,16 +143,14 @@ export default function SiteHeader() {
                 </li>
               ))}
             </ul>
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                openBooking();
-              }}
+            <a
+              href={getConsultationMailto('General Consultation')}
+              onClick={() => setMobileMenuOpen(false)}
               className="btn btn-primary btn-full"
             >
               <span>Book a consultation</span>
               <span className="arrow-icon">↗</span>
-            </button>
+            </a>
           </div>
         )}
       </header>

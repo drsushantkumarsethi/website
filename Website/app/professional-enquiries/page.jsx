@@ -3,7 +3,8 @@
 import React from 'react';
 import Link from 'next/link';
 import { doctorData } from '../../data/doctorData';
-import { useAppointment } from '../../components/AppointmentContext';
+import { useAppointment, getConsultationMailto } from '../../components/AppointmentContext';
+import { MedicalEcgLine, MedicalCrossSparkle } from '../../components/MedicalAccents';
 
 export default function ProfessionalEnquiriesPage() {
   const { openBooking } = useAppointment();
@@ -56,14 +57,14 @@ export default function ProfessionalEnquiriesPage() {
             </p>
 
             <div>
-              <button
-                onClick={() => openBooking()}
+              <a
+                href={getConsultationMailto('Professional Consultation Request')}
                 className="btn btn-primary"
                 style={{ padding: '15px 30px', fontSize: '1rem' }}
               >
                 <span>Request a consultation</span>
                 <span className="arrow-icon">↗</span>
-              </button>
+              </a>
             </div>
           </div>
 
@@ -225,14 +226,14 @@ export default function ProfessionalEnquiriesPage() {
           </div>
 
           <div>
-            <button
-              onClick={() => openBooking()}
+            <a
+              href={getConsultationMailto('Professional Consultation Request')}
               className="btn btn-primary"
               style={{ padding: '16px 32px', fontSize: '1rem' }}
             >
               <span>Arrange a consultation</span>
               <span className="arrow-icon">↗</span>
-            </button>
+            </a>
           </div>
         </div>
       </div>

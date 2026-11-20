@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { doctorData } from '../../data/doctorData';
 import { useAppointment } from '../../components/AppointmentContext';
+import { MedicalEcgLine, HepaticCellLattice, MedicalCrossSparkle } from '../../components/MedicalAccents';
 
 export default function TheDoctorPage() {
   const { openBooking } = useAppointment();
@@ -21,7 +22,9 @@ export default function TheDoctorPage() {
   return (
     <div className="the-doctor-page">
       {/* 1. Hero Section (Screenshot 7) */}
-      <section className="doctor-hero-section">
+      <section className="doctor-hero-section" style={{ position: 'relative', overflow: 'hidden' }}>
+        <MedicalEcgLine style={{ position: 'absolute', top: '20px', right: '4%', zIndex: 0 }} />
+        <HepaticCellLattice style={{ position: 'absolute', bottom: '10px', left: '-15px', zIndex: 0 }} />
         <div className="container">
           <nav className="breadcrumb-nav" aria-label="Breadcrumb">
             <Link href="/">Home</Link> <span>/</span> <span>The doctor</span>

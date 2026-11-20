@@ -4,7 +4,8 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { doctorData } from '../../data/doctorData';
-import { useAppointment } from '../../components/AppointmentContext';
+import { useAppointment, getConsultationMailto } from '../../components/AppointmentContext';
+import { MedicalEcgLine, HepaticCellLattice, MedicalCrossSparkle } from '../../components/MedicalAccents';
 import { Search } from 'lucide-react';
 
 export default function ConditionsPage() {
@@ -34,7 +35,8 @@ export default function ConditionsPage() {
         </nav>
 
         {/* Hero Row (Screenshot 3) */}
-        <div className="doctor-hero-grid" style={{ marginBottom: '60px' }}>
+        <div className="doctor-hero-grid" style={{ position: 'relative', marginBottom: '60px' }}>
+          <MedicalEcgLine style={{ position: 'absolute', top: '-15px', right: '4%' }} />
           <div>
             <div className="eyebrow-wrap">
               <span className="eyebrow-line"></span>
@@ -198,13 +200,13 @@ export default function ConditionsPage() {
             </h2>
           </div>
 
-          <button
-            onClick={() => openBooking()}
+          <a
+            href={getConsultationMailto('Conditions & Care Consultation')}
             className="btn btn-primary"
           >
             <span>Arrange a consultation</span>
             <span className="arrow-icon">↗</span>
-          </button>
+          </a>
         </div>
       </div>
     </div>

@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { doctorData } from '../data/doctorData';
-import { useAppointment } from './AppointmentContext';
+import { useAppointment, getConsultationMailto } from './AppointmentContext';
 
 export default function SiteFooter() {
   const currentYear = new Date().getFullYear();
@@ -101,15 +101,14 @@ export default function SiteFooter() {
             </div>
 
             <div style={{ marginTop: '8px', marginBottom: '14px' }}>
-              <button
-                type="button"
-                onClick={() => openBooking()}
+              <a
+                href={getConsultationMailto('General Consultation')}
                 className="link-with-arrow"
                 style={{ fontWeight: 600, color: 'var(--color-primary)' }}
               >
                 <span>Book a consultation</span>
                 <span className="arrow-icon">↗</span>
-              </button>
+              </a>
             </div>
 
             <div className="contact-note">

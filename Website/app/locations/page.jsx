@@ -3,7 +3,7 @@
 import React from 'react';
 import { getVerifiedClinics } from '../../utils/dataHelpers';
 import ClinicCard from '../../components/ClinicCard';
-import { useAppointment } from '../../components/AppointmentContext';
+import { useAppointment, getConsultationMailto } from '../../components/AppointmentContext';
 import { Calendar, Compass } from 'lucide-react';
 
 export default function LocationsPage() {
@@ -93,10 +93,10 @@ export default function LocationsPage() {
             </div>
 
             <div className="arrival-action-bar">
-              <button onClick={() => openBooking()} className="btn btn-primary">
+              <a href={getConsultationMailto('Clinic Location Appointment')} className="btn btn-primary">
                 <Calendar size={16} />
                 <span>Request Appointment Token</span>
-              </button>
+              </a>
             </div>
           </div>
         </div>

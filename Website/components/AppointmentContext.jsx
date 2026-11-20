@@ -6,6 +6,25 @@ import VerificationDrawer from './VerificationDrawer';
 
 const AppointmentContext = createContext(null);
 
+export const getConsultationMailto = (serviceTitle = 'Gastroenterology & Hepatology Consultation', details = {}) => {
+  const email = 'drsushantkumarsethi@gmail.com';
+  const subject = `Consultation Appointment Request - Dr. Sushant Kumar Sethi`;
+  const body = `Dear Dr. Sushant Kumar Sethi,
+
+I would like to request a consultation appointment.
+
+Consultation / Concern: ${serviceTitle || 'Gastroenterology & Hepatology Consultation'}
+Full Name: ${details.name || ''}
+Contact Phone Number: ${details.phone || ''}
+Preferred Date & Time: ${details.date || ''}
+Location: Bhubaneswar, Odisha
+Symptoms / Health Notes: ${details.notes || ''}
+
+Thank you.`;
+
+  return `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+};
+
 export function AppointmentProvider({ children }) {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [preselectedService, setPreselectedService] = useState(undefined);
@@ -15,7 +34,9 @@ export function AppointmentProvider({ children }) {
   const openBooking = (serviceTitle = undefined, clinicId = undefined) => {
     setPreselectedService(serviceTitle);
     setPreselectedClinic(clinicId);
-    setIsBookingOpen(true);
+    if (typeof window !== 'undefined') {
+      window.location.href = getConsultationMailto(serviceTitle);
+    }
   };
 
   const closeBooking = () => {
@@ -42,7 +63,8 @@ export function AppointmentProvider({ children }) {
         openBooking,
         closeBooking,
         openAudit,
-        closeAudit
+        closeAudit,
+        getConsultationMailto
       }}
     >
       {children}

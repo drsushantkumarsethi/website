@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { doctorData } from '../../data/doctorData';
-import { useAppointment } from '../../components/AppointmentContext';
+import { useAppointment, getConsultationMailto } from '../../components/AppointmentContext';
 import { AlertTriangle, ShieldAlert } from 'lucide-react';
 
 export default function MedicalDisclaimerPage() {
@@ -74,9 +74,9 @@ export default function MedicalDisclaimerPage() {
             <div className="legal-cta-box">
               <h3>Have Questions About Your Digestive Health?</h3>
               <p>Schedule an in-person consultation for personalized diagnostic assessment.</p>
-              <button onClick={() => openBooking()} className="btn btn-primary btn-sm">
+              <a href={getConsultationMailto('Consultation Request')} className="btn btn-primary btn-sm">
                 Book Consultation
-              </button>
+              </a>
             </div>
           </div>
         </div>

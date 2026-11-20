@@ -5,7 +5,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { doctorData } from '../../../data/doctorData';
-import { useAppointment } from '../../../components/AppointmentContext';
+import { useAppointment, getConsultationMailto } from '../../../components/AppointmentContext';
+import { MedicalEcgLine, MedicalStethoscope, MedicalCrossSparkle } from '../../../components/MedicalAccents';
 import { Sparkles, Plus, AlertCircle, ArrowUpRight } from 'lucide-react';
 
 export default function ConditionDetailPage({ params }) {
@@ -237,14 +238,14 @@ export default function ConditionDetailPage({ params }) {
                 <div style={{ color: 'var(--color-text-light)' }}>Consultations by request</div>
               </div>
 
-              <button
-                onClick={() => openBooking(condition.title)}
+              <a
+                href={getConsultationMailto(condition.title)}
                 className="btn btn-primary btn-full"
                 style={{ marginBottom: '14px' }}
               >
                 <span>Plan your visit</span>
                 <span className="arrow-icon">↗</span>
-              </button>
+              </a>
 
               <div style={{ fontSize: '0.76rem', color: 'var(--color-text-light)', textAlign: 'center', lineHeight: '1.4' }}>
                 Your preferred date and time requires clinic confirmation.
@@ -345,13 +346,13 @@ export default function ConditionDetailPage({ params }) {
             </h2>
           </div>
 
-          <button
-            onClick={() => openBooking(condition.title)}
+          <a
+            href={getConsultationMailto(condition.title)}
             className="btn btn-primary"
           >
             <span>Arrange a consultation</span>
             <span className="arrow-icon">↗</span>
-          </button>
+          </a>
         </div>
       </div>
     </div>

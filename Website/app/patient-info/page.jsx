@@ -4,7 +4,7 @@ import React from 'react';
 import { doctorData } from '../../data/doctorData';
 import { getVerifiedFaqs } from '../../utils/dataHelpers';
 import FaqAccordion from '../../components/FaqAccordion';
-import { useAppointment } from '../../components/AppointmentContext';
+import { useAppointment, getConsultationMailto } from '../../components/AppointmentContext';
 import {
   FileText,
   AlertTriangle,
@@ -179,10 +179,10 @@ export default function PatientInfoPage() {
           <div className="faq-consultation-prompt">
             <h4>Have a specific medical concern or unaddressed symptom?</h4>
             <p>Schedule a personal clinical evaluation with Dr. Sushant Kumar Sethi.</p>
-            <button onClick={() => openBooking()} className="btn btn-primary btn-sm">
+            <a href={getConsultationMailto('Patient Evaluation')} className="btn btn-primary btn-sm">
               <Calendar size={15} />
               <span>Request Consultation</span>
-            </button>
+            </a>
           </div>
         </div>
       </section>

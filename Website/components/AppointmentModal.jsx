@@ -54,6 +54,27 @@ export default function AppointmentModal({
 
     setErrorMessage('');
     setSubmitted(true);
+
+    const email = 'drsushantkumarsethi@gmail.com';
+    const subject = `Consultation Request: ${formData.serviceArea} - ${formData.fullName}`;
+    const body = `Dear Dr. Sushant Kumar Sethi,
+
+I would like to request a consultation appointment.
+
+Full Name: ${formData.fullName}
+Phone Number: ${formData.phone}
+Email: ${formData.email || 'Not provided'}
+Clinical Focus: ${formData.serviceArea}
+Preferred Date: ${formData.preferredDate || 'Earliest available'}
+Preferred Time: ${formData.preferredTime}
+Location: Bhubaneswar, Odisha
+Notes / Symptoms: ${formData.symptomNotes || 'None'}
+
+Thank you.`;
+
+    if (typeof window !== 'undefined') {
+      window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }
   };
 
   const handleReset = () => {

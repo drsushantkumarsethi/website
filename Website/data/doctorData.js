@@ -9,6 +9,7 @@ export const doctorData = {
     city: 'Bhubaneswar',
     state: 'Odisha',
     country: 'India',
+    email: 'drsushantkumarsethi@gmail.com',
     yearsOfExperience: '25+',
     experienceSummary: 'Over 25 years of medical experience. Personalised care for digestive, liver, and pancreatic concerns.',
     degrees: ['MBBS', 'MD (Medicine)', 'DNB (Gastroenterology)'],
@@ -513,7 +514,8 @@ export const doctorData = {
   },
   contact: {
     phone: '+91 80930 60180',
-    email: 'drsushant2004@yahoo.co.in',
+    email: 'drsushantkumarsethi@gmail.com',
+    consultationEmail: 'drsushantkumarsethi@gmail.com',
     verifiedInstagram: 'https://www.instagram.com/drsushantkumarsethi/',
     verifiedInstagramHandle: '@drsushantkumarsethi',
     city: 'Bhubaneswar',

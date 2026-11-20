@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { doctorData } from '../data/doctorData';
-import { useAppointment } from '../components/AppointmentContext';
+import { useAppointment, getConsultationMailto } from '../components/AppointmentContext';
 import { Home, Calendar } from 'lucide-react';
 
 export default function NotFound() {
@@ -27,10 +27,10 @@ export default function NotFound() {
             <Link href="/services" className="btn btn-secondary">
               <span>View Clinical Services</span>
             </Link>
-            <button onClick={() => openBooking()} className="btn btn-light">
+            <a href={getConsultationMailto('Consultation Request')} className="btn btn-light">
               <Calendar size={16} />
               <span>Book Consultation</span>
-            </button>
+            </a>
           </div>
         </div>
       </div>
