@@ -38,7 +38,7 @@ export const doctorData = {
         institution: 'National Board of Examinations / Indraprastha Apollo Hospitals, New Delhi'
       },
       {
-        year: 'TRAINING',
+        year: 'FELLOWSHIP',
         degree: 'EUS & ERCP',
         institution: 'Asian Institute of Gastroenterology, Hyderabad'
       }

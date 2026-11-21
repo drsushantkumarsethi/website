@@ -165,7 +165,7 @@ export default function HomePage() {
                 }}>
                   <GraduationCap size={18} color="var(--color-teal)" />
                 </div>
-                <div className="stat-col-val-text">AIIMS &amp; Apollo Trained</div>
+                <div className="stat-col-val-text">AIIMS &amp; Apollo</div>
                 <div className="stat-col-desc">MBBS • MD (Medicine) • DNB (Gastroenterology)</div>
               </div>
 
