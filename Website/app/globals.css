@@ -4,39 +4,39 @@
    ========================================================================== */
 
 :root {
-  /* Brand Palette - Sophisticated Medical Olive Green & Deep Navy */
-  --color-teal: #506f2e;
-  --color-teal-hover: #3d5622;
-  --color-teal-soft: #edf3e6;
-  --color-teal-glow: rgba(80, 111, 46, 0.22);
+  /* Brand Palette - Sophisticated Medical Deep Olive Green & High-Contrast Navy */
+  --color-teal: #3d5a1f;
+  --color-teal-hover: #2d4316;
+  --color-teal-soft: #edf4e4;
+  --color-teal-glow: rgba(61, 90, 31, 0.25);
 
-  --color-navy: #213360;
-  --color-navy-dark: #0e204d;
-  --color-navy-deep: #061733;
-  --color-navy-slate: #283b6a;
-  --color-navy-light: #435ba1;
+  --color-navy: #12244a;
+  --color-navy-dark: #081636;
+  --color-navy-deep: #040d21;
+  --color-navy-slate: #1c3057;
+  --color-navy-light: #2c477d;
 
-  --color-primary: #213360;
-  --color-primary-dark: #0e204d;
-  --color-primary-light: #edf3e6;
-  --color-primary-soft: rgba(33, 51, 96, 0.08);
+  --color-primary: #12244a;
+  --color-primary-dark: #081636;
+  --color-primary-light: #edf4e4;
+  --color-primary-soft: rgba(8, 22, 54, 0.08);
 
-  --color-accent-teal: #506f2e;
-  --color-accent-gold: #c29d68;
-  --color-accent-gold-soft: rgba(194, 157, 104, 0.15);
+  --color-accent-teal: #3d5a1f;
+  --color-accent-gold: #b38e55;
+  --color-accent-gold-soft: rgba(179, 142, 85, 0.15);
 
-  --color-heading: #0e204d;
-  --color-heading-dark: #061733;
-  --color-text-main: #213360;
-  --color-text-body: #556277;
-  --color-text-muted: #848e9f;
-  --color-text-light: #9ca7b7;
+  --color-heading: #081636;
+  --color-heading-dark: #040d21;
+  --color-text-main: #0c1a36;
+  --color-text-body: #182845;
+  --color-text-muted: #334460;
+  --color-text-light: #485c7c;
 
-  --color-bg-page: #ffffff;
-  --color-bg-subtle: #f8fafd;
-  --color-bg-muted: #f1f5f9;
-  --color-border: #e6e8eb;
-  --color-border-light: #edf2f7;
+  --color-bg-page: #faf8f5;
+  --color-bg-subtle: #f3ece2;
+  --color-bg-muted: #eae1d3;
+  --color-border: #e2d7c5;
+  --color-border-light: #ece3d4;
 
   /* Typography: Quicksand & Roboto from IIGH */
   --font-heading: var(--font-quicksand), "Quicksand", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -163,26 +163,64 @@ h1, h2, h3, h4, h5, h6, .heading-editorial {
   color: var(--color-heading);
 }
 
-/* Clean Layout & Rendering - Transitions & Animations Removed */
+/* Page Transitions, Smooth Animations & Glassmorphism */
 .text-highlight {
   color: var(--color-heading);
 }
 
 .page-transition-wrapper {
-  /* Instant page render */
+  animation: pageFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Glassmorphism & Hover Pop-up system */
+.glass-surface {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 10px 30px rgba(8, 22, 54, 0.07);
+}
+
+/* Card hover pop-up effects across all pages */
+.editorial-card,
+.condition-card,
+.blog-card,
+.stat-col-item,
+.specialty-card,
+.procedure-card,
+.clinic-card,
+.hero-photo-card,
+.meet-image-card,
+.doctor-header-card {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
+}
+
+.editorial-card:hover,
+.condition-card:hover,
+.blog-card:hover,
+.stat-col-item:hover,
+.specialty-card:hover,
+.procedure-card:hover,
+.clinic-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(8, 22, 54, 0.12);
+  border-color: var(--color-teal);
 }
 
 /* Subtle Medical Accent Elements */
 .medical-accent-decor {
   pointer-events: none;
-}
-
-.hero-text-col {
-  /* Instant render */
-}
-
-.hero-media-wrap {
-  /* Instant render */
 }
 
 /* Buttons matching IIGH Hospital aesthetic with Quicksand typography */
@@ -196,43 +234,49 @@ h1, h2, h3, h4, h5, h6, .heading-editorial {
   font-size: 0.95rem;
   font-weight: 700;
   border-radius: var(--radius-sm);
-  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
   text-decoration: none;
   position: relative;
   overflow: hidden;
   cursor: pointer;
+}
+.btn:hover {
+  transform: translateY(-2px);
+}
+.btn:active {
+  transform: translateY(0);
 }
 
 .btn-primary {
   background-color: var(--color-teal);
   color: #ffffff;
   border: 1px solid var(--color-teal);
-  box-shadow: 0 4px 14px rgba(80, 111, 46, 0.35);
+  box-shadow: 0 4px 14px rgba(61, 90, 31, 0.35);
 }
 .btn-primary:hover {
   background-color: var(--color-navy);
   border-color: var(--color-navy);
   color: #ffffff;
-  box-shadow: 0 4px 14px rgba(33, 51, 96, 0.22);
+  box-shadow: 0 8px 22px rgba(8, 22, 54, 0.25);
 }
 .btn-primary:active {
-  box-shadow: 0 2px 6px rgba(80, 111, 46, 0.2);
+  box-shadow: 0 2px 6px rgba(61, 90, 31, 0.2);
 }
 
 .btn-secondary {
   background-color: var(--color-navy);
   color: #ffffff;
   border: 1px solid var(--color-navy);
-  box-shadow: 0 4px 14px rgba(33, 51, 96, 0.15);
+  box-shadow: 0 4px 14px rgba(8, 22, 54, 0.15);
 }
 .btn-secondary:hover {
   background-color: var(--color-teal);
   border-color: var(--color-teal);
   color: #ffffff;
-  box-shadow: 0 4px 14px rgba(80, 111, 46, 0.3);
+  box-shadow: 0 8px 22px rgba(61, 90, 31, 0.3);
 }
 .btn-secondary:active {
-  box-shadow: 0 2px 6px rgba(33, 51, 96, 0.2);
+  box-shadow: 0 2px 6px rgba(8, 22, 54, 0.2);
 }
 
 .btn-sm {
@@ -555,12 +599,393 @@ h1, h2, h3, h4, h5, h6, .heading-editorial {
   gap: 20px;
 }
 
-/* Right Media (Doctor with Arch Frame & Floating Cards) */
+/* Right Media (Senior Consultant at Apollo Desk with Info Below Photo) */
 .hero-media-wrap {
   position: relative;
   display: flex;
   justify-content: center;
 }
+
+.hero-media-card {
+  display: flex;
+  flex-direction: column;
+  max-width: 440px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.hero-photo-frame {
+  position: relative;
+  width: 100%;
+  height: 290px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(10, 27, 63, 0.12);
+  border: 1px solid var(--color-border);
+  background: #ffffff;
+}
+
+.hero-chamber-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.hero-experience-tag {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(10, 27, 63, 0.9);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 2;
+}
+
+.exp-tag-num {
+  color: #a4ce6a;
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+.exp-tag-text {
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Placed BELOW the Photo (Never Covering the Photo!) */
+.hero-caption-card-below {
+  margin-top: 16px;
+  padding: 18px 22px;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-teal);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(10, 27, 63, 0.06);
+}
+
+.caption-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  gap: 10px;
+}
+
+.caption-doctor-name {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--color-heading);
+}
+
+.caption-badge {
+  background: var(--color-teal-soft);
+  color: var(--color-teal);
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: 1px solid #c7d8b8;
+}
+
+.caption-doctor-subtitle {
+  font-size: 0.84rem;
+  color: var(--color-text-body);
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+
+.caption-doctor-degrees {
+  font-size: 0.76rem;
+  color: var(--color-text-muted);
+}
+
+/* Senior Consultant Hero Photo Card - Cleanly Framed & Card Below */
+.hero-photo-card {
+  position: relative;
+  max-width: 440px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(226, 215, 197, 0.9);
+  border-radius: 20px;
+  padding: 14px;
+  box-shadow: 0 12px 32px rgba(8, 22, 54, 0.08);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+}
+.hero-photo-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 42px rgba(8, 22, 54, 0.14);
+  border-color: var(--color-teal);
+}
+.hero-photo-frame {
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  background-color: #f0ebe1;
+  border: 1px solid var(--color-border);
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-chamber-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.hero-photo-card:hover .hero-chamber-img {
+  transform: scale(1.02);
+}
+.hero-caption-card-below {
+  margin-top: 14px;
+  padding: 14px 16px;
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-teal);
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(8, 22, 54, 0.05);
+}
+.hero-caption-badge-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.hero-caption-plus {
+  color: var(--color-teal);
+  font-weight: 800;
+  font-size: 1.3rem;
+  line-height: 1.1;
+}
+.hero-caption-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-heading);
+  line-height: 1.25;
+}
+.hero-caption-specialty {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-body);
+  margin-top: 3px;
+  line-height: 1.35;
+}
+.hero-caption-location {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid var(--color-border-light);
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+/* Meet Dr. Sethi Portrait Card - Cleanly Framed & Card Below */
+.meet-image-card {
+  position: relative;
+  max-width: 380px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(226, 215, 197, 0.9);
+  border-radius: 20px;
+  padding: 14px;
+  box-shadow: 0 12px 32px rgba(8, 22, 54, 0.08);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+}
+.meet-image-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 42px rgba(8, 22, 54, 0.14);
+  border-color: var(--color-teal);
+}
+.meet-img-frame {
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  background-color: #f7f3ec;
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.meet-portrait-img {
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.meet-image-card:hover .meet-portrait-img {
+  transform: scale(1.02);
+}
+.meet-caption-card-below {
+  margin-top: 14px;
+  padding: 14px 16px;
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-teal);
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(8, 22, 54, 0.05);
+}
+.meet-caption-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.meet-caption-plus {
+  color: var(--color-teal);
+  font-weight: 800;
+  font-size: 1.3rem;
+  line-height: 1.1;
+}
+.meet-caption-name {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-heading);
+  line-height: 1.25;
+}
+.meet-caption-degrees {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-teal);
+  margin-top: 3px;
+}
+.meet-caption-specialty {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-text-body);
+  margin-top: 2px;
+  line-height: 1.35;
+}
+.meet-caption-sub {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid var(--color-border-light);
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+/* Doctor Page Header Card - Cleanly Framed & Card Below */
+.doctor-header-card {
+  position: relative;
+  max-width: 420px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(226, 215, 197, 0.9);
+  border-radius: 20px;
+  padding: 14px;
+  box-shadow: 0 12px 32px rgba(8, 22, 54, 0.08);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+}
+.doctor-header-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 42px rgba(8, 22, 54, 0.14);
+  border-color: var(--color-teal);
+}
+.doctor-header-img-frame {
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  background-color: #f0ebe1;
+  border: 1px solid var(--color-border);
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.doctor-header-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.doctor-header-card:hover .doctor-header-img {
+  transform: scale(1.02);
+}
+.doctor-caption-card-below {
+  margin-top: 14px;
+  padding: 14px 16px;
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-teal);
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(8, 22, 54, 0.05);
+}
+.doctor-caption-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.doctor-caption-plus {
+  color: var(--color-teal);
+  font-weight: 800;
+  font-size: 1.3rem;
+  line-height: 1.1;
+}
+.doctor-caption-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-heading);
+  line-height: 1.25;
+}
+.doctor-caption-sub {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-teal);
+  margin-top: 3px;
+}
+.doctor-caption-specialty {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-text-body);
+  margin-top: 2px;
+  line-height: 1.35;
+}
+.doctor-caption-loc {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid var(--color-border-light);
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+/* Arch Container fallback */
 .hero-arch-container {
   position: relative;
   width: 380px;
@@ -574,19 +999,6 @@ h1, h2, h3, h4, h5, h6, .heading-editorial {
   overflow: visible;
   box-shadow: 0 12px 36px rgba(22, 59, 52, 0.05);
 }
-.hero-arch-container:hover {
-  box-shadow: 0 16px 40px rgba(22, 59, 52, 0.08);
-}
-.hero-arch-ring {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  right: 15px;
-  bottom: 15px;
-  border: 1px dashed #dbe5e2;
-  border-radius: 190px 190px 20px 20px;
-  pointer-events: none;
-}
 .hero-doctor-img {
   width: 320px;
   height: auto;
@@ -596,73 +1008,7 @@ h1, h2, h3, h4, h5, h6, .heading-editorial {
   z-index: 2;
   border-radius: 0 0 25px 25px;
 }
-
-/* Floating experience badge with IIGH teal accent */
-.hero-float-badge {
-  position: absolute;
-  top: 40px;
-  right: -20px;
-  background-color: var(--color-navy-dark);
-  border-left: 4px solid var(--color-teal);
-  color: #ffffff;
-  padding: 14px 20px;
-  border-radius: var(--radius-md);
-  box-shadow: 0 14px 32px rgba(33, 51, 96, 0.25);
-  z-index: 5;
-  text-align: left;
-  cursor: pointer;
-}
-.hero-float-badge:hover {
-  box-shadow: 0 16px 36px rgba(33, 51, 96, 0.3);
-}
-.float-badge-num {
-  font-family: var(--font-heading);
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--color-teal);
-  line-height: 1;
-  display: block;
-  margin-bottom: 4px;
-}
-.float-badge-label {
-  font-size: 0.72rem;
-  line-height: 1.3;
-  color: #d1deda;
-  display: block;
-}
-
-/* Bottom floating doctor card */
-.hero-bottom-card {
-  position: absolute;
-  bottom: -20px;
-  left: 20px;
-  right: 20px;
-  background: #ffffff;
-  padding: 14px 20px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--color-border);
-  border-left: 4px solid var(--color-teal);
-  box-shadow: 0 12px 30px rgba(33, 51, 96, 0.09);
-  z-index: 5;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
-  cursor: pointer;
-}
-.hero-bottom-card:hover {
-  box-shadow: 0 14px 32px rgba(33, 51, 96, 0.12);
-  border-color: var(--color-teal);
-}
-.bottom-card-plus {
-  color: var(--color-teal);
-  font-weight: 800;
-  font-size: 1.25rem;
-}
 .bottom-card-name {
-  font-family: var(--font-heading);
-  font-size: 0.95rem;
-  font-weight: 700;
   color: var(--color-heading);
   display: block;
 }
@@ -2596,6 +2942,29 @@ h1, h2, h3, h4, h5, h6, .heading-editorial {
   }
 
   /* Hero image & container responsive scaling */
+  .hero-photo-card,
+  .meet-image-card,
+  .doctor-header-card {
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+  }
+  .hero-caption-card-below,
+  .meet-caption-card-below,
+  .doctor-caption-card-below {
+    padding: 12px 14px;
+  }
+  .hero-caption-title,
+  .meet-caption-name,
+  .doctor-caption-title {
+    font-size: 0.98rem;
+  }
+  .hero-caption-specialty,
+  .meet-caption-specialty,
+  .doctor-caption-specialty {
+    font-size: 0.76rem;
+  }
   .hero-arch-container {
     width: 280px;
     height: 380px;

@@ -481,11 +481,11 @@ export const doctorData = {
       isVerified: true
     },
     {
-      id: 'private-clinic',
+      id: 'clinic-chamber',
       name: "Dr. Sushant Sethi Clinic & Diagnostics",
-      facilityType: 'Private Outpatient Clinic & Diagnostics',
+      facilityType: 'Outpatient Clinic & Diagnostics',
       affiliationType: 'Evening Consultation Clinic',
-      hospital: 'Private Consultation Chamber',
+      hospital: 'Consultation Chamber',
       address: 'Bhubaneswar, Odisha',
       city: 'Bhubaneswar',
       phone: '+91 91246 60465',

@@ -92,31 +92,31 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right Media (Doctor Portrait in Arch Frame) */}
+            {/* Right Media (Senior Consultant at Apollo Consultation Desk) */}
             <div className="hero-media-wrap">
-              <div className="hero-arch-container">
-                <div className="hero-arch-ring"></div>
-                <Image
-                  src="/images/hero-doctor.png"
-                  alt={doctorData.doctor.fullName}
-                  width={340}
-                  height={430}
-                  priority
-                  className="hero-doctor-img"
-                />
-
-                {/* Floating Experience Badge */}
-                <div className="hero-float-badge">
-                  <span className="float-badge-num">25+</span>
-                  <span className="float-badge-label">Years of medical<br />experience</span>
+              <div className="hero-photo-card">
+                <div className="hero-photo-frame">
+                  <Image
+                    src="/images/apollo-consultation-chamber.jpg"
+                    alt={`${doctorData.doctor.fullName} - Senior Consultant Gastroenterologist at Apollo Hospitals`}
+                    width={480}
+                    height={340}
+                    priority
+                    className="hero-chamber-img"
+                  />
                 </div>
 
-                {/* Floating White Doctor Card */}
-                <div className="hero-bottom-card">
-                  <span className="bottom-card-plus">+</span>
-                  <div>
-                    <span className="bottom-card-name">{doctorData.doctor.fullName}</span>
-                    <span className="bottom-card-degrees">MBBS • MD (Medicine) • DNB (Gastroenterology)</span>
+                {/* Text card placed CLEANLY BELOW the photo - NEVER OVERLAPPING */}
+                <div className="hero-caption-card-below">
+                  <div className="hero-caption-badge-row">
+                    <span className="hero-caption-plus">+</span>
+                    <div>
+                      <div className="hero-caption-title">Senior Consultant</div>
+                      <div className="hero-caption-specialty">Gastroenterology, Hepatology, Therapeutic Endoscopy &amp; Liver Transplantation</div>
+                    </div>
+                  </div>
+                  <div className="hero-caption-location">
+                    APOLLO HOSPITALS BHUBANESWAR • CONSULTATION DESK
                   </div>
                 </div>
               </div>
@@ -213,28 +213,33 @@ export default function HomePage() {
         <DigestiveCurve style={{ position: 'absolute', bottom: '15px', left: '2%', zIndex: 0 }} />
         <div className="container">
           <div className="meet-grid">
-            {/* Left Image (Same photo and frame as The Doctor page) */}
+            {/* Left Image (Dr. Sethi Portrait with Card Placed CLEANLY BELOW) */}
             <div style={{ display: 'flex', justifyContent: 'center' }}>
-              <div className="meet-image-card" style={{ maxWidth: '340px', width: '100%' }}>
+              <div className="meet-image-card" style={{ maxWidth: '360px', width: '100%' }}>
                 <div className="meet-img-frame">
                   <Image
-                    src="/images/apollo-consultation-chamber.jpg"
-                    alt={`${doctorData.doctor.fullName} at Apollo Hospitals Bhubaneswar`}
-                    width={340}
-                    height={300}
-                    className="meet-img"
+                    src="/images/hero-doctor.png"
+                    alt={`${doctorData.doctor.fullName} - Senior Consultant Gastroenterologist`}
+                    width={360}
+                    height={420}
+                    className="meet-portrait-img"
                     priority
                   />
-                  <div className="meet-floating-badge">
-                    <span className="badge-plus">+</span>
+                </div>
+
+                {/* Text card placed CLEANLY BELOW the photo - NEVER OVERLAPPING */}
+                <div className="meet-caption-card-below">
+                  <div className="meet-caption-row">
+                    <span className="meet-caption-plus">+</span>
                     <div>
-                      <div className="badge-title">Senior Consultant</div>
-                      <div className="badge-sub">Gastroenterology, Hepatology &amp; Liver Care</div>
+                      <div className="meet-caption-name">{doctorData.doctor.fullName}</div>
+                      <div className="meet-caption-degrees">MBBS • MD (Medicine) • DNB (Gastroenterology)</div>
+                      <div className="meet-caption-specialty">Gastroenterology, Hepatology, Therapeutic Endoscopy &amp; Liver Transplantation</div>
                     </div>
                   </div>
-                </div>
-                <div className="meet-card-caption">
-                  APOLLO HOSPITALS BHUBANESWAR CONSULTATION DESK
+                  <div className="meet-caption-sub">
+                    25+ YEARS SENIOR CLINICAL EXPERTISE &amp; ACADEMIC LEADERSHIP
+                  </div>
                 </div>
               </div>
             </div>
@@ -435,7 +440,7 @@ export default function HomePage() {
                 Separate Hospital &amp; Clinic Timings
               </h2>
               <p className="clinic-cta-sub" style={{ margin: 0 }}>
-                In-person consultations available at Apollo Hospitals (Morning/Afternoon) and Private Clinic (Evening).
+                In-person consultations available at Apollo Hospitals (Morning/Afternoon) and Clinic Consultation Chamber (Evening).
               </p>
             </div>
             <div>
@@ -546,7 +551,7 @@ export default function HomePage() {
                   borderRadius: '4px',
                   textTransform: 'uppercase'
                 }}>
-                  Evening Private Clinic
+                  Evening Clinic Chamber
                 </span>
               </div>
               <div style={{ padding: '24px' }}>
@@ -554,7 +559,7 @@ export default function HomePage() {
                   Dr. Sushant Sethi Clinic &amp; Diagnostics
                 </h3>
                 <p style={{ fontSize: '0.86rem', color: 'var(--color-text-muted)', marginBottom: '14px' }}>
-                  Private Consultation Chamber &amp; Diagnostics, Bhubaneswar, Odisha
+                  Consultation Chamber &amp; Diagnostics, Bhubaneswar, Odisha
                 </p>
                 <div style={{
                   backgroundColor: 'var(--color-teal-soft)',
@@ -570,12 +575,12 @@ export default function HomePage() {
                     Monday – Saturday: 06:30 PM – 08:30 PM
                   </div>
                   <div style={{ fontSize: '0.78rem', color: 'var(--color-text-body)', marginTop: '2px' }}>
-                    Private consultations &amp; comprehensive diagnostics
+                    Consultations &amp; comprehensive diagnostics
                   </div>
                 </div>
                 <button
                   type="button"
-                  onClick={() => openBooking('Clinic Consultation', 'private-clinic')}
+                  onClick={() => openBooking('Clinic Consultation', 'clinic-chamber')}
                   className="btn btn-primary btn-full"
                 >
                   <span>Book Clinic Visit</span>

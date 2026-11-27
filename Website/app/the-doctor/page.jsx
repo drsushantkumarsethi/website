@@ -46,25 +46,33 @@ export default function TheDoctorPage() {
               </p>
             </div>
 
-            {/* Doctor Photo in Chair with Floating Card (Screenshot 7) */}
+            {/* Doctor Photo Outside Apollo Hospital with Card Placed CLEANLY BELOW */}
             <div style={{ display: 'flex', justifyContent: 'center' }}>
-              <div className="meet-image-card" style={{ maxWidth: '340px', width: '100%' }}>
-                <div className="meet-img-frame">
+              <div className="doctor-header-card" style={{ maxWidth: '380px', width: '100%' }}>
+                <div className="doctor-header-img-frame">
                   <Image
-                    src="/images/apollo-consultation-chamber.jpg"
-                    alt={doctorData.doctor.fullName}
-                    width={340}
-                    height={300}
-                    className="meet-img"
+                    src="/images/apollo-hospital-exterior.jpg"
+                    alt={`${doctorData.doctor.fullName} at Apollo Hospitals Bhubaneswar`}
+                    width={380}
+                    height={320}
+                    className="doctor-header-img"
                     priority
                   />
-                  <div className="meet-floating-badge">
-                    <div className="meet-badge-title">+ Senior Consultant</div>
-                    <div className="meet-badge-sub">Gastroenterology, Hepatology &amp; Liver Transplant</div>
-                  </div>
                 </div>
-                <div className="meet-caption">
-                  APOLLO HOSPITALS BHUBANESWAR CONSULTATION DESK
+
+                {/* Text card placed CLEANLY BELOW the photo - NEVER OVERLAPPING */}
+                <div className="doctor-caption-card-below">
+                  <div className="doctor-caption-row">
+                    <span className="doctor-caption-plus">+</span>
+                    <div>
+                      <div className="doctor-caption-title">{doctorData.doctor.fullName}</div>
+                      <div className="doctor-caption-sub">Senior Consultant &amp; Head of Academics</div>
+                      <div className="doctor-caption-specialty">Gastroenterology, Hepatology, Therapeutic Endoscopy &amp; Liver Transplantation</div>
+                    </div>
+                  </div>
+                  <div className="doctor-caption-loc">
+                    APOLLO HOSPITALS BHUBANESWAR • OPD &amp; ENDOSCOPY SUITE
+                  </div>
                 </div>
               </div>
             </div>
@@ -188,37 +196,37 @@ export default function TheDoctorPage() {
                 ))}
               </div>
 
-              {/* Real Facility Photos */}
+              {/* Real Facility Photos (Zero Repetition - Clinic Chamber & Diagnostics Lab) */}
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '20px', marginTop: '30px' }}>
-                <div style={{ borderRadius: '10px', overflow: 'hidden', border: '1px solid var(--color-border)', backgroundColor: '#ffffff' }}>
-                  <div style={{ position: 'relative', width: '100%', height: '180px' }}>
-                    <Image
-                      src="/images/apollo-hospital-exterior.jpg"
-                      alt="Dr. Sethi at Apollo Hospitals Bhubaneswar"
-                      fill
-                      sizes="(max-width: 768px) 100vw, 400px"
-                      style={{ objectFit: 'cover' }}
-                    />
-                  </div>
-                  <div style={{ padding: '12px 16px', fontSize: '0.84rem', fontWeight: 600, color: 'var(--color-heading)' }}>
-                    Apollo Hospitals Bhubaneswar
-                    <div style={{ fontSize: '0.76rem', color: 'var(--color-text-muted)', fontWeight: 400 }}>Main hospital entrance &amp; OPD center</div>
-                  </div>
-                </div>
-
-                <div style={{ borderRadius: '10px', overflow: 'hidden', border: '1px solid var(--color-border)', backgroundColor: '#ffffff' }}>
+                <div style={{ borderRadius: '10px', overflow: 'hidden', border: '1px solid var(--color-border)', backgroundColor: '#ffffff', boxShadow: '0 4px 16px rgba(10, 27, 63, 0.05)' }}>
                   <div style={{ position: 'relative', width: '100%', height: '180px' }}>
                     <Image
                       src="/images/clinic-consultation-chamber.jpg"
-                      alt="Dr. Sethi at Private Clinic Chamber"
+                      alt="Dr. Sethi at Clinic Consultation Chamber"
                       fill
                       sizes="(max-width: 768px) 100vw, 400px"
                       style={{ objectFit: 'cover' }}
                     />
                   </div>
                   <div style={{ padding: '12px 16px', fontSize: '0.84rem', fontWeight: 600, color: 'var(--color-heading)' }}>
-                    Private Clinic Consultation Chamber
+                    Clinic Consultation Chamber
                     <div style={{ fontSize: '0.76rem', color: 'var(--color-text-muted)', fontWeight: 400 }}>Evening consultation chamber in Bhubaneswar</div>
+                  </div>
+                </div>
+
+                <div style={{ borderRadius: '10px', overflow: 'hidden', border: '1px solid var(--color-border)', backgroundColor: '#ffffff', boxShadow: '0 4px 16px rgba(10, 27, 63, 0.05)' }}>
+                  <div style={{ position: 'relative', width: '100%', height: '180px' }}>
+                    <Image
+                      src="/images/clinic-diagnostics-lab.jpg"
+                      alt="Comprehensive Diagnostic Laboratory"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 400px"
+                      style={{ objectFit: 'cover' }}
+                    />
+                  </div>
+                  <div style={{ padding: '12px 16px', fontSize: '0.84rem', fontWeight: 600, color: 'var(--color-heading)' }}>
+                    Diagnostic Laboratory &amp; Advanced Testing
+                    <div style={{ fontSize: '0.76rem', color: 'var(--color-text-muted)', fontWeight: 400 }}>Comprehensive clinical analyzers &amp; investigations</div>
                   </div>
                 </div>
               </div>
