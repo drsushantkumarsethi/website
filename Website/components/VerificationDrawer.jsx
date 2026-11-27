@@ -55,7 +55,7 @@ export default function VerificationDrawer({ isOpen, onClose }) {
     },
     {
       fieldName: 'Official Clinic Phone',
-      currentValue: contact.phone || '+91 80930 60180',
+      currentValue: contact.phone || '+91 91246 60465',
       status: 'verified',
       location: 'doctorData.contact.phone'
     },

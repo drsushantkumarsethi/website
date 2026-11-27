@@ -20,7 +20,7 @@ export const blogPosts = [
     updatedAt: '18 November 2026',
     author: {
       name: 'Dr. Sushant Kumar Sethi',
-      title: 'Senior Consultant Gastroenterology & Hepatology',
+      title: 'Senior Consultant, Gastroenterology, Hepatology, Therapeutic Endoscopy & Liver Transplantation',
       qualifications: 'MBBS, MD (Medicine), DNB (Gastroenterology)',
       experience: '25+ Years Experience'
     },
@@ -90,7 +90,7 @@ export const blogPosts = [
     updatedAt: '15 November 2026',
     author: {
       name: 'Dr. Sushant Kumar Sethi',
-      title: 'Senior Consultant Gastroenterology & Hepatology',
+      title: 'Senior Consultant, Gastroenterology, Hepatology, Therapeutic Endoscopy & Liver Transplantation',
       qualifications: 'MBBS, MD (Medicine), DNB (Gastroenterology)',
       experience: '25+ Years Experience'
     },
@@ -157,7 +157,7 @@ export const blogPosts = [
     updatedAt: '10 November 2026',
     author: {
       name: 'Dr. Sushant Kumar Sethi',
-      title: 'Senior Consultant Gastroenterology & Hepatology',
+      title: 'Senior Consultant, Gastroenterology, Hepatology, Therapeutic Endoscopy & Liver Transplantation',
       qualifications: 'MBBS, MD (Medicine), DNB (Gastroenterology)',
       experience: '25+ Years Experience'
     },
@@ -223,7 +223,7 @@ export const blogPosts = [
     updatedAt: '02 November 2026',
     author: {
       name: 'Dr. Sushant Kumar Sethi',
-      title: 'Senior Consultant Gastroenterology & Hepatology',
+      title: 'Senior Consultant, Gastroenterology, Hepatology, Therapeutic Endoscopy & Liver Transplantation',
       qualifications: 'MBBS, MD (Medicine), DNB (Gastroenterology)',
       experience: '25+ Years Experience'
     },
@@ -286,7 +286,7 @@ export const blogPosts = [
     updatedAt: '25 October 2026',
     author: {
       name: 'Dr. Sushant Kumar Sethi',
-      title: 'Senior Consultant Gastroenterology & Hepatology',
+      title: 'Senior Consultant, Gastroenterology, Hepatology, Therapeutic Endoscopy & Liver Transplantation',
       qualifications: 'MBBS, MD (Medicine), DNB (Gastroenterology)',
       experience: '25+ Years Experience'
     },
@@ -349,7 +349,7 @@ export const blogPosts = [
     updatedAt: '12 October 2026',
     author: {
       name: 'Dr. Sushant Kumar Sethi',
-      title: 'Senior Consultant Gastroenterology & Hepatology',
+      title: 'Senior Consultant, Gastroenterology, Hepatology, Therapeutic Endoscopy & Liver Transplantation',
       qualifications: 'MBBS, MD (Medicine), DNB (Gastroenterology)',
       experience: '25+ Years Experience'
     },

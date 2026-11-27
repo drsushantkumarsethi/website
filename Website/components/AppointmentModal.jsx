@@ -266,7 +266,7 @@ Submitted via Dr. Sushant Kumar Sethi Consultation Desk`;
                   >
                     {clinicsList.map((clinic) => (
                       <option key={clinic.id} value={clinic.id}>
-                        {clinic.name} ({clinic.city || 'Bhubaneswar'})
+                        {clinic.name} — {clinic.consultationTimings || clinic.timing}
                       </option>
                     ))}
                   </select>

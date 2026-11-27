@@ -242,7 +242,7 @@ export default function BlogArticleClient({ post, relatedPosts, doctor }) {
                 {doctor.primaryTitle} • {doctor.degrees.join(' • ')}
               </div>
               <p style={{ fontSize: '0.92rem', lineHeight: 1.6, color: 'var(--color-text-body)', margin: 0 }}>
-                {doctor.experienceSummary} Head of Academics, Gastroenterology &amp; Hepatology at Apollo Hospitals Bhubaneswar.
+                {doctor.experienceSummary} Head of Academics, Gastroenterology, Hepatology, Therapeutic Endoscopy &amp; Liver Transplantation at Apollo Hospitals Bhubaneswar.
               </p>
             </div>
           </div>

@@ -63,8 +63,8 @@ export function MedicalStethoscope({ style = {}, className = '' }) {
         strokeLinecap="round"
       />
       {/* Chest piece bell & diaphragm */}
-      <circle cx="65" cy="48" r="6" stroke="#21cdc0" strokeWidth="1.5" />
-      <circle cx="65" cy="48" r="2" fill="#21cdc0" />
+      <circle cx="65" cy="48" r="6" stroke="#506f2e" strokeWidth="1.5" />
+      <circle cx="65" cy="48" r="2" fill="#506f2e" />
     </svg>
   );
 }
@@ -89,13 +89,13 @@ export function HepaticCellLattice({ style = {}, className = '' }) {
       {/* Hexagon 1 */}
       <polygon points="30,10 50,22 50,44 30,56 10,44 10,22" stroke="#213360" strokeWidth="1" />
       {/* Hexagon 2 */}
-      <polygon points="70,10 90,22 90,44 70,56 50,44 50,22" stroke="#21cdc0" strokeWidth="1" />
+      <polygon points="70,10 90,22 90,44 70,56 50,44 50,22" stroke="#506f2e" strokeWidth="1" />
       {/* Hexagon 3 */}
       <polygon points="50,44 70,56 70,78 50,90 30,78 30,56" stroke="#213360" strokeWidth="1" />
       {/* Hexagon 4 */}
       <polygon points="90,44 110,56 110,78 90,90 70,78 70,56" stroke="#213360" strokeWidth="1" />
       {/* Hexagon 5 */}
-      <polygon points="30,78 50,90 50,112 30,124 10,112 10,90" stroke="#21cdc0" strokeWidth="1" />
+      <polygon points="30,78 50,90 50,112 30,124 10,112 10,90" stroke="#506f2e" strokeWidth="1" />
     </svg>
   );
 }
@@ -120,10 +120,10 @@ export function MedicalCrossSparkle({ style = {}, className = '' }) {
       {/* Medical Cross */}
       <path d="M20 8 L20 32 M8 20 L32 20" stroke="#213360" strokeWidth="2" strokeLinecap="round" />
       {/* Corner Sparkle Dots */}
-      <circle cx="12" cy="12" r="1.5" fill="#21cdc0" />
-      <circle cx="28" cy="12" r="1.5" fill="#21cdc0" />
-      <circle cx="12" cy="28" r="1.5" fill="#21cdc0" />
-      <circle cx="28" cy="28" r="1.5" fill="#21cdc0" />
+      <circle cx="12" cy="12" r="1.5" fill="#506f2e" />
+      <circle cx="28" cy="12" r="1.5" fill="#506f2e" />
+      <circle cx="12" cy="28" r="1.5" fill="#506f2e" />
+      <circle cx="28" cy="28" r="1.5" fill="#506f2e" />
     </svg>
   );
 }
@@ -153,7 +153,7 @@ export function DigestiveCurve({ style = {}, className = '' }) {
       />
       <path
         d="M0 35 C50 15, 90 45, 140 25 C190 5, 210 40, 240 25"
-        stroke="#21cdc0"
+        stroke="#506f2e"
         strokeWidth="1"
       />
     </svg>

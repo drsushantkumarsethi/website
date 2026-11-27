@@ -244,11 +244,11 @@ export default function ConditionDetailClient({ condition, relatedConditions }) 
 
         {/* Warning Box */}
         <div style={{
-          border: '1px solid #def8f6',
+          border: '1px solid #c7d8b8',
           borderLeft: '4px solid var(--color-teal)',
           borderRadius: '8px',
           padding: '20px 24px',
-          backgroundColor: '#f8fdfd',
+          backgroundColor: 'var(--color-teal-soft)',
           display: 'flex',
           alignItems: 'flex-start',
           gap: '16px',

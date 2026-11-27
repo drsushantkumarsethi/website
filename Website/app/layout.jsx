@@ -44,7 +44,7 @@ export const metadata = {
     icon: '/favicon.svg'
   },
   openGraph: {
-    title: `${doctorData.doctor.fullName} | Senior Consultant, Gastroenterology & Hepatology`,
+    title: `${doctorData.doctor.fullName} | Senior Consultant, Gastroenterology, Hepatology, Therapeutic Endoscopy & Liver Transplantation`,
     description: doctorData.doctor.experienceSummary,
     url: 'https://drsushantkumarsethi.com',
     siteName: doctorData.doctor.fullName,
@@ -69,14 +69,16 @@ const jsonLd = {
       '@id': 'https://drsushantkumarsethi.com/#physician',
       name: 'Dr. Sushant Kumar Sethi',
       url: 'https://drsushantkumarsethi.com',
-      image: 'https://drsushantkumarsethi.com/images/doctor-chair.jpg',
-      telephone: '+91 80930 60180',
+      image: 'https://drsushantkumarsethi.com/images/apollo-consultation-chamber.jpg',
+      telephone: '+91 91246 60465',
       email: 'drsushantkumarsethi@gmail.com',
       medicalSpecialty: [
         'https://schema.org/Gastroenterology',
-        'Hepatology'
+        'Hepatology',
+        'Therapeutic Endoscopy',
+        'Liver Transplantation'
       ],
-      jobTitle: 'Senior Consultant Gastroenterologist & Hepatologist',
+      jobTitle: 'Senior Consultant, Gastroenterology, Hepatology, Therapeutic Endoscopy & Liver Transplantation',
       description: doctorData.doctor.experienceSummary,
       alumniOf: [
         {
@@ -101,6 +103,7 @@ const jsonLd = {
         { '@type': 'MedicalProcedure', name: 'Colonoscopy & Polypectomy' },
         { '@type': 'MedicalProcedure', name: 'Endoscopic Ultrasound (EUS)' },
         { '@type': 'MedicalProcedure', name: 'ERCP' },
+        { '@type': 'MedicalProcedure', name: 'Liver Transplantation Consultation' },
         { '@type': 'MedicalTherapy', name: 'Fatty Liver Disease (MASLD) Treatment' },
         { '@type': 'MedicalTherapy', name: 'GERD & Acid Reflux Management' }
       ]
@@ -108,9 +111,9 @@ const jsonLd = {
     {
       '@type': 'MedicalBusiness',
       '@id': 'https://drsushantkumarsethi.com/#clinic',
-      name: 'Dr. Sushant Kumar Sethi - Clinic & Consultation Desk',
+      name: 'Dr. Sushant Kumar Sethi - Apollo Hospitals OPD & Evening Clinic',
       url: 'https://drsushantkumarsethi.com',
-      telephone: '+91 80930 60180',
+      telephone: '+91 91246 60465',
       priceRange: '₹₹',
       openingHoursSpecification: [
         {
@@ -118,6 +121,12 @@ const jsonLd = {
           dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
           opens: '10:00',
           closes: '17:00'
+        },
+        {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+          opens: '18:30',
+          closes: '20:30'
         }
       ],
       address: {

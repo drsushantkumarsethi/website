@@ -35,39 +35,39 @@ export default function SiteHeader() {
 
   return (
     <>
-      {/* Top Clinical Announcement Strip - IIGH Hospital Style */}
+      {/* Top Clinical Announcement Strip - Hospital & Clinic Timings */}
       <div className="header-top-bar" role="region" aria-label="Clinical Notice">
         <div className="container header-top-inner">
           <div className="header-top-left">
-            <span className="topbar-badge">Consultation Desk</span>
+            <span className="topbar-badge">Appointments &amp; Helpline</span>
             <a href={`tel:${doctorData.contact.phone.replace(/\s+/g, '')}`} className="topbar-item">
               <Phone size={12} className="topbar-icon" />
               <span>Direct: {doctorData.contact.phone}</span>
             </a>
             <span className="topbar-sep">•</span>
-            <span className="topbar-item">
-              <MapPin size={12} className="topbar-icon" />
-              <span>Bhubaneswar, Odisha</span>
+            <span className="topbar-item" title="Hospital OPD at Apollo Hospitals">
+              <Clock size={12} className="topbar-icon" />
+              <span>Hospital: 10:00 AM - 5:00 PM</span>
             </span>
             <span className="topbar-sep">•</span>
-            <span className="topbar-item">
+            <span className="topbar-item" title="Evening Clinic Timings">
               <Clock size={12} className="topbar-icon" />
-              <span>Mon - Sat: 9:00 AM - 7:00 PM</span>
+              <span>Clinic: 6:30 PM - 8:30 PM</span>
             </span>
           </div>
           <div className="header-top-right">
             <a
-              href={`https://wa.me/918093060180?text=${encodeURIComponent('Hello Dr. Sushant Kumar Sethi Clinic, I would like to enquire about a consultation.')}`}
+              href={`https://wa.me/919124660465?text=${encodeURIComponent('Hello Dr. Sushant Kumar Sethi Clinic, I would like to enquire about a consultation.')}`}
               target="_blank"
               rel="noopener noreferrer"
               className="topbar-whatsapp"
             >
               <MessageCircle size={13} />
-              <span>WhatsApp Desk</span>
+              <span>WhatsApp Chat</span>
             </a>
             <span className="topbar-sep">|</span>
-            <Link href="/clinic-appointments" className="topbar-link">
-              <span>Clinic appointments</span>
+            <Link href="/locations" className="topbar-link">
+              <span>Locations &amp; Hours</span>
             </Link>
           </div>
         </div>
@@ -88,7 +88,7 @@ export default function SiteHeader() {
             </div>
             <div className="brand-text-col">
               <span className="brand-name">{doctorData.doctor.fullName}</span>
-              <span className="brand-sub">GASTROENTEROLOGY &amp; HEPATOLOGY</span>
+              <span className="brand-sub">GASTROENTEROLOGY, HEPATOLOGY, ENDOSCOPY &amp; LIVER TRANSPLANT</span>
             </div>
           </Link>
 
@@ -160,19 +160,59 @@ export default function SiteHeader() {
                 </li>
               ))}
             </ul>
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                openBooking('General Consultation');
-              }}
-              className="btn btn-primary btn-full"
-            >
-              <span>Book a consultation</span>
-              <span className="arrow-icon">↗</span>
-            </button>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  openBooking('General Consultation');
+                }}
+                className="btn btn-primary btn-full"
+              >
+                <span>Book a consultation</span>
+                <span className="arrow-icon">↗</span>
+              </button>
+              <a
+                href={`tel:${doctorData.contact.phone.replace(/\s+/g, '')}`}
+                className="btn btn-secondary btn-full"
+                style={{ textAlign: 'center' }}
+              >
+                <Phone size={14} style={{ display: 'inline', marginRight: '6px' }} />
+                <span>Call {doctorData.contact.phone}</span>
+              </a>
+            </div>
           </div>
         )}
       </header>
+
+      {/* Sticky Mobile Quick Action Bar (Visible only on mobile <= 768px) */}
+      <nav className="mobile-bottom-bar" aria-label="Mobile quick actions">
+        <a
+          href={`tel:${doctorData.contact.phone.replace(/\s+/g, '')}`}
+          className="mobile-bar-btn mobile-bar-call"
+          aria-label="Call Doctor Consultation Desk"
+        >
+          <Phone size={18} />
+          <span>Call Now</span>
+        </a>
+        <a
+          href={`https://wa.me/919124660465?text=${encodeURIComponent('Hello Dr. Sushant Kumar Sethi Clinic, I would like to enquire about a consultation.')}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mobile-bar-btn mobile-bar-whatsapp"
+          aria-label="Chat on WhatsApp"
+        >
+          <MessageCircle size={18} />
+          <span>WhatsApp</span>
+        </a>
+        <button
+          type="button"
+          onClick={() => openBooking('Mobile Quick Booking')}
+          className="mobile-bar-btn mobile-bar-book"
+          aria-label="Book a consultation appointment"
+        >
+          <span>Book Visit</span>
+        </button>
+      </nav>
     </>
   );
 }

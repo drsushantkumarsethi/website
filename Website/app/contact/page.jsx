@@ -233,8 +233,8 @@ export default function ContactPage() {
                         fontSize: '0.92rem'
                       }}
                     >
-                      <option value="Apollo Hospitals, Bhubaneswar">Apollo Hospitals, Bhubaneswar</option>
-                      <option value="Specialist Consultation Center, Central Bhubaneswar">Specialist Consultation Center, Central Bhubaneswar</option>
+                      <option value="Apollo Hospitals, Bhubaneswar">Apollo Hospitals, Bhubaneswar (Hospital OPD: 10:00 AM - 5:00 PM)</option>
+                      <option value="Dr. Sushant Sethi Clinic & Diagnostics">Dr. Sushant Sethi Clinic &amp; Diagnostics (Evening Clinic: 6:30 PM - 8:30 PM)</option>
                     </select>
                   </div>
                 </div>
@@ -370,13 +370,12 @@ export default function ContactPage() {
 
               <div>
                 <div style={{ fontSize: '0.74rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--color-text-light)', marginBottom: '4px' }}>
-                  Consultation Schedule
+                  Consultation Schedules
                 </div>
-                <div style={{ fontWeight: 600, color: 'var(--color-heading)' }}>
-                  Monday through Saturday
-                </div>
-                <div style={{ fontSize: '0.85rem', color: 'var(--color-text-muted)' }}>
-                  Prior appointment allocation recommended
+                <div style={{ fontSize: '0.85rem', color: 'var(--color-text-body)', lineHeight: '1.5' }}>
+                  <div>• <strong>Apollo Hospitals OPD:</strong> Mon – Sat: 10:00 AM – 05:00 PM</div>
+                  <div>• <strong>Evening Clinic:</strong> Mon – Sat: 06:30 PM – 08:30 PM</div>
+                  <div style={{ marginTop: '4px', color: 'var(--color-text-muted)' }}>Prior appointment allocation recommended</div>
                 </div>
               </div>
             </div>

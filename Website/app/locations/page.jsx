@@ -17,9 +17,9 @@ export default function LocationsPage() {
         <div className="container">
           <div className="locations-header-content">
             <span className="section-eyebrow">Outpatient Consultation Centers</span>
-            <h1 className="locations-title">Clinic Locations & Schedules</h1>
+            <h1 className="locations-title">Hospital &amp; Clinic Schedules</h1>
             <p className="locations-subtitle">
-              Dr. Sushant Kumar Sethi conducts scheduled outpatient consultations at premier clinical centers in Bhubaneswar, Odisha.
+              Dr. Sushant Kumar Sethi conducts outpatient consultations across two dedicated clinical locations in Bhubaneswar, Odisha with separate morning and evening timings.
             </p>
           </div>
         </div>

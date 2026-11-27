@@ -31,7 +31,7 @@ export default function HomePage() {
             <div className="hero-text-col">
               <div className="eyebrow-wrap">
                 <span className="eyebrow-line"></span>
-                <span className="eyebrow-text">SENIOR CONSULTANT • GASTROENTEROLOGY</span>
+                <span className="eyebrow-text">SENIOR CONSULTANT • GASTROENTEROLOGY, HEPATOLOGY, ENDOSCOPY &amp; LIVER TRANSPLANT</span>
               </div>
               <div className="hero-sub-label">BHUBANESWAR • ODISHA</div>
 
@@ -40,10 +40,10 @@ export default function HomePage() {
               </h1>
 
               <div className="hero-primary-title">
-                Senior Consultant, Gastroenterology &amp; Hepatology
+                Senior Consultant, Gastroenterology, Hepatology, Therapeutic Endoscopy &amp; Liver Transplantation
               </div>
               <div className="hero-academic-title">
-                Head of Academics • Gastroenterology &amp; Hepatology
+                Head of Academics • Gastroenterology, Hepatology, Therapeutic Endoscopy &amp; Liver Transplantation
               </div>
 
               <div className="hero-badges-row">
@@ -218,8 +218,8 @@ export default function HomePage() {
               <div className="meet-image-card" style={{ maxWidth: '340px', width: '100%' }}>
                 <div className="meet-img-frame">
                   <Image
-                    src="/images/doctor-chair.jpg"
-                    alt={doctorData.doctor.fullName}
+                    src="/images/apollo-consultation-chamber.jpg"
+                    alt={`${doctorData.doctor.fullName} at Apollo Hospitals Bhubaneswar`}
                     width={340}
                     height={300}
                     className="meet-img"
@@ -229,12 +229,12 @@ export default function HomePage() {
                     <span className="badge-plus">+</span>
                     <div>
                       <div className="badge-title">Senior Consultant</div>
-                      <div className="badge-sub">Gastroenterology &amp; Hepatology</div>
+                      <div className="badge-sub">Gastroenterology, Hepatology &amp; Liver Care</div>
                     </div>
                   </div>
                 </div>
                 <div className="meet-card-caption">
-                  CLINICAL EXPERIENCE, ACADEMIC LEADERSHIP
+                  APOLLO HOSPITALS BHUBANESWAR CONSULTATION DESK
                 </div>
               </div>
             </div>
@@ -421,33 +421,167 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 6. Your Clinic Consultation Strip (Screenshot 5 Bottom) */}
-      <section className="section-clinic-cta">
+      {/* 6. Consultation Centers & Practice Hours */}
+      <section className="section-clinic-cta" style={{ padding: '70px 0' }}>
         <div className="container">
           <div className="eyebrow-wrap">
             <span className="eyebrow-line"></span>
-            <span className="eyebrow-text">YOUR CLINIC CONSULTATION</span>
+            <span className="eyebrow-text">CONSULTATION CENTERS &amp; SCHEDULES</span>
           </div>
 
-          <div className="clinic-cta-grid">
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '36px', flexWrap: 'wrap', gap: '20px' }}>
             <div>
-              <h2 className="clinic-cta-heading">
-                A conversation.<br />A considered next step.
+              <h2 className="clinic-cta-heading" style={{ fontSize: '2.5rem', marginBottom: '8px' }}>
+                Separate Hospital &amp; Clinic Timings
               </h2>
-              <p className="clinic-cta-sub">
-                Choose a preferred date and time on our appointment page.
+              <p className="clinic-cta-sub" style={{ margin: 0 }}>
+                In-person consultations available at Apollo Hospitals (Morning/Afternoon) and Private Clinic (Evening).
               </p>
             </div>
-
             <div>
-              <button
-                type="button"
-                onClick={() => openBooking('General Consultation')}
-                className="btn btn-primary"
+              <a
+                href={`tel:${doctorData.contact.phone.replace(/\s+/g, '')}`}
+                className="btn btn-secondary"
+                style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}
               >
-                <span>Book a consultation</span>
+                <span>Call {doctorData.contact.phone}</span>
                 <span className="arrow-icon">↗</span>
-              </button>
+              </a>
+            </div>
+          </div>
+
+          {/* Two Consultation Center Cards with Real Photos */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '30px' }}>
+            {/* Apollo Hospitals */}
+            <div style={{
+              backgroundColor: '#ffffff',
+              borderRadius: '14px',
+              border: '1px solid var(--color-border)',
+              overflow: 'hidden',
+              boxShadow: '0 8px 24px rgba(0,0,0,0.04)'
+            }}>
+              <div style={{ position: 'relative', width: '100%', height: '200px' }}>
+                <Image
+                  src="/images/apollo-hospital-exterior.jpg"
+                  alt="Apollo Hospitals Bhubaneswar"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 500px"
+                  style={{ objectFit: 'cover' }}
+                />
+                <span style={{
+                  position: 'absolute',
+                  top: '12px',
+                  left: '12px',
+                  backgroundColor: 'rgba(14, 32, 77, 0.9)',
+                  color: '#ffffff',
+                  fontSize: '0.72rem',
+                  fontWeight: 700,
+                  padding: '4px 10px',
+                  borderRadius: '4px',
+                  textTransform: 'uppercase'
+                }}>
+                  Hospital Consultations
+                </span>
+              </div>
+              <div style={{ padding: '24px' }}>
+                <h3 style={{ fontSize: '1.25rem', color: 'var(--color-heading)', marginBottom: '8px' }}>
+                  Apollo Hospitals, Bhubaneswar
+                </h3>
+                <p style={{ fontSize: '0.86rem', color: 'var(--color-text-muted)', marginBottom: '14px' }}>
+                  Sainik School Road, Unit 15, Bhubaneswar, Odisha 751005
+                </p>
+                <div style={{
+                  backgroundColor: 'var(--color-teal-soft)',
+                  border: '1px solid #c7d8b8',
+                  padding: '10px 14px',
+                  borderRadius: '8px',
+                  marginBottom: '18px'
+                }}>
+                  <div style={{ fontSize: '0.74rem', textTransform: 'uppercase', fontWeight: 700, color: '#354d1d' }}>
+                    Hospital Consultation Hours
+                  </div>
+                  <div style={{ fontSize: '0.98rem', fontWeight: 700, color: 'var(--color-heading)' }}>
+                    Monday – Saturday: 10:00 AM – 05:00 PM
+                  </div>
+                  <div style={{ fontSize: '0.78rem', color: 'var(--color-text-body)', marginTop: '2px' }}>
+                    Endoscopy, Colonoscopy, EUS, ERCP &amp; OPD
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => openBooking('Hospital Consultation', 'apollo-hospital')}
+                  className="btn btn-primary btn-full"
+                >
+                  <span>Book Hospital Visit</span>
+                  <span className="arrow-icon">↗</span>
+                </button>
+              </div>
+            </div>
+
+            {/* Evening Clinic */}
+            <div style={{
+              backgroundColor: '#ffffff',
+              borderRadius: '14px',
+              border: '1px solid var(--color-border)',
+              overflow: 'hidden',
+              boxShadow: '0 8px 24px rgba(0,0,0,0.04)'
+            }}>
+              <div style={{ position: 'relative', width: '100%', height: '200px' }}>
+                <Image
+                  src="/images/clinic-consultation-chamber.jpg"
+                  alt="Dr. Sushant Sethi Evening Clinic Chamber"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 500px"
+                  style={{ objectFit: 'cover' }}
+                />
+                <span style={{
+                  position: 'absolute',
+                  top: '12px',
+                  left: '12px',
+                  backgroundColor: 'rgba(80, 111, 46, 0.95)',
+                  color: '#ffffff',
+                  fontSize: '0.72rem',
+                  fontWeight: 700,
+                  padding: '4px 10px',
+                  borderRadius: '4px',
+                  textTransform: 'uppercase'
+                }}>
+                  Evening Private Clinic
+                </span>
+              </div>
+              <div style={{ padding: '24px' }}>
+                <h3 style={{ fontSize: '1.25rem', color: 'var(--color-heading)', marginBottom: '8px' }}>
+                  Dr. Sushant Sethi Clinic &amp; Diagnostics
+                </h3>
+                <p style={{ fontSize: '0.86rem', color: 'var(--color-text-muted)', marginBottom: '14px' }}>
+                  Private Consultation Chamber &amp; Diagnostics, Bhubaneswar, Odisha
+                </p>
+                <div style={{
+                  backgroundColor: 'var(--color-teal-soft)',
+                  border: '1px solid #c7d8b8',
+                  padding: '10px 14px',
+                  borderRadius: '8px',
+                  marginBottom: '18px'
+                }}>
+                  <div style={{ fontSize: '0.74rem', textTransform: 'uppercase', fontWeight: 700, color: '#354d1d' }}>
+                    Clinic Consultation Hours
+                  </div>
+                  <div style={{ fontSize: '0.98rem', fontWeight: 700, color: 'var(--color-heading)' }}>
+                    Monday – Saturday: 06:30 PM – 08:30 PM
+                  </div>
+                  <div style={{ fontSize: '0.78rem', color: 'var(--color-text-body)', marginTop: '2px' }}>
+                    Private consultations &amp; comprehensive diagnostics
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => openBooking('Clinic Consultation', 'private-clinic')}
+                  className="btn btn-primary btn-full"
+                >
+                  <span>Book Clinic Visit</span>
+                  <span className="arrow-icon">↗</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>

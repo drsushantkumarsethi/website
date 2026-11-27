@@ -82,7 +82,7 @@ Thank you.`;
             </h1>
 
             <p className="doctor-hero-subtitle" style={{ marginBottom: '20px' }}>
-              Request a consultation with Dr. Sushant Kumar Sethi, Senior Consultant in Gastroenterology &amp; Hepatology. Choose your preferred date and time, and leave a number where the clinic can reach you.
+              Request a consultation with Dr. Sushant Kumar Sethi, Senior Consultant in Gastroenterology, Hepatology, Therapeutic Endoscopy &amp; Liver Transplantation. Choose your preferred date and time, and leave a number where the clinic can reach you.
             </p>
 
             <div style={{
@@ -91,12 +91,12 @@ Thank you.`;
               gap: '8px',
               padding: '6px 14px',
               borderRadius: '9999px',
-              backgroundColor: '#f2f7f5',
+              backgroundColor: 'var(--color-teal-soft)',
               fontSize: '0.78rem',
-              color: 'var(--color-primary)',
-              fontWeight: 500
+              color: '#354d1d',
+              fontWeight: 600
             }}>
-              <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: 'var(--color-primary)' }}></span>
+              <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: 'var(--color-teal)' }}></span>
               <span>Appointment requests • Confirmation required</span>
             </div>
           </div>
@@ -112,7 +112,7 @@ Thank you.`;
             gap: '20px'
           }}>
             <Image
-              src="/images/hero-doctor.jpg"
+              src="/images/apollo-consultation-chamber.jpg"
               alt={doctorData.doctor.fullName}
               width={70}
               height={70}
@@ -123,7 +123,7 @@ Thank you.`;
                 {doctorData.doctor.fullName}
               </div>
               <div style={{ fontSize: '0.84rem', color: 'var(--color-text-muted)', marginBottom: '4px' }}>
-                Senior Consultant • Gastroenterology &amp; Hepatology
+                Senior Consultant • Gastroenterology, Hepatology, Therapeutic Endoscopy &amp; Liver Transplantation
               </div>
               <div style={{ fontSize: '0.75rem', color: 'var(--color-text-light)' }}>
                 MBBS • MD (Medicine) • DNB (Gastroenterology)
@@ -483,11 +483,13 @@ Thank you.`;
               backgroundColor: '#ffffff',
               marginBottom: '20px'
             }}>
-              <div style={{ fontWeight: 600, fontSize: '0.82rem', color: 'var(--color-heading)', marginBottom: '4px' }}>
-                Clinic information
+              <div style={{ fontWeight: 600, fontSize: '0.84rem', color: 'var(--color-heading)', marginBottom: '6px' }}>
+                Practice Locations &amp; Timings
               </div>
-              <div style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)', lineHeight: 1.4 }}>
-                The clinic&apos;s address, contact number, and consultation hours will be published once confirmed.
+              <div style={{ fontSize: '0.8rem', color: 'var(--color-text-body)', lineHeight: 1.5 }}>
+                • <strong>Hospital OPD (Apollo):</strong> Mon–Sat: 10:00 AM – 5:00 PM<br />
+                • <strong>Evening Clinic:</strong> Mon–Sat: 6:30 PM – 8:30 PM<br />
+                • <strong>Helpline:</strong> <a href={`tel:${doctorData.contact.phone.replace(/\s+/g, '')}`} style={{ color: 'var(--color-navy)', fontWeight: 600 }}>{doctorData.contact.phone}</a>
               </div>
             </div>
 

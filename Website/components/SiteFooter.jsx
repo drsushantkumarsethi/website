@@ -22,7 +22,7 @@ export default function SiteFooter() {
               </div>
               <div className="brand-text-col">
                 <span className="brand-name">{doctorData.doctor.fullName}</span>
-                <span className="brand-sub">GASTROENTEROLOGY &amp; HEPATOLOGY</span>
+                <span className="brand-sub">GASTROENTEROLOGY, HEPATOLOGY, ENDOSCOPY &amp; LIVER TRANSPLANT</span>
               </div>
             </Link>
 
@@ -122,8 +122,11 @@ export default function SiteFooter() {
               </button>
             </div>
 
-            <div className="contact-note">
-              Clinic address and consultation hours will be published once confirmed.
+            <div className="contact-note" style={{ fontSize: '0.8rem', lineHeight: '1.5', marginTop: '10px' }}>
+              <strong style={{ color: 'var(--color-heading)', display: 'block', marginBottom: '4px' }}>Consultation Timings:</strong>
+              <div>• <strong>Hospital OPD:</strong> Mon – Sat: 10:00 AM – 5:00 PM (Apollo Hospitals)</div>
+              <div>• <strong>Evening Clinic:</strong> Mon – Sat: 6:30 PM – 8:30 PM (Private Chamber)</div>
+              <div style={{ marginTop: '4px', color: 'var(--color-text-muted)' }}>Bhubaneswar, Odisha • Ph: +91 91246 60465</div>
             </div>
           </div>
         </div>

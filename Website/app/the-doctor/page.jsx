@@ -42,7 +42,7 @@ export default function TheDoctorPage() {
               </h1>
 
               <p className="doctor-hero-subtitle">
-                {doctorData.doctor.fullName} • Senior Consultant &amp; Head of Academics, Gastroenterology &amp; Hepatology • {doctorData.doctor.location}
+                {doctorData.doctor.fullName} • Senior Consultant, Gastroenterology, Hepatology, Therapeutic Endoscopy &amp; Liver Transplantation • {doctorData.doctor.location}
               </p>
             </div>
 
@@ -51,7 +51,7 @@ export default function TheDoctorPage() {
               <div className="meet-image-card" style={{ maxWidth: '340px', width: '100%' }}>
                 <div className="meet-img-frame">
                   <Image
-                    src="/images/doctor-chair.jpg"
+                    src="/images/apollo-consultation-chamber.jpg"
                     alt={doctorData.doctor.fullName}
                     width={340}
                     height={300}
@@ -60,11 +60,11 @@ export default function TheDoctorPage() {
                   />
                   <div className="meet-floating-badge">
                     <div className="meet-badge-title">+ Senior Consultant</div>
-                    <div className="meet-badge-sub">Gastroenterology &amp; Hepatology</div>
+                    <div className="meet-badge-sub">Gastroenterology, Hepatology &amp; Liver Transplant</div>
                   </div>
                 </div>
                 <div className="meet-caption">
-                  CLINICAL EXPERIENCE, ACADEMIC LEADERSHIP.
+                  APOLLO HOSPITALS BHUBANESWAR CONSULTATION DESK
                 </div>
               </div>
             </div>
@@ -186,6 +186,41 @@ export default function TheDoctorPage() {
                     <p className="inst-role-text">{exp.role}</p>
                   </div>
                 ))}
+              </div>
+
+              {/* Real Facility Photos */}
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '20px', marginTop: '30px' }}>
+                <div style={{ borderRadius: '10px', overflow: 'hidden', border: '1px solid var(--color-border)', backgroundColor: '#ffffff' }}>
+                  <div style={{ position: 'relative', width: '100%', height: '180px' }}>
+                    <Image
+                      src="/images/apollo-hospital-exterior.jpg"
+                      alt="Dr. Sethi at Apollo Hospitals Bhubaneswar"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 400px"
+                      style={{ objectFit: 'cover' }}
+                    />
+                  </div>
+                  <div style={{ padding: '12px 16px', fontSize: '0.84rem', fontWeight: 600, color: 'var(--color-heading)' }}>
+                    Apollo Hospitals Bhubaneswar
+                    <div style={{ fontSize: '0.76rem', color: 'var(--color-text-muted)', fontWeight: 400 }}>Main hospital entrance &amp; OPD center</div>
+                  </div>
+                </div>
+
+                <div style={{ borderRadius: '10px', overflow: 'hidden', border: '1px solid var(--color-border)', backgroundColor: '#ffffff' }}>
+                  <div style={{ position: 'relative', width: '100%', height: '180px' }}>
+                    <Image
+                      src="/images/clinic-consultation-chamber.jpg"
+                      alt="Dr. Sethi at Private Clinic Chamber"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 400px"
+                      style={{ objectFit: 'cover' }}
+                    />
+                  </div>
+                  <div style={{ padding: '12px 16px', fontSize: '0.84rem', fontWeight: 600, color: 'var(--color-heading)' }}>
+                    Private Clinic Consultation Chamber
+                    <div style={{ fontSize: '0.76rem', color: 'var(--color-text-muted)', fontWeight: 400 }}>Evening consultation chamber in Bhubaneswar</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

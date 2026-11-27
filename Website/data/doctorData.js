@@ -2,9 +2,9 @@ export const doctorData = {
   doctor: {
     fullName: 'Dr. Sushant Kumar Sethi',
     honorific: 'Dr.',
-    primaryTitle: 'Senior Consultant, Gastroenterology & Hepatology',
-    secondaryTitle: 'Head of Academics • Gastroenterology & Hepatology',
-    speciality: 'Gastroenterology & Hepatology',
+    primaryTitle: 'Senior Consultant, Gastroenterology, Hepatology, Therapeutic Endoscopy & Liver Transplantation',
+    secondaryTitle: 'Head of Academics • Gastroenterology, Hepatology, Therapeutic Endoscopy & Liver Transplantation',
+    speciality: 'Gastroenterology, Hepatology, Therapeutic Endoscopy & Liver Transplantation',
     location: 'Bhubaneswar, Odisha',
     city: 'Bhubaneswar',
     state: 'Odisha',
@@ -436,7 +436,7 @@ export const doctorData = {
       {
         id: 'faq-1',
         question: 'How do I request an appointment?',
-        answer: 'You can submit an appointment request directly through our online consultation form by selecting your preferred date and time, or by calling our clinical coordination desk at +91 80930 60180.'
+        answer: 'You can submit an appointment request directly through our online consultation form by selecting your preferred date and time, or by calling our clinical coordination desk at +91 91246 60465.'
       },
       {
         id: 'faq-2',
@@ -451,20 +451,52 @@ export const doctorData = {
     ],
     images: {
       heroDoctor: '/images/hero-doctor.png',
-      meetDoctor: '/images/meet-doctor-card.jpg',
-      doctorChair: '/images/doctor-chair.jpg',
+      meetDoctor: '/images/apollo-consultation-chamber.jpg',
+      doctorChair: '/images/apollo-consultation-chamber.jpg',
       portraitUrl: '/images/dr-sushant-sethi.jpg',
-      clinicInteriorUrl: '/images/clinic-interior.jpg'
+      clinicInteriorUrl: '/images/clinic-consultation-chamber.jpg',
+      apolloExterior: '/images/apollo-hospital-exterior.jpg',
+      apolloChamber: '/images/apollo-consultation-chamber.jpg',
+      clinicChamber: '/images/clinic-consultation-chamber.jpg',
+      clinicLab: '/images/clinic-diagnostics-lab.jpg'
     }
   },
   clinics: [
     {
-      id: 'bhubaneswar-main',
-      name: 'Dr. Sethi Consultation Clinic',
-      hospital: 'Apollo Hospitals / IMS & SUM Hospitals',
+      id: 'apollo-hospital',
+      name: 'Apollo Hospitals (Hospital Consultations & Endoscopy)',
+      facilityType: 'Hospital Outpatient & Inpatient Care',
+      affiliationType: 'Hospital Consultation & Endoscopy',
+      hospital: 'Apollo Hospitals, Bhubaneswar',
+      address: 'Apollo Hospitals, Sainik School Road, Unit 15, Bhubaneswar, Odisha 751005',
+      city: 'Bhubaneswar',
+      phone: '+91 91246 60465',
+      timing: 'Monday – Saturday: 10:00 AM – 05:00 PM',
+      consultationDays: 'Monday – Saturday',
+      consultationTimings: '10:00 AM – 05:00 PM (Hospital OPD)',
+      bookingInstructions: 'Hospital OPD consultations, advanced endoscopy, EUS & ERCP procedures. Prior token confirmation recommended.',
+      image: '/images/apollo-hospital-exterior.jpg',
+      chamberImage: '/images/apollo-consultation-chamber.jpg',
+      mapsUrl: 'https://maps.google.com/?q=Apollo+Hospitals+Bhubaneswar',
+      isVerified: true
+    },
+    {
+      id: 'private-clinic',
+      name: "Dr. Sushant Sethi Clinic & Diagnostics",
+      facilityType: 'Private Outpatient Clinic & Diagnostics',
+      affiliationType: 'Evening Consultation Clinic',
+      hospital: 'Private Consultation Chamber',
       address: 'Bhubaneswar, Odisha',
-      phone: '+91 80930 60180',
-      timing: 'Monday – Saturday: Morning & Evening by confirmed appointment'
+      city: 'Bhubaneswar',
+      phone: '+91 91246 60465',
+      timing: 'Monday – Saturday: 06:30 PM – 08:30 PM',
+      consultationDays: 'Monday – Saturday',
+      consultationTimings: '06:30 PM – 08:30 PM (Evening Clinic)',
+      bookingInstructions: 'Evening consultation & diagnostic evaluation. Prior appointment booking required.',
+      image: '/images/clinic-consultation-chamber.jpg',
+      labImage: '/images/clinic-diagnostics-lab.jpg',
+      mapsUrl: 'https://maps.google.com/?q=Bhubaneswar+Odisha',
+      isVerified: true
     }
   ],
   patientGuides: {
@@ -513,13 +545,15 @@ export const doctorData = {
     }
   },
   contact: {
-    phone: '+91 80930 60180',
+    phone: '+91 91246 60465',
     email: 'drsushantkumarsethi@gmail.com',
     consultationEmail: 'drsushantkumarsethi@gmail.com',
     verifiedInstagram: 'https://www.instagram.com/drsushantkumarsethi/',
     verifiedInstagramHandle: '@drsushantkumarsethi',
     city: 'Bhubaneswar',
-    hospital: 'Apollo Hospitals, Bhubaneswar'
+    hospital: 'Apollo Hospitals, Bhubaneswar',
+    hospitalTimings: 'Monday – Saturday: 10:00 AM – 05:00 PM',
+    clinicTimings: 'Monday – Saturday: 06:30 PM – 08:30 PM'
   },
   services: [
     { id: 'gerd', title: 'Acid Reflux & GERD Management' },
