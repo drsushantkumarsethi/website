@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "npm --prefix Website run dev",
     "prebuild": "npm --prefix Website install",
-    "build": "npm --prefix Website run build",
+    "build": "cd Website && STATIC_EXPORT=true npm run build && cp -r out/* .. && cp out/.htaccess ..",
     "start": "npm --prefix Website run start"
   }
 }

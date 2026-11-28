@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[397],{1095:(e,s,r)=>{Promise.resolve().then(r.bind(r,2427))},2427:(e,s,r)=>{"use strict";r.r(s),r.d(s,{default:()=>a});var n=r(5155);function a(e){let{children:s}=e;return(0,n.jsx)("div",{className:"page-transition-wrapper",children:s})}r(2115)}},e=>{e.O(0,[441,255,358],()=>e(e.s=1095)),_N_E=e.O()}]);
