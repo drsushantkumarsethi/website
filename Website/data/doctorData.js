@@ -450,7 +450,7 @@ export const doctorData = {
       }
     ],
     images: {
-      heroDoctor: '/images/hero-doctor.png',
+      heroDoctor: '/images/dr-sushant-sethi-portrait.jpg',
       meetDoctor: '/images/apollo-consultation-chamber.jpg',
       doctorChair: '/images/apollo-consultation-chamber.jpg',
       portraitUrl: '/images/dr-sushant-sethi.jpg',

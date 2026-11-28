@@ -218,10 +218,10 @@ export default function HomePage() {
               <div className="meet-image-card" style={{ maxWidth: '360px', width: '100%' }}>
                 <div className="meet-img-frame">
                   <Image
-                    src="/images/hero-doctor.png"
+                    src="/images/dr-sushant-sethi-portrait.jpg"
                     alt={`${doctorData.doctor.fullName} - Senior Consultant Gastroenterologist`}
                     width={360}
-                    height={420}
+                    height={440}
                     className="meet-portrait-img"
                     priority
                   />

@@ -831,10 +831,10 @@ h1, h2, h3, h4, h5, h6, .heading-editorial {
 }
 .meet-portrait-img {
   width: 100%;
-  height: auto;
-  max-height: 420px;
+  height: 430px;
+  max-height: 460px;
   object-fit: cover;
-  object-position: top center;
+  object-position: center 20%;
   display: block;
   transition: transform 0.4s ease;
 }
